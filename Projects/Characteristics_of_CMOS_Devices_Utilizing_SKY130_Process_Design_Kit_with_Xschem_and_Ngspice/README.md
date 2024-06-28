@@ -42,6 +42,7 @@
 
 <h2><div id="tool">2. Tools and PDK</div></h2>
 <h3><div id="sky">2.1 SKY130PDK</div></h3>
+ <img src="../assets/images/skywater.png" alt="Skywater" style="width:500px;height:600px;"> 
 <p>The SkyWater 130nm Process Design Kit (PDK) is an open-source toolset provided by SkyWater Technology, tailored for semiconductor design at the 130nm technology node. It includes essential components such as design rules, device models, and standard cell libraries. The purpose of the SkyWater 130nm PDK is to enable designers to create and simulate integrated circuits with accuracy and efficiency. It supports both analog and digital circuit design, making it suitable for a wide range of applications from consumer electronics to advanced research in semiconductor technology.</p>
 <h3><div id="xschem">2.2 Xschem</div></h3>
 <p>Xschem, coupled with the SkyWater 130nm Process Design Kit (PDK) and Ngspice, forms a robust toolchain for VLSI circuit design and simulation. Xschem serves as a powerful schematic capture tool, providing an intuitive interface for designing and analyzing circuits at the transistor level. Integrated with the SkyWater 130nm PDK, Xschem facilitates efficient creation and editing of circuit schematics, ensuring compatibility with specific design rules and device models. Ngspice complements Xschem by enabling accurate simulation of analog and mixed-signal circuits, crucial for predicting and validating circuit behavior before fabrication. Together, they enhance the precision and effectiveness of semiconductor design processes.</p>
