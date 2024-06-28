@@ -51,7 +51,7 @@
 <img src="https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Characteristics_of_CMOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice/assets/images/ngspice.png" alt="NGSpice">
 <p><a href="https://ngspice.sourceforge.io/">Ngspice</a>, in conjunction with Xschem and the SkyWater 130nm Process Design Kit (PDK), is pivotal for simulating VLSI circuits with precision. It enables thorough analysis of analog and mixed-signal designs, predicting circuit performance and validating functionality before fabrication. Integrated seamlessly with Xschem and utilizing the comprehensive device models and design rules of the SkyWater 130nm PDK, Ngspice supports various simulation types, including transient and AC/DC analyses. This combination ensures that designers can achieve accurate and reliable results, optimizing circuits for performance, power efficiency, and overall design robustness in semiconductor applications.</p>
 
-<p> To install <a href="https://xschem.sourceforge.io/stefan/xschem_man/tutorial_xschem_sky130.html">SKY130 PDK, Xschem and Ngspice</a> follow the instructions provide in this site.</p>
+<p> To install <a href="https://xschem.sourceforge.io/stefan/xschem_man/tutorial_xschem_sky130.html">SKY130 PDK, Xschem and Ngspice</a> follow the instructions provided in this site.</p>
 
 
 
