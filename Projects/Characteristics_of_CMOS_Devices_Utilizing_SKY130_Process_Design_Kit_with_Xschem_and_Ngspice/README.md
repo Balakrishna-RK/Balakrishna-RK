@@ -8,9 +8,9 @@
 </ul>
 <h3><a href="#tool">2. Tools and PDK</a></h3>
 <ul>
-    <li><a href="#SKY130PDK">2.1 SKY130PDK</a></li>
-    <li><a href="#Xschem">2.2 Xschem</a></li>
-    <li><a href="#NGSpice">2.3 Ngspice</a></li>
+    <li><a href="#sky">2.1 SKY130PDK</a></li>
+    <li><a href="#xschem">2.2 Xschem</a></li>
+    <li><a href="#ngspice">2.3 Ngspice</a></li>
 </ul>
 <h3><a href="#">3. PMOS Analysis</a></h3>
 <ul>
