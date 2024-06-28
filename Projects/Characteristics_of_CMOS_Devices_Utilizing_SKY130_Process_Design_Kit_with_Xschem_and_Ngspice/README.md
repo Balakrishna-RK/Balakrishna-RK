@@ -56,6 +56,17 @@
 
 <p><b> To install <a href="https://xschem.sourceforge.io/stefan/xschem_man/tutorial_xschem_sky130.html">SKY130 PDK, Xschem and Ngspice</a> follow the instructions provided in this site.</b></p>
 
+<h2><div id="">3. Analysis of PMOS Circuit</div></h2>
+<h3><div id="">3.1 PMOS Circuit Analysis</div></h3>
+<h3><div id="">3.2 Drain Characteristics</div></h3>
+<h3><div id="">3.3 Transfer Characteristics</div></h3>
+
+<h2><div id="">4. Analysis of NMOS Circuit</div></h2>
+<h3><div id="">4.1 NMOS Circuit Analysis</div></h3>
+<h3><div id="">4.2 Drain Characteristics</div></h3>
+<h3><div id="">4.3 Transfer Characteristics</div></h3>
+
+<h2><div id="">5. Conclusion</div></h2>
 
 
   <a href="#foo">section name</a>
