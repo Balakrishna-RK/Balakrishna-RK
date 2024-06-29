@@ -1,4 +1,5 @@
-<h1>Characteristics of CMOS Devices Utilizing SKY130 Process Design Kit with Xschem and Ngspice</h1>
+<h1>Characteristics of MOS Devices Utilizing SKY130 Process Design Kit with Xschem and Ngspice</h1>
+<p><b>This project focuses on the analysis of MOSFET characteristics, specifically PMOS and NMOS transistors. Using the SkyWater 130nm Process Design Kit (PDK), we design circuits with Xschem and perform detailed simulations with Ngspice. The goal is to understand the behavior of MOS transistors through their drain and transfer characteristics. This foundational analysis aids in designing more complex CMOS circuits in future projects.</b></p>
 
 <h2>Contents</h2>
 
@@ -12,22 +13,22 @@
     <li><a href="#xschem">2.2 Xschem</a></li>
     <li><a href="#ngspice">2.3 Ngspice</a></li>
 </ul>
-<h3><a href="#">3. Analysis of PMOS Circuit</a></h3>
+<h3><a href="#pmos">3. Analysis of PMOS Circuit</a></h3>
 <ul>
-  <li><a href="#">3.1 PMOS Circuit Analysis</a></li>
-  <li><a href="#">3.2 Drain Characteristics</a></li>
-  <li><a href="#">3.3 Transfer Characteristics</a></li>
+  <li><a href="#pmoscircut">3.1 PMOS Circuit Analysis</a></li>
+  <li><a href="#pmostd">3.2 Transfer and Drain Characteristics</a></li>
+  <li><a href="#pmosgm">3.3 Analysis of Gm and Ro</a></li>
 </ul>
-<h3><a href="#">4. Analysis of NMOS Circuit</h3>
+<h3><a href="#nmos">4. Analysis of NMOS Circuit</h3>
 <ul>
-  <li><a href="#">4.1 NMOS Circuit Analysis</a></li>
-  <li><a href="#">4.2 Drain Characteristics</a></li>
-  <li><a href="#">4.3 Transfer Characteristics</a></li>
+  <li><a href="#nmoscircuit">4.1 NMOS Circuit Analysis</a></li>
+  <li><a href="#nmostd">4.2 Transfer and Drain Characteristics</a></li>
+  <li><a href="#nmosgm">4.3 Analysis of Gm and Ro</a></li>
 </ul>
-<h3><a href="#">5. Conclusion</a></h3>
+<h3><a href="#conclude">5. Conclusion</a></h3>
 
 <h2><div id="intro">1. Introduction</div></h2>
-<p>This project aims to experiment with and analyze the drain and transfer characteristics of PMOS and NMOS transistors using the SkyWater 130nm Process Design Kit (PDK). The project utilizes Xschem for circuit design and Ngspice for simulation. By exploring these characteristics, we aim to gain a deeper understanding of the behavior of these fundamental components in integrated circuits.</p>
+<p>This project focuses on the analysis and design of MOS characteristics, specifically utilizing the SkyWater 130nm Process Design Kit (PDK). By employing Xschem for circuit design and Ngspice for simulation, we explore the fundamental drain and transfer characteristics of PMOS and NMOS transistors. Additionally, we delve into the analysis of Level 2 parameters, such as transconductance (gm) and output resistance (ro), within the small signal model. This comprehensive study aims to enhance our understanding of MOSFET behavior, providing critical insights for more advanced CMOS circuit design in future projects.</p>
 
 <h3><div id="obj">1.1. Objective</div></h3>
 <hr> The primary objectives of this project are as follows:</hr>
@@ -56,17 +57,17 @@
 
 <p><b> To install <a href="https://xschem.sourceforge.io/stefan/xschem_man/tutorial_xschem_sky130.html">SKY130 PDK, Xschem and Ngspice</a> follow the instructions provided in this site.</b></p>
 
-<h2><div id="">3. Analysis of PMOS Circuit</div></h2>
-<h3><div id="">3.1 PMOS Circuit Analysis</div></h3>
-<h3><div id="">3.2 Drain Characteristics</div></h3>
-<h3><div id="">3.3 Transfer Characteristics</div></h3>
+<h2><div id="pmos">3. Analysis of PMOS Circuit</div></h2>
+<h3><div id="pmoscircuit">3.1 PMOS Circuit Analysis</div></h3>
+<h3><div id="pmostd">3.2 Transfer and Drain Characteristics</div></h3>
+<h3><div id="pmosgm">3.3 Analysis of Gm and Ro</div></h3>
 
-<h2><div id="">4. Analysis of NMOS Circuit</div></h2>
-<h3><div id="">4.1 NMOS Circuit Analysis</div></h3>
-<h3><div id="">4.2 Drain Characteristics</div></h3>
-<h3><div id="">4.3 Transfer Characteristics</div></h3>
+<h2><div id="nmos">4. Analysis of NMOS Circuit</div></h2>
+<h3><div id="nmoscircuit">4.1 NMOS Circuit Analysis</div></h3>
+<h3><div id="nmostd">4.2 Transfer and Drain Characteristics</div></h3>
+<h3><div id="nmosgm">4.3 Analysis of Gm and Ro</div></h3>
 
-<h2><div id="">5. Conclusion</div></h2>
+<h2><div id="conclude">5. Conclusion</div></h2>
 
 
   <a href="#foo">section name</a>
