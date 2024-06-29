@@ -15,7 +15,7 @@
 </ul>
 <h3><a href="#pmos">3. Analysis of PMOS Circuit</a></h3>
 <ul>
-  <li><a href="#pmoscircut">3.1 PMOS Circuit Analysis</a></li>
+  <li><a href="#pmoscircuit">3.1 PMOS Circuit Analysis</a></li>
   <li><a href="#pmostd">3.2 Transfer and Drain Characteristics</a></li>
   <li><a href="#pmosgm">3.3 Analysis of Gm and Ro</a></li>
 </ul>
@@ -59,15 +59,34 @@
 
 <h2><div id="pmos">3. Analysis of PMOS Circuit</div></h2>
 <h3><div id="pmoscircuit">3.1 PMOS Circuit Analysis</div></h3>
- <img src="https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice/assets/images/sykwater.png" alt="PMOS Circuit"> 
+ <img src="https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice/assets/images/pmos_circuit.png" alt="PMOS Circuit"> 
 <p>Now we have connected the PMOS circuit using the `pfet_01v8` component from the SkyWater 130nm PDK library in Xschem. We apply a negative voltage to Vgs and vary the voltage of Vds to observe the PMOS behavior. Specifically, we vary Vds for different Vgs voltages to understand the PMOS characteristics. In Xschem, create voltage sources and name them Vgs and Vds using the library components. Use the `code_shown.sym` to include the `.lib` of the PDK library for netlist generation. Implement the `.dc` command to create various voltage steps as shown in the above image. After configuring these settings, generate the netlist and simulate the circuit using Ngspice. In the Ngspice terminal, type `display` to list the available plots, use `setplot` to select a specific plot, and then type `plot` followed by the plot name you want to visualize.</p>
- <img src="https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice/assets/images/sykwater.png" alt="comments"> 
+ <img src="https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice/assets/images/pmos_circuit_analysis.png" alt="comments"> 
+ <p>The above-mentioned commands are shown on the left side of the image to help you get started with plotting. These include using `display` to list available plots, `setplot` to select a plot, and `plot` followed by the plot name to visualize specific results. Follow these steps in the Ngspice terminal to generate and analyze your simulation data effectively.</p>
 <h3><div id="pmostd">3.2 Transfer and Drain Characteristics</div></h3>
+<h3>Transfer Characteristics</h3>
+<p>The following steps outline the process for plotting and analyzing the PMOS transfer characteristics using the SkyWater 130nm PDK, Xschem, and Ngspice. First, we plot the transfer characteristics, specifically Id versus Vgs, for various Vds voltages. This allows us to understand how the PMOS transistor operates and how the drain current changes in response to different gate-source voltages. By varying the Vds voltage while observing the changes in Id, we gain insights into the transistor's behavior in different operating regions. These plots help us analyze key parameters such as the threshold voltage, transconductance, and output resistance, providing a comprehensive understanding of PMOS performance.</p>
+<img src="" alt="pmos transfer characteristics">
+
+<p>Now, we are plotting the transfer characteristics. Using the commands `display`, `setplot`, and `plot` in the Ngspice terminal, we can visualize these characteristics effectively. After simulating, type `plot vds#branch` to plot the characteristics. </p>
+<h3>Drain Characteristics</h3>
+<p>To analyze the drain characteristics of PMOS transistors, we configure the `.dc` command within `code_shown.sym` to sweep the gate-source voltage (Vgs). This enables us to plot the drain current (Id) versus drain-source voltage (Vds) across a range of Vgs values, providing detailed insights into the transistor's operational behavior. By employing Ngspice's `plot` and `display` commands to visualize the Id Vs Vds.</p>
 <h3><div id="pmosgm">3.3 Analysis of Gm and Ro</div></h3>
 
 <h2><div id="nmos">4. Analysis of NMOS Circuit</div></h2>
 <h3><div id="nmoscircuit">4.1 NMOS Circuit Analysis</div></h3>
+
+<p>We have connected an NMOS circuit using the `nfet_01v8` component from the SkyWater 130nm PDK library in Xschem. First, we apply a negative voltage to the Vgs terminal with various Vds voltages to observe the NMOS behavior. Next, we vary the Vds voltage for different Vgs values to understand the PMOS characteristics. Create voltage sources and name them Vgs and Vds using the Xschem library. Use `code_shown.sym` to reference the PDK library in the netlist. Employ the `.dc` command to set up various voltage steps as depicted in the image. Generate the netlist and simulate it using Ngspice. In the Ngspice terminal, type `display` to list the available plots, `setplot` to select the plot, and `plot` followed by the plot name to visualize the results.</p>
+
+<p>The above-mentioned commands are shown on the left side of the image to help you get started with plotting. These include using `display` to list available plots, `setplot` to select a plot, and `plot` followed by the plot name to visualize specific results. Follow these steps in the Ngspice terminal to generate and analyze your simulation data effectively.</p>
+
 <h3><div id="nmostd">4.2 Transfer and Drain Characteristics</div></h3>
+<h3>Transfer Characteristics</h3>
+<p>The following steps outline the process for plotting and analyzing the NMOS transfer characteristics using the SkyWater 130nm PDK, Xschem, and Ngspice. First, we plot the transfer characteristics, specifically Id versus Vgs, for various Vds voltages. This allows us to understand how the NMOS transistor operates and how the drain current changes in response to different gate-source voltages. By varying the Vds voltage while observing the changes in Id, we gain insights into the transistor's behavior in different operating regions. These plots help us analyze key parameters such as the threshold voltage, transconductance, and output resistance, providing a comprehensive understanding of NMOS performance.</p>
+<img src="" alt="nmos transfer characteristics">
+<p>Now, we are plotting the transfer characteristics. Using the commands `display`, `setplot`, and `plot` in the Ngspice terminal, we can visualize these characteristics effectively. After simulating, type `plot -vds#branch` (note: for convenience, we use the negative sign) to plot the characteristics.</p>
+<h3>Drain Characteristics</h3>
+<p>To analyze the drain characteristics of NMOS transistors, we configure the `.dc` command within `code_shown.sym` to vary the gate-source voltage (Vgs). This setup allows us to plot the drain current (Id) versus drain-source voltage (Vds) for different Vgs values, offering detailed insights into the transistor's operational behavior. Using Ngspice's `plot` and `display` commands, we visualize these characteristics to evaluate crucial parameters such as saturation regions, threshold voltages, and current levels under varying bias conditions. After simulation, type `plot -vds#branch` in Ngspice to generate the plot; the negative sign is used for convenient visualization of the plot orientation. </p>
 <h3><div id="nmosgm">4.3 Analysis of Gm and Ro</div></h3>
 
 <h2><div id="conclude">5. Conclusion</div></h2>
