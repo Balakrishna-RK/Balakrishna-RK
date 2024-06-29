@@ -92,7 +92,15 @@
 
 <h3><div id="pmosgm">3.3 Analysis of Gm and Ro</div></h3>
 <h3>Analysis of Gm</h3>
-<p>To calculate the transconductance (gm) of a PMOS transistor, we select the higher Vgs value of -1.8V. Using this gate-source voltage, we plot the drain current (Id) versus drain-source voltage (Vds). Subsequently, we employ the `.measure` command in Ngspice to determine the value of Id at Vgs = -1.8V. The transconductance gm is then calculated using the formula gm = dId / dVgs, where dId represents the change in drain current and dVgs represents the change in gate-source voltage. At Vgs = -1.8V, we find that Id is approximately 403 µA (microamps), and the transconductance gm measures -483 µS (microsiemens), as displayed in the calculations shown on the left. These steps illustrate how transconductance quantifies the efficiency of a MOSFET in amplifying signals, essential for optimizing circuit performance in various applications.</p>
+<img src="https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice/assets/images/gm_pmos_cal.png" alt="gm pmoscal">
+<p>To calculate the transconductance (gm) of a PMOS transistor, we select the higher Vgs value of -1.8V. Using this gate-source voltage, we plot the drain current (Id) versus drain-source voltage (Vds). Subsequently, we employ the `.measure` command in Ngspice to determine the value of Id at Vgs = -1.8V. The transconductance gm is then calculated using the formula gm = dId / dVgs, where dId represents the change in drain current and dVgs represents the change in gate-source voltage.</p>
+
+<img src="https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice/assets/images/pmos_id.png" alt="pmos_id" style="width:48%" align="left">
+<img src="https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice/assets/images/pmos_gm.png" alt="pmos_gm" style="width:48%" align="right">
+
+<div>
+<p>At Vgs = -1.8V, we find that Id is approximately 403 µA (microamps), and the transconductance gm measures -483 µS (microsiemens), as displayed in the calculations shown on the left. These steps illustrate how transconductance quantifies the efficiency of a MOSFET in amplifying signals, essential for optimizing circuit performance in various applications.</p>
+</div>
 
 <h3>Analysis of Ro</h3>
 
