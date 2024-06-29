@@ -105,6 +105,8 @@
 
 <p>We have connected an NMOS circuit using the `nfet_01v8` component from the SkyWater 130nm PDK library in Xschem. First, we apply a negative voltage to the Vgs terminal with various Vds voltages to observe the NMOS behavior. Next, we vary the Vds voltage for different Vgs values to understand the PMOS characteristics. Create voltage sources and name them Vgs and Vds using the Xschem library. Use `code_shown.sym` to reference the PDK library in the netlist. Employ the `.dc` command to set up various voltage steps as depicted in the image. Generate the netlist and simulate it using Ngspice. In the Ngspice terminal, type `display` to list the available plots, `setplot` to select the plot, and `plot` followed by the plot name to visualize the results.</p>
 
+<img src="" alt="nmos circuit analysis">
+
 <p>The above-mentioned commands are shown on the left side of the image to help you get started with plotting. These include using `display` to list available plots, `setplot` to select a plot, and `plot` followed by the plot name to visualize specific results. Follow these steps in the Ngspice terminal to generate and analyze your simulation data effectively.</p>
 
 <h3><div id="nmostd">4.2 Transfer and Drain Characteristics</div></h3>
