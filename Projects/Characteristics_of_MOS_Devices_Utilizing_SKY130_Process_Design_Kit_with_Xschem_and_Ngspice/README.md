@@ -59,6 +59,9 @@
 
 <h2><div id="pmos">3. Analysis of PMOS Circuit</div></h2>
 <h3><div id="pmoscircuit">3.1 PMOS Circuit Analysis</div></h3>
+ <img src="https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice/assets/images/sykwater.png" alt="PMOS Circuit"> 
+<p>Now we have connected the PMOS circuit using the `pfet_01v8` component from the SkyWater 130nm PDK library in Xschem. We apply a negative voltage to Vgs and vary the voltage of Vds to observe the PMOS behavior. Specifically, we vary Vds for different Vgs voltages to understand the PMOS characteristics. In Xschem, create voltage sources and name them Vgs and Vds using the library components. Use the `code_shown.sym` to include the `.lib` of the PDK library for netlist generation. Implement the `.dc` command to create various voltage steps as shown in the above image. After configuring these settings, generate the netlist and simulate the circuit using Ngspice. In the Ngspice terminal, type `display` to list the available plots, use `setplot` to select a specific plot, and then type `plot` followed by the plot name you want to visualize.</p>
+ <img src="https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice/assets/images/sykwater.png" alt="comments"> 
 <h3><div id="pmostd">3.2 Transfer and Drain Characteristics</div></h3>
 <h3><div id="pmosgm">3.3 Analysis of Gm and Ro</div></h3>
 
