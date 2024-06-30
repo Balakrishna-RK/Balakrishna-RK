@@ -110,7 +110,7 @@ To calculate the transconductance (gm) of a PMOS transistor, we select the highe
 ![pmos_id](assets/images/pmos_id.png)
 ![pmos_gm](assets/images/pmos_gm.png)
 
-At Vgs = -1.8V, we find that Id is approximately 403 µA (microamps), and the transconductance gm measures -483 µS (microsiemens), as displayed in the calculations shown on the left. These steps illustrate how transconductance quantifies the efficiency of a MOSFET in amplifying signals, essential for optimizing circuit performance in various applications.
+At Vgs = -1.8V, we find that Id is approximately 403 µA (microamps), and the transconductance gm measures 483 µS (microsiemens), as displayed in the calculations shown on the left. These steps illustrate how transconductance quantifies the efficiency of a MOSFET in amplifying signals, essential for optimizing circuit performance in various applications.
 
 #### Analysis of Ro
 
@@ -185,7 +185,7 @@ In this project, we extensively analyzed the characteristics of PMOS and NMOS tr
 
 #### PMOS Analysis
 - **Transfer Characteristics**: We explored the relationship between drain current (Id) and gate-source voltage (Vgs) while varying drain-source voltage (Vds). This provided insights into the transistor's operation across different bias conditions.
-- **Analysis of Gm**: By calculating transconductance (gm), we evaluated the efficiency of PMOS amplification. At Vgs = -1.8V, we observed gm to be approximately -483 µS.
+- **Analysis of Gm**: By calculating transconductance (gm), we evaluated the efficiency of PMOS amplification. At Vgs = -1.8V, we observed gm to be approximately 483 µS.
 - **Analysis of Ro**: Output resistance (Ro) was examined to understand stability under varying Vds conditions. At Vds = -1.8V, Ro measured around 11,954 Ω.
 
 #### NMOS Analysis
