@@ -22,8 +22,7 @@ I have equipped myself with skills in Layout Design, Physical Design, RTL design
 
 <ul>
     <li><b>Characteristics of MOS Devices Utilizing SKY130 Process Design Kit with Xschem and Ngspice</b></li>
-    <li><b>Design and Analysis of CMOS Inverter using Xschem, Ngspice and SKY130PDK</b></li>
-    <li><b>Layout Design of CMOS Inverter using Magic VLSI and SKY130PDK</b></li>
+    <li><b>Design and Analysis of a CMOS Inverter with Layout Design Implementation Using Magic VLSI</b></li>
     <li><b>Design and Analysis of 8-bit Carry Select Adder using SKY130PDK, Xschem and Ngspice</b></li>
     <li><b>Layout Design of 8-bit Carry Select Adder using Magic VLSI and SKY130PDK</b></li>
     <li><b>Design and Analysis of 8-word 8-bit Static RAM with 6T Cell using SKY130PDK, Xschem and Ngspice</b></li>
