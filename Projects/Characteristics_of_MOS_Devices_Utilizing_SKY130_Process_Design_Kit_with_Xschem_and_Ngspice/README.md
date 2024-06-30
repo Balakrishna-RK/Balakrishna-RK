@@ -4,7 +4,7 @@
 **This project focuses on the analysis of MOSFET characteristics, specifically PMOS and NMOS transistors. Using the SkyWater 130nm Process Design Kit (PDK), we design circuits with Xschem and perform detailed simulations with Ngspice. The goal is to understand the behavior of MOS transistors through their drain and transfer characteristics. This foundational analysis aids in designing more complex CMOS circuits in future projects.**
 
 ## Contents
-- [1. Introduction](#intro)
+- [1. Introduction](#1.-Introduction)
   - [1.1. Objective](#obj)
 
 - [2. Tools and PDK](#tool)
