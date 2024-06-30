@@ -105,23 +105,37 @@ To analyze the drain characteristics of PMOS transistors, we configure the `.dc`
 
 ![gm pmoscal](assets/images/gm_pmos_cal.png)
 
-To calculate the transconductance (gm) of a PMOS transistor, we select the higher Vgs value of -1.8V. Using this gate-source voltage, we plot the drain current (Id) versus drain-source voltage (Vds). Subsequently, we employ the `.measure` command in Ngspice to determine the value of Id at Vgs = -1.8V. The transconductance gm is then calculated using the formula gm = dId / dVgs, where dId represents the change in drain current and dVgs represents the change in gate-source voltage.
+To calculate the transconductance (gm) of a PMOS transistor, we select the higher Vgs value of 1.8V. Using this gate-source voltage, we plot the drain current (Id) versus drain-source voltage (Vds). Subsequently, we employ the `.measure` command in Ngspice to determine the value of Id at Vgs = 1.8V. The transconductance gm is then calculated using the formula gm = dId / dVgs, where dId represents the change in drain current and dVgs represents the change in gate-source voltage.
 
 ![pmos_id](assets/images/pmos_id.png)
 ![pmos_gm](assets/images/pmos_gm.png)
 
-At Vgs = -1.8V, we find that Id is approximately 403 µA (microamps), and the transconductance gm measures 483 µS (microsiemens), as displayed in the calculations shown on the left. These steps illustrate how transconductance quantifies the efficiency of a MOSFET in amplifying signals, essential for optimizing circuit performance in various applications.
+At Vgs = 1.8V, we find that Id is approximately 403 µA (microamps), and the transconductance gm measures 483 µS (microsiemens), as displayed in the calculations shown on the left. These steps illustrate how transconductance quantifies the efficiency of a MOSFET in amplifying signals, essential for optimizing circuit performance in various applications.
 
 #### Analysis of Ro
 
 ![pmos ro calculation](assets/images/ro_pmos_calculation.png)
 
-To calculate the output resistance (Ro) of the PMOS transistor, we select a higher drain-source voltage (Vds) of -1.8V. Using this Vds value, we plot the drain current (Id) versus gate-source voltage (Vgs). Next, we use the `.measure` command in Ngspice to determine the Id at Vds = -1.8V. To find Ro, we use the formula Ro = 1 / (d(Id)/d(Vds) * λ). For simplicity, we neglect the channel-length modulation parameter (λ) as it increases the complexity due to Level 3 SPICE parameters.
+To calculate the output resistance (Ro) of the PMOS transistor, we select a higher drain-source voltage (Vds) of 1.8V. Using this Vds value, we plot the drain current (Id) versus gate-source voltage (Vgs). Next, we use the `.measure` command in Ngspice to determine the Id at Vds = 1.8V. To find Ro, we use the formula Ro = 1 / (d(Id)/d(Vds) * λ). Next, we calculate the channel length modulation parameter (λ) to determine the output resistance (ro).
+### Determine λ:
+
+1. Identify the region where the transistor is in saturation (flat region of the Id vs. Vds plot).
+2. Fit a linear approximation to the saturation region of the curve.
+3. Calculate the slope (ΔId/ΔVds) of the linear approximation.
+4. Determine the average drain current (Id_avg) in the saturation region.
+5. Calculate λ using the formula:
+
+   ### λ=ΔVdsΔId​⋅Idavg​1​
+
+### Once λ is determined, the output resistance (ro) can be calculated using:
+
+  ### ro​=λ⋅ID​1​
+
 
 ![pmos_ro_id](assets/images/id_ro_pmos.png)
 ![pmos_ro](assets/images/ro_pmos.png)
 
-After performing these calculations, we find that Id at Vds = -1.8V is approximately 403 µA (microamps), and the output resistance Ro is measured to be around 11,954 ohms (Ω). These measurements provide critical insights into the MOSFET's stability and performance in circuit applications. Follow the commands shown on the left side of the screen to accurately perform and verify these calculations in Ngspice.
+After performing these calculations, we find that Id at Vds = 1.8V is approximately 403 µA (microamps), and the output resistance Ro is measured to be around 54,213 ohms (Ω). These measurements provide critical insights into the MOSFET's stability and performance in circuit applications. Follow the commands shown on the left side of the screen to accurately perform and verify these calculations in Ngspice.
 
 ## 4. Analysis of NMOS Circuit
 
@@ -172,12 +186,27 @@ After performing these calculations, we find that Id at Vgs = 1.8V is approximat
 
 #### Analysis of Ro
 
-To calculate the output resistance (Ro) of the NMOS transistor, we select a higher drain-source voltage (Vds) of 1.8V. Using this Vds value, we plot the drain current (Id) versus the drain-source voltage (Vds). Next, we use the `.measure` command in Ngspice to determine the Id at Vds = 1.8V. To find Ro, we use the formula Ro = 1 / (d(Id) * λ), where λ is the channel-length modulation parameter. However, for simplicity, we neglect λ due to the complexity introduced by the Level 3 SPICE parameters. 
+![r0_calculation_nmos](assets/images/ro_calculation_nmos.png)
+
+To calculate the output resistance (Ro) of the NMOS transistor, we select a higher drain-source voltage (Vds) of 1.8V. Using this Vds value, we plot the drain current (Id) versus the drain-source voltage (Vds). Next, we use the `.measure` command in Ngspice to determine the Id at Vds = 1.8V. To find Ro, we use the formula Ro = 1 / (d(Id) * λ), where λ is the channel-length modulation parameter.
+### Determine λ:
+
+1. Identify the region where the transistor is in saturation (flat region of the Id vs. Vds plot).
+2. Fit a linear approximation to the saturation region of the curve.
+3. Calculate the slope (ΔId/ΔVds) of the linear approximation.
+4. Determine the average drain current (Id_avg) in the saturation region.
+5. Calculate λ using the formula:
+
+   ### λ=ΔVdsΔId​⋅Idavg​1​
+
+### Once λ is determined, the output resistance (ro) can be calculated using:
+
+  ### ro​=λ⋅ID​1​
 
 ![nmos_r0_id](assets/images/ro_id_nmos.png)
 ![nmos_ro](assets/images/ro_nmos.png)
 
-After performing these calculations, we find that Id at Vds = 1.8V is approximately 500 µA (microamps), and the output resistance Ro is measured to be around 19,306 Ω (ohms). Understanding Ro is essential for assessing the stability and performance of the MOSFET in various circuit applications. Follow the commands shown on the left side of the screen to accurately perform and verify these calculations in Ngspice.
+After performing these calculations, we find that Id at Vds = 1.8V is approximately 500 µA (microamps), and the output resistance Ro is measured to be around 2,71,739 Ω (ohms). Understanding Ro is essential for assessing the stability and performance of the MOSFET in various circuit applications. Follow the commands shown on the left side of the screen to accurately perform and verify these calculations in Ngspice.
 
 ## 5. Conclusion
 
@@ -185,13 +214,13 @@ In this project, we extensively analyzed the characteristics of PMOS and NMOS tr
 
 #### PMOS Analysis
 - **Transfer Characteristics**: We explored the relationship between drain current (Id) and gate-source voltage (Vgs) while varying drain-source voltage (Vds). This provided insights into the transistor's operation across different bias conditions.
-- **Analysis of Gm**: By calculating transconductance (gm), we evaluated the efficiency of PMOS amplification. At Vgs = -1.8V, we observed gm to be approximately 483 µS.
-- **Analysis of Ro**: Output resistance (Ro) was examined to understand stability under varying Vds conditions. At Vds = -1.8V, Ro measured around 11,954 Ω.
+- **Analysis of Gm**: By calculating transconductance (gm), we evaluated the efficiency of PMOS amplification. At Vgs = 1.8V, we observed gm to be approximately 483 µS.
+- **Analysis of Ro**: Output resistance (Ro) was examined to understand stability under varying Vds conditions. At Vds = 1.8V, Ro measured around 54,213 Ω.
 
 #### NMOS Analysis
 - **Transfer Characteristics**: Similar to PMOS, we analyzed Id versus Vgs for NMOS transistors, observing behavior under varying Vds to characterize operational regions.
 - **Analysis of Gm**: NMOS transistors demonstrated gm of approximately 532 µS at Vgs = 1.8V, indicating strong amplification capability.
-- **Analysis of Ro**: The output resistance for NMOS was found to be around 19,306 Ω at Vds = 1.8V, crucial for assessing circuit stability.
+- **Analysis of Ro**: The output resistance for NMOS was found to be around 2,71,739 Ω at Vds = 1.8V, crucial for assessing circuit stability.
 
 ### Insights and Future Directions
 
