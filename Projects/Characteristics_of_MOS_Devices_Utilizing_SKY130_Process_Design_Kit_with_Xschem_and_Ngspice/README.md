@@ -172,3 +172,26 @@ To calculate the output resistance (Ro) of the NMOS transistor, we select a high
 After performing these calculations, we find that Id at Vds = 1.8V is approximately 500 µA (microamps), and the output resistance Ro is measured to be around 19,306 Ω (ohms). Understanding Ro is essential for assessing the stability and performance of the MOSFET in various circuit applications. Follow the commands shown on the left side of the screen to accurately perform and verify these calculations in Ngspice.
 
 ## 5. Conclusion
+
+In this project, we extensively analyzed the characteristics of PMOS and NMOS transistors using the SkyWater 130nm Process Design Kit (PDK), Xschem, and Ngspice simulation tools. Here's a brief summary of our findings:
+
+#### PMOS Analysis
+- **Transfer Characteristics**: We explored the relationship between drain current (Id) and gate-source voltage (Vgs) while varying drain-source voltage (Vds). This provided insights into the transistor's operation across different bias conditions.
+- **Analysis of Gm**: By calculating transconductance (gm), we evaluated the efficiency of PMOS amplification. At Vgs = -1.8V, we observed gm to be approximately -483 µS.
+- **Analysis of Ro**: Output resistance (Ro) was examined to understand stability under varying Vds conditions. At Vds = -1.8V, Ro measured around 11,954 Ω.
+
+#### NMOS Analysis
+- **Transfer Characteristics**: Similar to PMOS, we analyzed Id versus Vgs for NMOS transistors, observing behavior under varying Vds to characterize operational regions.
+- **Analysis of Gm**: NMOS transistors demonstrated gm of approximately 532 µS at Vgs = 1.8V, indicating strong amplification capability.
+- **Analysis of Ro**: The output resistance for NMOS was found to be around 19,306 Ω at Vds = 1.8V, crucial for assessing circuit stability.
+
+### Insights and Future Directions
+
+This project enhanced our understanding of MOS transistor behavior in circuit design contexts. PMOS and NMOS transistors exhibit opposite characteristics due to semiconductor properties such as electron mobility (\(\mu_n\)) and hole mobility (\(\mu_p\)), as well as factors like gate capacitance (Cox) and the width-to-length ratio (W/L ratio). To compensate for these differences and achieve symmetrical performance in CMOS logic, PMOS transistors typically have widths twice that of NMOS transistors.
+We anticipate applying these understandings in upcoming projects such as inverters, Carry Select Adders (CSAs), and Static RAM (SRAM). By leveraging our insights into transistor characteristics, we aim to optimize circuit designs for improved performance and efficiency. Understanding gm and Ro will be crucial in achieving high-speed operation and minimizing power consumption in these advanced applications.
+
+
+
+
+
+
