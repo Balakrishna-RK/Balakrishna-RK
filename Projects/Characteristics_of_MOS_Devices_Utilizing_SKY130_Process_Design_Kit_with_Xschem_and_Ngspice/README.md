@@ -99,7 +99,7 @@ Now, we are plotting the transfer characteristics. Using the commands `display`,
 
 To analyze the drain characteristics of PMOS transistors, we configure the `.dc` command within `code_shown.sym` to sweep the gate-source voltage (Vgs). This enables us to plot the drain current (Id) versus drain-source voltage (Vds) across a range of Vgs values, providing detailed insights into the transistor's operational behavior. By employing Ngspice's `plot` and `display` commands to visualize the Id Vs Vds.
 
-### 3.3 Analysis of Gm and Ro](#pmosgm)
+### [3.3 Analysis of Gm and Ro](#pmosgm)
 
 #### Analysis of Gm
 
