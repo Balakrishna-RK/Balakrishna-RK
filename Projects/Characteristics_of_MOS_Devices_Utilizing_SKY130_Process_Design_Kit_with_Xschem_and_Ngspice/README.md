@@ -77,6 +77,10 @@ Now we have connected the PMOS circuit using the `pfet_01v8` component from the 
 
 The above-mentioned commands are shown on the left side of the image to help you get started with plotting. These include using `display` to list available plots, `setplot` to select a plot, and `plot` followed by the plot name to visualize specific results. Follow these steps in the Ngspice terminal to generate and analyze your simulation data effectively.
 
+![**Click here for .sch file**](assets/files/pmos_analysis.sch)
+
+![**Click here for .spice file**](assets/files/pmos_analysis.spice)
+
 ### 3.2 Transfer and Drain Characteristics
 
 
@@ -130,6 +134,10 @@ We have connected an NMOS circuit using the `nfet_01v8` component from the SkyWa
 ![nmos circuit analysis](assets/images/nmos_circuit_analysis.png)
 
 The above-mentioned commands are shown on the left side of the image to help you get started with plotting. These include using `display` to list available plots, `setplot` to select a plot, and `plot` followed by the plot name to visualize specific results. Follow these steps in the Ngspice terminal to generate and analyze your simulation data effectively.
+
+![**Click here for .sch file**](assets/files/nmos_analysis.sch)
+
+![**Click here for .spice file**](assets/files/nmos_analysis.spice)
 
 
 ### Transfer and Drain Characteristics
