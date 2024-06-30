@@ -220,7 +220,7 @@ In this project, we extensively analyzed the characteristics of PMOS and NMOS tr
 #### NMOS Analysis
 - **Transfer Characteristics**: Similar to PMOS, we analyzed Id versus Vgs for NMOS transistors, observing behavior under varying Vds to characterize operational regions.
 - **Analysis of Gm**: NMOS transistors demonstrated gm of approximately 532 µS at Vgs = 1.8V, indicating strong amplification capability.
-- **Analysis of Ro**: The output resistance for NMOS was found to be around 2,71,739 Ω at Vds = 1.8V, crucial for assessing circuit stability.
+- **Analysis of Ro**: The Output resistance (Ro) for NMOS was found to be around 2,71,739 Ω at Vds = 1.8V, crucial for assessing circuit stability.
 
 ### Insights and Future Directions
 
