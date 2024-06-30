@@ -54,7 +54,7 @@ This project serves as a foundational step towards mastering CMOS circuit design
 
 The [SkyWater 130nm Process Design Kit (PDK)](https://skywater-pdk.readthedocs.io/en/main/index.html#) is an open-source toolset provided by SkyWater Technology, tailored for semiconductor design at the 130nm technology node. It includes essential components such as design rules, device models, and standard cell libraries. The purpose of the SkyWater 130nm PDK is to enable designers to create and simulate integrated circuits with accuracy and efficiency. It supports both analog and digital circuit design, making it suitable for a wide range of applications from consumer electronics to advanced research in semiconductor technology.
 
-### [2.2 Xschem](#xschem
+### [2.2 Xschem](#xschem)
 
 ![Xschem](assets/images/xschem.png)
 
