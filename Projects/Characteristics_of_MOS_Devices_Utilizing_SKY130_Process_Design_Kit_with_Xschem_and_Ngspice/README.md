@@ -4,29 +4,25 @@
 **This project focuses on the analysis of MOSFET characteristics, specifically PMOS and NMOS transistors. Using the SkyWater 130nm Process Design Kit (PDK), we design circuits with Xschem and perform detailed simulations with Ngspice. The goal is to understand the behavior of MOS transistors through their drain and transfer characteristics. This foundational analysis aids in designing more complex CMOS circuits in future projects.**
 
 ## Contents
-### [1. Introduction](#intro)
+- [1. Introduction](#intro)
+  - [1.1. Objective](#obj)
 
-- [1.1. Objective](#obj)
+- [2. Tools and PDK](#tool)
+  - [2.1 SKY130PDK](#sky)
+  - [2.2 Xschem](#xschem)
+  - [2.3 Ngspice](#ngspice)
 
-### [2. Tools and PDK](#tool)
+- [3. Analysis of PMOS Circuit](#pmos)
+  - [3.1 PMOS Circuit Analysis](#pmoscircuit)
+  - [3.2 Transfer and Drain Characteristics](#pmostd)
+  - [3.3 Analysis of Gm and Ro](#pmosgm)
 
-- [2.1 SKY130PDK](#sky)
-- [2.2 Xschem](#xschem)
-- [2.3 Ngspice](#ngspice)
+- [4. Analysis of NMOS Circuit](#nmos)
+  - [4.1 NMOS Circuit Analysis](#nmoscircuit)
+  - [4.2 Transfer and Drain Characteristics](#nmostd)
+  - [4.3 Analysis of Gm and Ro](#nmosgm)
 
-### [3. Analysis of PMOS Circuit](#pmos)
-
-- [3.1 PMOS Circuit Analysis](#pmoscircuit)
-- [3.2 Transfer and Drain Characteristics](#pmostd)
-- [3.3 Analysis of Gm and Ro](#pmosgm)
-
-### [4. Analysis of NMOS Circuit](#nmos)
-
-- [4.1 NMOS Circuit Analysis](#nmoscircuit)
-- [4.2 Transfer and Drain Characteristics](#nmostd)
-- [4.3 Analysis of Gm and Ro](#nmosgm)
-
-### [5. Conclusion](#conclude)
+- [5. Conclusion](#conclude)
 
 
 ## [1. Introduction](#intro)
