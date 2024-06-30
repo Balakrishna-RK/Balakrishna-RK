@@ -5,12 +5,12 @@
 
 ## Contents
 - [1. Introduction](#1-Introduction)
-  - [1.1. Objective](#1.1-Objective)
+  - [1.1. Objective](#11-Objective)
 
 - [2. Tools and PDK](#2-Tools-and-PDK)
-  - [2.1 SKY130PDK](#2.1-SKY130PDK)
-  - [2.2 Xschem](#2.2-Xschem)
-  - [2.3 Ngspice](#2.3-Ngspice)
+  - [2.1 SKY130PDK](#21-SKY130PDK)
+  - [2.2 Xschem](#22-Xschem)
+  - [2.3 Ngspice](#23-Ngspice)
 
 - [3. Analysis of PMOS Circuit](#3-Analysis-of-PMOS-Circuit)
   - [3.1 PMOS Circuit Analysis](#3.1-PMOS-Circuit-Analysis)
