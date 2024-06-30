@@ -5,30 +5,30 @@
 
 ## Contents
 - [1. Introduction](#1-Introduction)
-  - [1.1. Objective](#obj)
+  - [1.1. Objective](#1.1-Objective)
 
-- [2. Tools and PDK](#tool)
-  - [2.1 SKY130PDK](#sky)
-  - [2.2 Xschem](#xschem)
-  - [2.3 Ngspice](#ngspice)
+- [2. Tools and PDK](#2-Tools-and-PDK)
+  - [2.1 SKY130PDK](#2.1-SKY130PDK)
+  - [2.2 Xschem](#2.2-Xschem)
+  - [2.3 Ngspice](#2.3-Ngspice)
 
-- [3. Analysis of PMOS Circuit](#pmos)
-  - [3.1 PMOS Circuit Analysis](#pmoscircuit)
-  - [3.2 Transfer and Drain Characteristics](#pmostd)
-  - [3.3 Analysis of Gm and Ro](#pmosgm)
+- [3. Analysis of PMOS Circuit](#3-Analysis-of-PMOS-Circuit)
+  - [3.1 PMOS Circuit Analysis](#3.1-PMOS-Circuit-Analysis)
+  - [3.2 Transfer and Drain Characteristics](#3.2-Transfer-and-Drain-Characteristics)
+  - [3.3 Analysis of Gm and Ro](#3.3-Analysis-of-Gm-and-Ro)
 
-- [4. Analysis of NMOS Circuit](#nmos)
-  - [4.1 NMOS Circuit Analysis](#nmoscircuit)
-  - [4.2 Transfer and Drain Characteristics](#nmostd)
-  - [4.3 Analysis of Gm and Ro](#nmosgm)
+- [4. Analysis of NMOS Circuit](#4-Analysis-of-NMOS-Circuit)
+  - [4.1 NMOS Circuit Analysis](#4.1-NMOS-Circuit-Analysis)
+  - [4.2 Transfer and Drain Characteristics](#4.2-Transfer-and-Drain-Characteristics)
+  - [4.3 Analysis of Gm and Ro](#4.3-Analysis-of-Gm-and-Ro)
 
-- [5. Conclusion](#conclude)
+- [5. Conclusion](#5-Conclusion)
 
 
 ## 1. Introduction
   This project focuses on the analysis and design of MOS characteristics, specifically utilizing the SkyWater 130nm Process Design Kit (PDK). By employing Xschem for circuit design and Ngspice for simulation, we explore the fundamental drain and transfer characteristics of PMOS and NMOS transistors. Additionally, we delve into the analysis of Level 2 parameters, such as transconductance (gm) and output resistance (ro), within the small signal model. This comprehensive study aims to enhance our understanding of MOSFET behavior, providing critical insights for more advanced CMOS circuit design in future projects.
 
-### [1.1. Objective](#obj)
+### 1.1. Objective
 
 The primary objectives include experimental determination and analysis of MOS transistor characteristics, circuit design using Xschem, simulation using Ngspice, and enhancing understanding of CMOS circuits for advanced VLSI projects.
 
@@ -42,22 +42,22 @@ The primary objectives include experimental determination and analysis of MOS tr
 
 This project serves as a foundational step towards mastering CMOS circuit design and is crucial for the successful execution of more advanced VLSI design projects.
 
-## [2. Tools and PDK](#tool)
+## 2. Tools and PDK
 
-### [2.1 SKY130PDK](#sky)
+### 2.1 SKY130PDK
 
 ![SkyWater 130nm PDK](assets/images/sykwater.png)
 
 The [SkyWater 130nm Process Design Kit (PDK)](https://skywater-pdk.readthedocs.io/en/main/index.html#) is an open-source toolset provided by SkyWater Technology, tailored for semiconductor design at the 130nm technology node. It includes essential components such as design rules, device models, and standard cell libraries. The purpose of the SkyWater 130nm PDK is to enable designers to create and simulate integrated circuits with accuracy and efficiency. It supports both analog and digital circuit design, making it suitable for a wide range of applications from consumer electronics to advanced research in semiconductor technology.
 
-### [2.2 Xschem](#xschem)
+### 2.2 Xschem
 
 ![Xschem](assets/images/xschem.png)
 
 [Xschem](https://xschem.sourceforge.io/stefan/index.html) is coupled with the SkyWater 130nm Process Design Kit (PDK) and Ngspice, forms a robust toolchain for VLSI circuit design and simulation. Xschem serves as a powerful schematic capture tool, providing an intuitive interface for designing and analyzing circuits at the transistor level. Integrated with the SkyWater 130nm PDK, Xschem facilitates efficient creation and editing of circuit schematics, ensuring compatibility with specific design rules and device models. Ngspice complements Xschem by enabling accurate simulation of analog and mixed-signal circuits, crucial for predicting and validating circuit behavior before fabrication. Together, they enhance the precision and effectiveness of semiconductor design processes.
 **[Learn more about Xschem](https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.html")**
 
-### [2.3 Ngspice](#ngspice)
+### 2.3 Ngspice
 
 ![Ngspice](assets/images/ngspice.png)
 
@@ -66,9 +66,9 @@ The [SkyWater 130nm Process Design Kit (PDK)](https://skywater-pdk.readthedocs.i
 **[Get Ngspice Manual Here!](https://ngspice.sourceforge.io/docs/ngspice-manual.pdf)**
 
 To install follow **[SKY130 PDK, Xschem and Ngspice](https://xschem.sourceforge.io/stefan/xschem_man/tutorial_xschem_sky130.html)** the instructions provided in this site.
-## [3. Analysis of PMOS Circuit](#pmos)
+## 3. Analysis of PMOS Circuit
 
-### [3.1 PMOS Circuit Analysis](#pmoscircuit)
+### 3.1 PMOS Circuit Analysis
 
 ![PMOS Circuit](assets/images/pmos_circuit.png)
 
@@ -77,7 +77,7 @@ Now we have connected the PMOS circuit using the `pfet_01v8` component from the 
 
 The above-mentioned commands are shown on the left side of the image to help you get started with plotting. These include using `display` to list available plots, `setplot` to select a plot, and `plot` followed by the plot name to visualize specific results. Follow these steps in the Ngspice terminal to generate and analyze your simulation data effectively.
 
-### [3.2 Transfer and Drain Characteristics](#pmostd)
+### 3.2 Transfer and Drain Characteristics
 
 
 #### Transfer Characteristics
@@ -95,7 +95,7 @@ Now, we are plotting the transfer characteristics. Using the commands `display`,
 
 To analyze the drain characteristics of PMOS transistors, we configure the `.dc` command within `code_shown.sym` to sweep the gate-source voltage (Vgs). This enables us to plot the drain current (Id) versus drain-source voltage (Vds) across a range of Vgs values, providing detailed insights into the transistor's operational behavior. By employing Ngspice's `plot` and `display` commands to visualize the Id Vs Vds.
 
-### [3.3 Analysis of Gm and Ro](#pmosgm)
+### 3.3 Analysis of Gm and Ro
 
 #### Analysis of Gm
 
@@ -119,9 +119,9 @@ To calculate the output resistance (Ro) of the PMOS transistor, we select a high
 
 After performing these calculations, we find that Id at Vds = -1.8V is approximately 403 µA (microamps), and the output resistance Ro is measured to be around 11,954 ohms (Ω). These measurements provide critical insights into the MOSFET's stability and performance in circuit applications. Follow the commands shown on the left side of the screen to accurately perform and verify these calculations in Ngspice.
 
-## [4. Analysis of NMOS Circuit](#nmos)
+## 4. Analysis of NMOS Circuit
 
-### [4.1 NMOS Circuit Analysis](#nmoscircuit)
+### 4.1 NMOS Circuit Analysis
 
 ![nmos circuits](assets/images/nmos_circuit.png)
 
@@ -132,7 +132,7 @@ We have connected an NMOS circuit using the `nfet_01v8` component from the SkyWa
 The above-mentioned commands are shown on the left side of the image to help you get started with plotting. These include using `display` to list available plots, `setplot` to select a plot, and `plot` followed by the plot name to visualize specific results. Follow these steps in the Ngspice terminal to generate and analyze your simulation data effectively.
 
 
-### [4.2 Transfer and Drain Characteristics](#nmostd)
+### Transfer and Drain Characteristics
 
 #### Transfer Characteristics
 
@@ -149,7 +149,7 @@ Now, we are plotting the transfer characteristics. Using the commands `display`,
 To analyze the drain characteristics of NMOS transistors, we configure the `.dc` command within `code_shown.sym` to vary the gate-source voltage (Vgs). This setup allows us to plot the drain current (Id) versus drain-source voltage (Vds) for different Vgs values, offering detailed insights into the transistor's operational behavior. Using Ngspice's `plot` and `display` commands, we visualize these characteristics to evaluate crucial parameters such as saturation regions, threshold voltages, and current levels under varying bias conditions. After simulation, type `plot -vds#branch` in Ngspice to generate the plot; the negative sign is used for convenient visualization of the plot orientation.
 
 
-### [4.3 Analysis of Gm and Ro](#nmosgm)
+### 4.3 Analysis of Gm and Ro
 
 #### Analysis of Gm
 
@@ -171,4 +171,4 @@ To calculate the output resistance (Ro) of the NMOS transistor, we select a high
 
 After performing these calculations, we find that Id at Vds = 1.8V is approximately 500 µA (microamps), and the output resistance Ro is measured to be around 19,306 Ω (ohms). Understanding Ro is essential for assessing the stability and performance of the MOSFET in various circuit applications. Follow the commands shown on the left side of the screen to accurately perform and verify these calculations in Ngspice.
 
-## [5. Conclusion](#conclude)
+## 5. Conclusion
