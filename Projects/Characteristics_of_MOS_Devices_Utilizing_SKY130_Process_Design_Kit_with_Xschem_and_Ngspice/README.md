@@ -125,11 +125,11 @@ To calculate the output resistance (Ro) of the PMOS transistor, we select a high
 4. Determine the average drain current (Id_avg) in the saturation region.
 5. Calculate λ using the formula:
 
-   ### λ=ΔVdsΔId​⋅Idavg​1​
+   ### λ=ΔVds/ΔId​⋅(1/Idavg)​
 
 ### Once λ is determined, the output resistance (ro) can be calculated using:
 
-  ### ro​=λ⋅ID​1​
+  ### ro​=1/(λ⋅ID)​
 
 
 ![pmos_ro_id](assets/images/id_ro_pmos.png)
@@ -197,11 +197,11 @@ To calculate the output resistance (Ro) of the NMOS transistor, we select a high
 4. Determine the average drain current (Id_avg) in the saturation region.
 5. Calculate λ using the formula:
 
-   ### λ=ΔVdsΔId​⋅Idavg​1​
+   ### λ=ΔVds/ΔId​⋅(1/Idavg)​
 
 ### Once λ is determined, the output resistance (ro) can be calculated using:
 
-  ### ro​=λ⋅ID​1​
+  ### ro​=ro​=1/(λ⋅ID)​
 
 ![nmos_r0_id](assets/images/ro_id_nmos.png)
 ![nmos_ro](assets/images/ro_nmos.png)
