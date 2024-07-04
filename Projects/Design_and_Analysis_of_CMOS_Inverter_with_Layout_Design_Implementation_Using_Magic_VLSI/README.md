@@ -14,8 +14,8 @@
   - [2.7 Magi VLSI](#27-Magi-VLSI)
   - [2.8 Netgen](#28-Netgen)
 
-- [3. Schematic Analysis](#3-Schematic Analysis)
-  - [3.1 Schematic Circuit and Symbol](#31-Schematic-Circuit-and-Symbol)
+- [3. Schematic Analysis](#3-Schematic-Analysis)
+  - [3.1 Schematic Circuit](#31-Schematic-Circuit)
   - [3.2 Voltage Transfer Characteristics](#32-Voltage-Transfer-Characteristics)
   - [3.3 Noise Analysis](#33-Noise-Analysis])
   - [3.4 Delay Analysis](#34-Delay-Analysis)
@@ -49,41 +49,59 @@
 
 ### 2.1 SKY130PDK
 
-### 2.2 Xschem
+### 2.2 Icarus Verilog
 
-### 2.3 Ngspice
+### 2.3 GTK Wave
 
-## 3. Analysis of PMOS Circuit
+### 2.4 Yosys
 
-### 3.1 PMOS Circuit Analysis
+### 2.5 Xschem
 
-### 3.2 Transfer and Drain Characteristics
+### 2.6 Ngspice
 
-#### Transfer Characteristics
+### 2.7 Magi VLSI
 
-#### Drain Characteristics
+### 2.8 Netgen
 
-### 3.3 Analysis of Gm and Ro
 
-#### Analysis of Gm
 
-#### Analysis of Ro
+## 3. Schematic Analysis
 
-## 4. Analysis of NMOS Circuit
+### 3.1 Schematic Circuit 
 
-### 4.1 NMOS Circuit Analysis
+### 3.2 Voltage Transfer Characteristics
 
-### 4.2 Transfer and Drain Characteristics
+### 3.3 Noise Analysis
 
-#### Transfer Characteristics
+### 3.4 Delay Analysis
 
-#### Drain Characteristics
+### 3.5 Power Analysis
 
-### 4.3 Analysis of Gm and Ro
+## 4. Layout Design
 
-#### Analysis of Gm
+### 4.1 Inverter Layout Design
 
-#### Analysis of Ro
+### 4.2 Magic VLSI SPICE file
 
-## 5. Conclusion
+## 5. Behavioural Description
+
+### 5.1 Verilog Inverter Design
+
+### 5.2 GTK Wave
+
+## 6. Verilog RTL Synthesis
+
+### 6.1 Yosys Synthesis
+
+### 6.2 NetlistSVG
+
+### 6.3 GraphViz
+
+## 7. Layout Versus Schematic
+
+### 7.1 LVS SPICE
+
+### 7.2 LVS Ngspice Simulation
+
+## 8. Conclusion
 
