@@ -1,8 +1,7 @@
 # About Me
 
 Hi,  
-I am Balakrishna RK, a passionate Electrical and Electronics Engineer with a bachelor's degree from Alagappa Chettiar Government College of Engineering and Technology, Tamil Nadu, India. I also hold a diploma in Electrical and Electronics Engineering. My keen interest in electronics, semiconductor technology, and IC design has driven me to pursue a career in VLSI Design.  
-I have equipped myself with skills in Layout Design, Physical Design, RTL design using Verilog and SystemVerilog, and Digital IC design through various projects and continuous learning.
+I am Balakrishna RK, a passionate Electrical and Electronics Engineer with a bachelor's degree from Alagappa Chettiar Government College of Engineering and Technology, Tamil Nadu, India. I also hold a diploma in Electrical and Electronics Engineering. My keen interest in electronics, semiconductor technology, and IC design has driven me to pursue a career in VLSI Design.I have equipped myself with skills in Layout Design, Physical Design, RTL design using Verilog and SystemVerilog, and Digital IC design through various projects and continuous learning.
 
 ### Projects
 - [**Characteristics of MOS Devices Utilizing SKY130 Process Design Kit with Xschem and Ngspice**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice)
