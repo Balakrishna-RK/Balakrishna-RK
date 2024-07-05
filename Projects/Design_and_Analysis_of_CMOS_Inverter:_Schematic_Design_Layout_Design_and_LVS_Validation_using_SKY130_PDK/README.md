@@ -108,13 +108,79 @@ To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/
 
 ### 3.1 Schematic Circuit 
 
+![Inverter Circuit](assets/images/schematic_circuit/inv_circuit.png)
+
+An inverter was designed in Xschem using components from the SKY130 PDK, specifically pfet_01v8 and nfet_01v8. The inputs ("in", "vdd", and "gnd") were connected using ipin.sym, while the output ("out") was connected with opin.sym.
+
+![Inverter Default Symbol](assets/images/schematic_circuit/inv_default_sym.png)
+
+ After constructing the circuit, a symbol was created using the Xschem symbol creation feature (Press A). The inverter symbol was then refined using the polygon tool to accurately represent the inputs and outputs.
+
+![Inverter Symbol](assets/images/schematic_circuit/inv_symbol.png)
+
+Following this, a testbench for the inverter was developed to facilitate further analysis. This setup ensures that the schematic captures all necessary connections and parameters required for accurate simulation and testing of the inverter’s performance in subsequent stages.
+
+
 ### 3.2 Voltage Transfer Characteristics
+
+![Test Bench](assets/images/vtc/inv_vtc_tb.png)
+
+A .dc analysis was performed using Ngspice to plot the input voltage (vin) against the output voltage (vout), focusing on determining the tripping point (Vm) of the inverter. Initially, the W/L ratio was set to 2, and the Vm was found to be 0.869V, slightly less than the desired 0.9V.
+
+![VTC Graph](assets/images/vtc/vtc_graph.png)
+
+![Size Rato 2](assets/images/vtc/inv_vtc_size2.png)
+
+ Increasing the size to 4 achieved a Vm of 0.905V, indicating a more accurate tripping point but at the cost of larger area consumption in the chipset. Consequently, a size of 2 was chosen, balancing accuracy and area efficiency. 
+
+![Size Rato 4](assets/images/vtc/inv_vtc_size4.png)
+
+This tripping point is critical as it defines the transition between logic 0 and logic 1, adhering to the thumb rule where Vm should be approximately half of Vdd. The analysis underscores the importance of optimizing the inverter's design to achieve a precise Vm, which is essential for reliable logic level determination in digital circuits.
 
 ### 3.3 Noise Analysis
 
+
+![Noise Analysis](assets/images/noise_analysis/noise_analysis_comments.png)
+
+Noise analysis is essential to understand the inverter's behavior in the presence of unwanted signals. MOSFETs amplify noise due to their transconductance (gm) and output resistance (Ro). The gain range over which the noise is amplified was identified. 
+
+![Gain Region](assets/images/noise_analysis/noise_gain_region.png)
+
+For the inverter, the input voltage range considered as logic 0 (VIL) was up to 0.7435V, and the range for logic 1 (VIH) was after 0.980V. Corresponding output voltages were 1.748V (VOH) for VIL and 0.6747V (VOL) for VIH. 
+
+![Gain with Vout](assets/images/noise_analysis/noise_gain_range_with_vout.png)
+
+
+This analysis ensures that transitions avoid noise amplification regions, maintaining signal integrity. By identifying these noise margins, the design can be optimized to minimize susceptibility to noise, which is crucial for the stability and reliability of high-speed digital circuits.
+
+
 ### 3.4 Delay Analysis
 
+![Delay Analysis](assets/images/delay_analysis/delay_calculation.png)
+
+Propagation delays were measured to evaluate the inverter's response time. The high-to-low propagation delay (tpHL) was 0.254 ps, and the low-to-high propagation delay (tpLH) was 0.398 ps, calculated from the time the input reaches 50% to the output reaching 50% of its final value.
+
+![Delay Graph](assets/images/delay_analysis/delay_graph.png)
+
+
+ Additionally, the rise time (tr) was 0.634 ps, and the fall time (tf) was 0.512 ps. These metrics are crucial for understanding the speed performance of the inverter in digital circuits. Accurate delay analysis ensures that the inverter can operate effectively within the timing constraints of complex VLSI systems, thereby enhancing overall circuit performance.
+
+![Delay Vout](assets/images/delay_analysis/delay_vout.png)
+
 ### 3.5 Power Analysis
+
+![Power Calculation](assets/images/power_analysis/avg_power_cal.png)
+
+Power consumption of the inverter was analyzed over a single cycle, focusing on the second cycle. By plotting Vdd#branch in Ngspice, the current was measured, and the average power was calculated using the formula:
+\[ P_{avg} = \frac{1}{T} \int_{0}^{T} i_{d}(t) \cdot V_{dd} \, dt \]
+where \( T \) is the time period, \( i_d \) is the current flow, and \( V_{dd} \) is the supply voltage.
+
+![Id](assets/images/power_analysis/power_id.png)
+
+ The measured average power was 0.814 µW. This power analysis is critical for designing energy-efficient circuits, which is particularly important in battery-powered and portable devices. By optimizing power consumption, the overall efficiency and longevity of the electronic system can be significantly improved.
+
+![Vout and Id](assets/images/power_analysis/power_vout_id.png)
+
 
 ## 4. Layout Design
 
