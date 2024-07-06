@@ -210,10 +210,12 @@ A SPICE file was extracted from the layout using Magic VLSI. The commands extrac
 
 ### 5.1 Verilog Inverter Design
 
+![Inverter Behavioural Design](assets/images/verilog/verilog_code_tb.png)
+
 For larger circuit designs, breaking down the design into smaller, manageable blocks is essential. A behavioral description of the inverter was created using Verilog for logic synthesis. The design was verified using a testbench file in Icarus Verilog and visualized with GTKWave to ensure correct functionality. This step is crucial for verifying that the design behaves as intended before proceeding to more complex synthesis stages.
 
 ### 5.2 GTK Wave
-
+![GTK Wave analysis](assets/images/verilog/verilog_gtkwave.png)
 GTKWave was used to graphically analyze the input and output signals of the inverter from the testbench. This tool helps in verifying the inverter's functionality by providing a visual representation of the signals, ensuring that the inverter operates correctly according to the design specifications.
 
 ## 6. RTL Logic Synthesis
@@ -221,6 +223,10 @@ GTKWave was used to graphically analyze the input and output signals of the inve
 ### 6.1 Yosys Synthesis
 
 Yosys, a free and powerful synthesis tool, was used for logic synthesis of the Verilog code. Yosys converts the behavioral Verilog description into a gate-level netlist, facilitating verification and analysis of the Finite State Machine (FSM) and overall circuit synthesis. The synthesis process includes generating a NetlistSVG with JSON and visualizing the logic synthesis with GraphViz. Commands for these operations are executed in the Yosys terminal. The resulting JSON can be rendered using an appropriate online tool, while the .dot file can be viewed with the xdot command in the terminal.
+
+![GraphViz](assets/images/yosys/verilog_yosys_graphviz.png)
+
+![NetlistSVG](assets/images/yosys/verilog_yosys_netlistSVG.png)
 
 ## 7. Layout Versus Schematic
 
