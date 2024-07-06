@@ -224,32 +224,38 @@ GTKWave was used to graphically analyze the input and output signals of the inve
 
 #### Yosys Commands
 
-```
-read_verilog inverter.v
-hierarchy -check -top inverter
-read_verilog -lib cmos_cells.lib
-synth
-dfflibmap -liberty cmos_cells.lib
-opt_clean
-write_verilog synth.v
-help write_json
-write_json synth.json
-```
-##### Continue with Above Commands for GraphViz :
-```
-help show
-show -prefix synth -notitle -colors 2 -width -format dot
-```
-##### Open synth.file in Directory
-```
-xdot synth.dot &
-```
 
 Yosys, a free and powerful synthesis tool, was used for logic synthesis of the Verilog code. Yosys converts the behavioral Verilog description into a gate-level netlist, facilitating verification and analysis of the Finite State Machine (FSM) and overall circuit synthesis. The synthesis process includes generating a NetlistSVG with JSON and visualizing the logic synthesis with GraphViz. Commands for these operations are executed in the Yosys terminal. The resulting JSON can be rendered using an appropriate online tool, while the .dot file can be viewed with the xdot command in the terminal.
 
-![GraphViz](assets/images/yosys/verilog_yosys_graphviz.png)
+```
+$ read_verilog inverter.v
+$ hierarchy -check -top inverter
+$ read_verilog -lib cmos_cells.lib
+$ synth
+$ dfflibmap -liberty cmos_cells.lib
+$ opt_clean
+$ write_verilog synth.v
+$ help write_json
+$ write_json synth.json
+```
+##### Continue with Above Commands for GraphViz :
+```
+$ help show
+$ show -prefix synth -notitle -colors 2 -width -format dot
+```
+##### Open synth.dot in Directory
+```
+$ xdot synth.dot &
+```
+To get Gate level synthesis using JSON, we can install [NetlistSVG](https://github.com/nturley/netlistsvg) to convert the synth.json file into NetlistSVG Gate level synthesis. Another way, we can directly convert the .json file through this [Website](https://neilturley.dev/netlistsvg/).
 
 ![NetlistSVG](assets/images/yosys/verilog_yosys_netlist.png)
+
+The below shows the RTL Gate Level Synthesis achieved through Yosys along [GraphViz](https://yosyshq.net/yosys/screenshots.html),
+
+![GraphViz](assets/images/yosys/verilog_yosys_graphviz.png)
+
+
 
 ## 7. Layout Versus Schematic
 
