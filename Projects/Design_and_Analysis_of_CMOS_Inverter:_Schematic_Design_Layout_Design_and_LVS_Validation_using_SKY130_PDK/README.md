@@ -43,8 +43,6 @@
 
 ## 1. Introduction
 
-### Project Introduction
-
 This project focuses on the comprehensive design and analysis of a CMOS inverter using the SKY130 PDK. The design process begins with schematic creation and circuit simulation, employing Xschem for schematic capture and Ngspice for detailed simulation. The layout design of the inverter is then performed using Magic VLSI, ensuring that the physical layout adheres to design rules and matches the schematic.
 
 To validate the design, a behavioral description of the CMOS inverter is created using Verilog code, which is then simulated using Icarus Verilog. The RTL synthesis of the Verilog code is carried out using Yosys, providing a gate-level representation of the design. Layout versus Schematic (LVS) verification is performed using Netgen to ensure that the physical layout accurately represents the schematic design.
