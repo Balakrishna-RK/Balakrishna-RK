@@ -1,0 +1,48 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5e9263468d90 .scope module, "tb" "tb" 2 1;
+ .timescale 0 0;
+v0x5e92634b2320_0 .var "t_a", 0 0;
+v0x5e92634b23c0_0 .net "t_y", 0 0, L_0x5e92634b2490;  1 drivers
+S_0x5e9263468f20 .scope module, "inst1" "inverter" 2 5, 3 1 0, S_0x5e9263468d90;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+L_0x5e92634b2490 .functor NOT 1, v0x5e92634b2320_0, C4<0>, C4<0>, C4<0>;
+v0x5e926346aba0_0 .net "a", 0 0, v0x5e92634b2320_0;  1 drivers
+v0x5e92634b2200_0 .net "y", 0 0, L_0x5e92634b2490;  alias, 1 drivers
+    .scope S_0x5e9263468d90;
+T_0 ;
+    %vpi_call 2 8 "$monitor", "a=%d, y=%d", v0x5e92634b2320_0, v0x5e92634b23c0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e92634b2320_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e92634b2320_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e92634b2320_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e92634b2320_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x5e9263468d90;
+T_1 ;
+    %vpi_call 2 17 "$dumpfile", "inverter_simulation.vcd" {0 0 0};
+    %vpi_call 2 17 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "inverter_tb.v";
+    "inverter.v";
