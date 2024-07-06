@@ -28,8 +28,8 @@
   - [4.2 Magic VLSI SPICE file](#42-Magic-VLSI-SPICE-file)
 
 - [5. Behavioural Description](#5-Behavioural-Descriptio)
-  - [5.1 Verilog Inverter Design](#41-Verilog-Inverter-Design)
-  - [5.2 GTK Wave](#42-GTK-Wave)
+  - [5.1 Verilog Inverter Design](#51-Verilog-Inverter-Design)
+  - [5.2 GTK Wave](#52-GTK-Wave)
  
 - [6.RTL Logic Synthesis](#6-RTL-Logic-Synthesis)
   - [6.1 Yosys Synthesis](#61-Yosys-Synthesis)
