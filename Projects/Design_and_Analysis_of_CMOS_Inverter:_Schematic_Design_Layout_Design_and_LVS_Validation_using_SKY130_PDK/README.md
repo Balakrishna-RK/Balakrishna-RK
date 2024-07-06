@@ -31,14 +31,12 @@
   - [5.1 Verilog Inverter Design](#41-Verilog-Inverter-Design)
   - [5.2 GTK Wave](#42-GTK-Wave)
  
-- [6. Verilog RTL Synthesis](#6-Verilog-RTL-Synthesis)
+- [6.RTL Logic Synthesis](#6-RTL-Logic-Synthesis)
   - [6.1 Yosys Synthesis](#61-Yosys-Synthesis)
-  - [6.2 NetlistSVG](#62-NetlistSVG)
-  - [6.3 GraphViz](#62-GraphViz)
+  
  
 - [7. Layout Versus Schematic](#7-Layout-Versus-Schematic)
-  - [7.1 LVS SPICE](#71-LVS-SPICE)
-  - [7.2 LVS Ngspice Simulation](#72-LVS-Ngspice-Simulation)
+  - [7.1 LVS Ngspice Simulation](#71-LVS-Ngspice-Simulation)
  
 
 - [8. Conclusion](#8-Conclusion)
@@ -202,19 +200,13 @@ where \( T \) is the time period, \( id \) is the current flow, and \( Vdd \) is
 
 ### 5.2 GTK Wave
 
-## 6. Verilog RTL Synthesis
+## 6. RTL Logic Synthesis
 
 ### 6.1 Yosys Synthesis
 
-### 6.2 NetlistSVG
-
-### 6.3 GraphViz
-
 ## 7. Layout Versus Schematic
 
-### 7.1 LVS SPICE
-
-### 7.2 LVS Ngspice Simulation
+### 7.1 LVS Ngspice Simulation
 
 ## 8. Conclusion
 
