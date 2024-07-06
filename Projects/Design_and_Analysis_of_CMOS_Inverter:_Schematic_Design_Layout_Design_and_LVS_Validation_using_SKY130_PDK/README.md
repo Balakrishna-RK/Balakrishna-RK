@@ -208,6 +208,8 @@ A SPICE file was extracted from the layout using Magic VLSI. The commands extrac
 
 ![Magic VLSI extracted .spice File](assets/images/Layout/magic_spice.png)
 
+**[Click Here](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_CMOS_Inverter%3A_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130_PDK/assets/files/layout_design) to get Layout Design Files**
+
 ## 5. Behavioural Description
 
 ### 5.1 Verilog Inverter Design
