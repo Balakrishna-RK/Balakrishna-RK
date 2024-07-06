@@ -275,5 +275,7 @@ Layout versus Schematic (LVS) verification was performed using the SPICE file ge
 
 ![LVS Output](assets/images/LVS/LVS_output.png)
 
+**[Click Here](https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Design_and_Analysis_of_CMOS_Inverter%3A_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130_PDK/assets/files/layout_design/cmos_inverter_ngspice.spice) to get LVS .spice file**
+
 ## 8. Conclusion
 
