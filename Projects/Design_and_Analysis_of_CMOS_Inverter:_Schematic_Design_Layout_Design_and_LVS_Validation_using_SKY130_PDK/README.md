@@ -187,6 +187,8 @@ where \( T \) is the time period, \( id \) is the current flow, and \( Vdd \) is
 
 ![Vout and Id](assets/images/power_analysis/power_vout_id.png)
 
+**[Click Here](/assets/files/schematic_design) to get Schematic Design Files.**
+
 
 ## 4. Layout Design
 
