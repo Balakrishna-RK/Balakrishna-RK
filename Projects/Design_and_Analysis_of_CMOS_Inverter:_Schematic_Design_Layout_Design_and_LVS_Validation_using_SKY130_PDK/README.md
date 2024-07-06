@@ -279,3 +279,13 @@ Layout versus Schematic (LVS) verification was performed using the SPICE file ge
 
 ## 8. Conclusion
 
+## 8. Conclusion
+
+This project successfully demonstrated the comprehensive design and analysis of a CMOS inverter using the SKY130 PDK. Starting from the schematic design created in Xschem and simulated with Ngspice, we verified the electrical characteristics, ensuring the design met initial specifications. The layout design was meticulously crafted in Magic VLSI, adhering to design rules and optimizing for area efficiency.
+
+Behavioral description using Verilog was verified with Icarus Verilog, and the RTL synthesis was performed using Yosys, producing a gate-level netlist. This process ensured that the logical functionality of the design was preserved through various stages of abstraction. Layout Versus Schematic (LVS) verification with Netgen confirmed that the physical layout matched the schematic design accurately.
+
+Additionally, detailed analysis of Voltage Transfer Characteristics (VTC), power consumption, propagation delay, and noise margins was conducted, ensuring the inverter's optimal performance and reliability. Creating visual representations of the netlist with NetlistSVG and generating RTL netlists with GraphViz provided clear insights into the design flow, enhancing understanding and verification.
+
+Overall, the project showcases the effective use of open-source tools and the SKY130 PDK in designing, simulating, and verifying a CMOS inverter, emphasizing the importance of thorough analysis and validation at each design stage to achieve a robust and reliable final product.
+
