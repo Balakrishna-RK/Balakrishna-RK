@@ -1,0 +1,4 @@
+* SPICE3 file created from cmos_inverter.ext - technology: sky130A
+
+X0 out in vdd vdd sky130_fd_pr__pfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X1 out in gnd gnd sky130_fd_pr__nfet_01v8 ad=0.1575 pd=1.6 as=0.1575 ps=1.6 w=0.45 l=0.15
