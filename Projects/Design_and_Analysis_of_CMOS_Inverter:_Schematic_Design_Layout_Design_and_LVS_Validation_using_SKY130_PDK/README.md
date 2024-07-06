@@ -220,7 +220,7 @@ For larger circuit designs, breaking down the design into smaller, manageable bl
 ![GTK Wave analysis](assets/images/verilog/verilog_gtkwave.png)
 GTKWave was used to graphically analyze the input and output signals of the inverter from the testbench. This tool helps in verifying the inverter's functionality by providing a visual representation of the signals, ensuring that the inverter operates correctly according to the design specifications.
 
-**[Click here](/assets/files/cmos_inverter_verilog) to get Behavioural Code**
+**[Click here](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_CMOS_Inverter%3A_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130_PDK/assets/files/cmos_inverter_verilog) to get Behavioural Code**
 
 ## 6. RTL Logic Synthesis
 
@@ -259,7 +259,7 @@ The below shows the RTL Gate Level Synthesis achieved through Yosys along [Graph
 
 ![GraphViz](assets/images/yosys/verilog_yosys_graphviz.png)
 
-**[Click here](/assets/files/cmos_inverter_verilog) to get Yosys Files**
+**[Click here](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_CMOS_Inverter%3A_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130_PDK/assets/files/cmos_inverter_verilog) to get Yosys Files**
 
 ## 7. Layout Versus Schematic
 
