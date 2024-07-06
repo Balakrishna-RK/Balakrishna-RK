@@ -187,7 +187,7 @@ where \( T \) is the time period, \( id \) is the current flow, and \( Vdd \) is
 
 ![Vout and Id](assets/images/power_analysis/power_vout_id.png)
 
-**[Click Here](/assets/files/schematic_design) to get Schematic Design Files.**
+**[Click Here](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_CMOS_Inverter%3A_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130_PDK/assets/files/schematic_design) to get Schematic Design Files.**
 
 
 ## 4. Layout Design
