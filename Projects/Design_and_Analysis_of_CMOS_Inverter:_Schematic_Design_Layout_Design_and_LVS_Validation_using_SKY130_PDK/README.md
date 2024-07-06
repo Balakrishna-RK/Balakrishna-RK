@@ -222,6 +222,29 @@ GTKWave was used to graphically analyze the input and output signals of the inve
 
 ### 6.1 Yosys Synthesis
 
+#### Yosys Commands
+
+```
+read_verilog inverter.v
+hierarchy -check -top inverter
+read_verilog -lib cmos_cells.lib
+synth
+dfflibmap -liberty cmos_cells.lib
+opt_clean
+write_verilog synth.v
+help write_json
+write_json synth.json
+```
+##### Continue with Above Commands for GraphViz :
+```
+help show
+show -prefix synth -notitle -colors 2 -width -format dot
+```
+##### Open synth.file in Directory
+```
+xdot synth.dot &
+```
+
 Yosys, a free and powerful synthesis tool, was used for logic synthesis of the Verilog code. Yosys converts the behavioral Verilog description into a gate-level netlist, facilitating verification and analysis of the Finite State Machine (FSM) and overall circuit synthesis. The synthesis process includes generating a NetlistSVG with JSON and visualizing the logic synthesis with GraphViz. Commands for these operations are executed in the Yosys terminal. The resulting JSON can be rendered using an appropriate online tool, while the .dot file can be viewed with the xdot command in the terminal.
 
 ![GraphViz](assets/images/yosys/verilog_yosys_graphviz.png)
