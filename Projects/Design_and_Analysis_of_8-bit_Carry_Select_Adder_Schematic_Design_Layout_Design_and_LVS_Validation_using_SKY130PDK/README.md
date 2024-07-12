@@ -108,13 +108,23 @@ To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/
 ## 3. RTL Design
 
 ### 3.1 CSA HDL Description
-A Carry Select Adder (CSA) accelerates the addition process by dividing it into smaller blocks, enabling parallel computation. The 8-bit CSA consists of a lower block and an upper block, each responsible for computing 4-bit operations. The lower block processes the least significant 4 bits without needing separate carry inputs of 0 and 1. The CSA utilizes ripple carry adders and multiplexers. The LSB block operates as a standard Ripple Carry Adder. The MSB block performs two parallel computations: one with the carry input set to 0 and the other with the carry input set to 1. When a carry is generated in the LSB block, the multiplexer selects the appropriate carry-out value based on this input.
 
-The HDL description of the CSA is provided. A test bench was developed to verify the design, obtaining simulation results in .vcd format, which were analyzed using GTKWave.
+A Carry Select Adder (CSA) accelerates the addition process by dividing it into smaller blocks, enabling parallel computation. The 8-bit CSA consists of a lower block and an upper block, each responsible for computing 4-bit operations. The lower block processes the least significant 4 bits without needing separate carry inputs of 0 and 1. The CSA utilizes ripple carry adders and multiplexers. The LSB block operates as a standard Ripple Carry Adder. The MSB block performs two parallel computations: one with the carry input set to 0 and the other with the carry input set to 1. When a carry is generated in the LSB block, the multiplexer selects the appropriate carry-out value based on this input.
+![HDL Test bench](assets/images/verilog/csa_tb_verilog.png)
+
+The **[HDL description](https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK/assets/files/verilog/csa.v)** of the CSA is provided. A **[Test bench](https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK/assets/files/verilog/csa_tb.v)** was developed to verify the design, obtaining simulation results in .vcd format, which were analyzed using GTKWave.
+
+![GTK Wave](assets/images/verilog/csa_gtk.png)
 
 ### 3.2 Gate Level Synthesis
 
 Using Yosys, gate-level synthesis of the CSA was performed, producing outputs in two formats: .dot and .json. The .dot format provides a graphical representation of the gate-level design, suitable for visualization with GraphViz. The .json format provides a structured data representation, enabling further analysis and processing. Both synthesis formats are depicted in the accompanying image.
+
+#### NetlistSVG:
+![NetlistSVG Gate Level Synthesis](https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK/assets/images/verilog/netlistSVG.svg)
+
+##### GraphViz:
+![GraphViz Gate Level Synthesis](https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK/assets/images/verilog/graphviz.png)
 
 
 ## 4. Multiplexer Schematic and Layout Design
