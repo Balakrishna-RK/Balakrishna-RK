@@ -103,6 +103,41 @@ The [SkyWater 130nm Process Design Kit (PDK)](https://skywater-pdk.readthedocs.i
 
 To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/tutorial_xschem_sky130.html)** the instructions provided in this site.
 
-3. RTL Design
-3.1 CSA HDL Description
-   3.2 Gate Level Synthesis
+
+
+## 3. RTL Design
+
+### 3.1 CSA HDL Description
+
+### 3.2 Gate Level Synthesis
+
+
+## 4. Multiplexrer Schematic and Layout Design
+
+### 4.1 Schematic Design
+
+### 4.2 Layout Design
+
+### 4.3 Layout Versus Schematic(LVS)
+
+
+## 5. Full Adder Schematic and Layout Design
+
+### 5.1 Schematic Design
+
+### 5.2 Layout Design
+
+### 5.3 Layout Versus Schematic(LVS)
+
+
+## 6. CSA Schematic and Layout Design
+
+### 6.1 Schematic Design
+
+### 6.2 Layout Design
+
+### 6.3 Layout Versus Schematic(LVS)
+
+
+
+## 7. Conclusion
