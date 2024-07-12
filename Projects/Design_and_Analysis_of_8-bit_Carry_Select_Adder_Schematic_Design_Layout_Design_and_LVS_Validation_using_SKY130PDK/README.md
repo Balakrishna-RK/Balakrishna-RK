@@ -108,17 +108,27 @@ To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/
 ## 3. RTL Design
 
 ### 3.1 CSA HDL Description
+A Carry Select Adder (CSA) accelerates the addition process by dividing it into smaller blocks, enabling parallel computation. The 8-bit CSA consists of a lower block and an upper block, each responsible for computing 4-bit operations. The lower block processes the least significant 4 bits without needing separate carry inputs of 0 and 1. The CSA utilizes ripple carry adders and multiplexers. The LSB block operates as a standard Ripple Carry Adder. The MSB block performs two parallel computations: one with the carry input set to 0 and the other with the carry input set to 1. When a carry is generated in the LSB block, the multiplexer selects the appropriate carry-out value based on this input.
+
+The HDL description of the CSA is provided. A test bench was developed to verify the design, obtaining simulation results in .vcd format, which were analyzed using GTKWave.
 
 ### 3.2 Gate Level Synthesis
+
+Using Yosys, gate-level synthesis of the CSA was performed, producing outputs in two formats: .dot and .json. The .dot format provides a graphical representation of the gate-level design, suitable for visualization with GraphViz. The .json format provides a structured data representation, enabling further analysis and processing. Both synthesis formats are depicted in the accompanying image.
 
 
 ## 4. Multiplexer Schematic and Layout Design
 
 ### 4.1 Schematic Design
+A 2-to-1 multiplexer schematic was created in Xschem. The circuit design incorporates symmetric gates assigned to PMOS and NMOS transistors, creating a reusable Xschem symbol for consistent use across the design. The multiplexer symbol is saved as mux2to1.sym. A test bench was developed to verify the multiplexer’s functionality, with inputs and outputs demonstrated in the test bench.
+
+Multiplexers are integral to digital circuits, selecting one of several input signals and forwarding the chosen input to a single output line, thereby facilitating decision-making processes within the circuit.
 
 ### 4.2 Layout Design
+The layout for the multiplexer was meticulously drawn in Magic VLSI using Metal 1 and Local Interconnect (LI) layers, as specified by the SkyWater 130nm Process Design Kit (PDK). This layout was saved as a .mag file for incorporation into the CSA Layout module. The layout was also extracted to a .ext file and converted to SPICE format for further analysis. The associated files are attached for reference.
 
 ### 4.3 Layout Versus Schematic(LVS)
+The extracted SPICE file from Magic VLSI was simulated and compared with the schematic design using Ngspice. This comparison ensures that the physical layout accurately represents the intended circuit functionality and performance. The LVS process verifies that the design is both logically and physically sound, ensuring that the layout matches the schematic specifications and performs as expected.
 
 
 ## 5. Full Adder Schematic and Layout Design
