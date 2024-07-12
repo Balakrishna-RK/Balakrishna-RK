@@ -20,7 +20,7 @@
   - [3.1 CSA HDL Description](#31-CSA-HDL-Description)
   - [3.2 Gate Level Synthesis](#32-Gate-Level-Synthesis)
 
-- [4. Multiplexrer Schematic and Layout Design](#4-Multiplexrer-Schematic-and-Layout-Design)
+- [4. Multiplexer Schematic and Layout Design](#4-Multiplexrer-Schematic-and-Layout-Design)
   - [4.1 Schematic Design](#41-Schematic-Design)
   - [4.2 Layout Design](#42-Layout-Design)
   - [4.3 Layout Versus Schematic(LVS)](#43-Layout-Versus-Schematic(LVS))
@@ -112,7 +112,7 @@ To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/
 ### 3.2 Gate Level Synthesis
 
 
-## 4. Multiplexrer Schematic and Layout Design
+## 4. Multiplexer Schematic and Layout Design
 
 ### 4.1 Schematic Design
 
