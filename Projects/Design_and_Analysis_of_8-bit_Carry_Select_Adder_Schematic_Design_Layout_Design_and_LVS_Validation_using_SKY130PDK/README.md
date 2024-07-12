@@ -16,30 +16,26 @@
   - [2.7 Magi VLSI](#27-Magi-VLSI)
   - [2.8 Netgen](#28-Netgen)
 
-- [3. Schematic Analysis](#3-Schematic-Analysis)
-  - [3.1 Schematic Circuit](#31-Schematic-Circuit)
-  - [3.2 ](#32-Voltage-Transfer-Characteristics)
-  - [3.3 ](#33-Noise-Analysis])
-  - [3.4 ](#34-Delay-Analysis)
-  - [3.5 ](#35-Power-Analysis)
+- [3. RTL Design](#3-RTL-Design)
+  - [3.1 CSA HDL Description](#31-CSA-HDL-Description)
+  - [3.2 Gate Level Synthesis](#32-Gate-Level-Synthesis)
 
-- [4. Layout Design](#4-Layout-Design)
-  - [4.1 ](#41-Inverter-Layout-Design)
-  - [4.2 ](#42-Magic-VLSI-SPICE-file)
+- [4. Multiplexrer Schematic and Layout Design](#4-Multiplexrer-Schematic-and-Layout-Design)
+  - [4.1 Schematic Design](#41-Schematic-Design)
+  - [4.2 Layout Design](#42-Layout-Design)
+  - [4.3 Layout Versus Schematic(LVS)](#43-Layout-Versus-Schematic(LVS))
 
-- [5. Behavioural Description](#5-Behavioural-Descriptio)
-  - [5.1 ](#51-Verilog-Inverter-Design)
-  - [5.2 ](#52-GTK-Wave)
+- [5. Full Adder Schematic and Layout Design](#5-Full-Adder-Schematic-and-Layout-Design)
+  - [5.1 Schematic Design](#51-Schematic-Design)
+  - [5.2 Layout Design](#52-Layout-Design)
+  - [5.3 Layout Versus Schematic(LVS)](#53-Layout-Versus-Schematic(LVS))
  
-- [6.](#6-RTL-Logic-Synthesis)
-  - [6.1 s](#61-Yosys-Synthesis)
+- [6. CSA Schematic and Layout Design](#6-CSA-Schematic-and-Layout-Design)
+  - [6.1 Schematic Design](#61-Schematic-Design)
+  - [6.2 Layout Design](#62-Layout-Design)
+  - [6.3 Layout Versus Schematic(LVS)](#63-Layout-Versus-Schematic(LVS))
   
- 
-- [7. Layout Versus Schematic](#7-Layout-Versus-Schematic)
-  - [7.1 LVS Ngspice Simulation](#71-LVS-Ngspice-Simulation)
- 
-
-- [8. Conclusion](#8-Conclusion)
+- [7. Conclusion](#7-Conclusion)
 
 
   ## 1. Introduction
@@ -106,3 +102,7 @@ The [SkyWater 130nm Process Design Kit (PDK)](https://skywater-pdk.readthedocs.i
 [Netgen](http://opencircuitdesign.com/netgen/) is an open-source tool for comparing netlists and performing layout versus schematic (LVS) checks. It verifies that the physical layout of a circuit matches its schematic design. Netgen is compatible with multiple EDA tools and supports integration with Magic VLSI for comprehensive design verification.
 
 To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/tutorial_xschem_sky130.html)** the instructions provided in this site.
+
+3. RTL Design
+3.1 CSA HDL Description
+   3.2 Gate Level Synthesis
