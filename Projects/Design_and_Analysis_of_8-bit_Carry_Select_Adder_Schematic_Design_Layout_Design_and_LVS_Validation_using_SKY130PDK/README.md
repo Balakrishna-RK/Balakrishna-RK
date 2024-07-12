@@ -155,10 +155,19 @@ The extracted SPICE file from Magic VLSI was simulated and compared with the sch
 ## 5. Full Adder Schematic and Layout Design
 
 ### 5.1 Schematic Design
+  The full adder is designed using the generate, propagate, and delete methodology with CMOS logic. This design and implementation will be carried out using the SkyWater 130nm technology, employing eSim and Ngspice software. A full adder is a digital circuit that adds three input bits (A, B, and Cin) and produces two output bits (SUM and CARRY). The full adder performs binary addition, where the SUM output represents the sum of the three inputs, and the CARRY output represents the carry-over bit from the addition.
+
+In CMOS technology, the full adder design typically involves using complementary pairs of p-type and n-type MOSFETs (PMOS and NMOS) to achieve low power consumption and high-speed operation. The generate, propagate, and delete logic can be implemented using standard CMOS gates to ensure robustness and efficiency.
+
+The full adder schematic is created in Xschem and saved as full_adder.sch. A corresponding symbol is generated to facilitate its integration into the Carry Select Adder (CSA) module. The test bench for the full adder is simulated using Ngspice, verifying the functionality of the design through circuit waveforms. The use of symmetric sizes for both NMOS and PMOS transistors ensures balanced performance and minimal signal distortion.
 
 ### 5.2 Layout Design
+  The layout for the full adder is designed as a full_adder.mag module and implemented in the CSA module using the SkyWater 130nm Process Design Kit (PDK). During layout design, it is crucial to maintain a symmetric width-to-length (W/L) ratio for the transistors to ensure consistent performance. The area of each gate is optimized according to design specifications to achieve a compact and efficient layout.
+
+The layout is extracted to a .ext file using the "extract all" command, and the .ext file is converted to a SPICE file using the ext2spice command for LVS (Layout Versus Schematic) verification.
 
 ### 5.3 Layout Versus Schematic(LVS)
+The SPICE file obtained from the layout design in Magic VLSI is used to perform LVS verification. LVS validation involves comparing the extracted layout netlist with the original schematic netlist to ensure that the physical layout accurately represents the intended circuit design. This process checks for any discrepancies in connectivity, component values, and overall circuit functionality. The SPICE code for LVS testing includes the necessary inputs to simulate the layout and verify that the outputs match those of the schematic design. This thorough validation ensures that the full adder design is both logically and physically consistent, meeting all design requirements and performance criteria.
 
 
 ## 6. CSA Schematic and Layout Design
