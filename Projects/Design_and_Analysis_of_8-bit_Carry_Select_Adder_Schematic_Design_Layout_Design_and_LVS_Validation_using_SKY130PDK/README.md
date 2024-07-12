@@ -112,7 +112,7 @@ To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/
 A Carry Select Adder (CSA) accelerates the addition process by dividing it into smaller blocks, enabling parallel computation. The 8-bit CSA consists of a lower block and an upper block, each responsible for computing 4-bit operations. The lower block processes the least significant 4 bits without needing separate carry inputs of 0 and 1. The CSA utilizes ripple carry adders and multiplexers. The LSB block operates as a standard Ripple Carry Adder. The MSB block performs two parallel computations: one with the carry input set to 0 and the other with the carry input set to 1. When a carry is generated in the LSB block, the multiplexer selects the appropriate carry-out value based on this input.
 ![HDL Test bench](assets/images/verilog/csa_tb_verilog.png)
 
-The **[HDL description](https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK/assets/files/verilog/csa.v)** of the CSA is provided. A **[Test bench](https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK/assets/files/verilog/csa_tb.v)** was developed to verify the design, obtaining simulation results in .vcd format, which were analyzed using GTKWave.
+The **[HDL description](assets/files/verilog/csa.v)** of the CSA is provided. A **[Test bench](assets/files/verilog/csa_tb.v)** was developed to verify the design, obtaining simulation results in .vcd format, which were analyzed using GTKWave.
 
 ![GTK Wave](assets/images/verilog/csa_gtk.png)
 
@@ -121,25 +121,36 @@ The **[HDL description](https://github.com/Balakrishna-RK/Balakrishna-RK/blob/ma
 Using Yosys, gate-level synthesis of the CSA was performed, producing outputs in two formats: .dot and .json. The .dot format provides a graphical representation of the gate-level design, suitable for visualization with GraphViz. The .json format provides a structured data representation, enabling further analysis and processing. Both synthesis formats are depicted in the accompanying image.
 
 #### NetlistSVG:
-![NetlistSVG Gate Level Synthesis](https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK/assets/images/verilog/netlistSVG.svg)
+![NetlistSVG Gate Level Synthesis](assets/images/verilog/netlistSVG.svg)
 
 ##### GraphViz:
-![GraphViz Gate Level Synthesis](https://github.com/Balakrishna-RK/Balakrishna-RK/blob/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK/assets/images/verilog/graphviz.png)
+![GraphViz Gate Level Synthesis](assets/images/verilog/graphviz.png)
 
 
 ## 4. Multiplexer Schematic and Layout Design
 
 ### 4.1 Schematic Design
+![Schematic Ciruit](assets/images/mux2to1/schematic/mux2to1_circuit.png)
+![Mux Symbol](assets/images/mux2to1/schematic/mux_symbol.png)
+
 A 2-to-1 multiplexer schematic was created in Xschem. The circuit design incorporates symmetric gates assigned to PMOS and NMOS transistors, creating a reusable Xschem symbol for consistent use across the design. The multiplexer symbol is saved as mux2to1.sym. A test bench was developed to verify the multiplexer’s functionality, with inputs and outputs demonstrated in the test bench.
+![Mux Test Bench](assets/images/mux2to1/schematic/mux_testbench.png)
 
 Multiplexers are integral to digital circuits, selecting one of several input signals and forwarding the chosen input to a single output line, thereby facilitating decision-making processes within the circuit.
+![Schematic Mux Output](assets/images/mux2to1/schematic/mux_output_schematic.png)
 
 ### 4.2 Layout Design
+![Mux Layout](assets/images/mux2to1/layout/mux_layout.png)
 The layout for the multiplexer was meticulously drawn in Magic VLSI using Metal 1 and Local Interconnect (LI) layers, as specified by the SkyWater 130nm Process Design Kit (PDK). This layout was saved as a .mag file for incorporation into the CSA Layout module. The layout was also extracted to a .ext file and converted to SPICE format for further analysis. The associated files are attached for reference.
+#### [Magic VLSI .spice File:](assets/files/mux_2to1_layout/mux_2to1.spice)
+![Mux Magic Spice File](assets/images/mux2to1/layout/mux_magic_spice.png)
 
 ### 4.3 Layout Versus Schematic(LVS)
+![Mux LVS Spice](assets/images/mux2to1/layout/mux_magic_ngspice.png)
+
 The extracted SPICE file from Magic VLSI was simulated and compared with the schematic design using Ngspice. This comparison ensures that the physical layout accurately represents the intended circuit functionality and performance. The LVS process verifies that the design is both logically and physically sound, ensuring that the layout matches the schematic specifications and performs as expected.
 
+![Mux LVS Output](assets/images/mux2to1/layout/mux_lvs_output.png)
 
 ## 5. Full Adder Schematic and Layout Design
 
