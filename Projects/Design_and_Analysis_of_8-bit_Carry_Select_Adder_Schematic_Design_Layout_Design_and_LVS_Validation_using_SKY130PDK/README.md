@@ -185,7 +185,7 @@ The layout is extracted to a .ext file using the "extract all" command, and the 
 
 The SPICE file obtained from the layout design in Magic VLSI is used to perform LVS verification. LVS validation involves comparing the extracted layout netlist with the original schematic netlist to ensure that the physical layout accurately represents the intended circuit design. This process checks for any discrepancies in connectivity, component values, and overall circuit functionality. The SPICE code for LVS testing includes the necessary inputs to simulate the layout and verify that the outputs match those of the schematic design. This thorough validation ensures that the full adder design is both logically and physically consistent, meeting all design requirements and performance criteria.
 
-![FA LVS Spice Output](assets/images/full_adder/layout/layout/fa_lvs_output.png)
+![FA LVS Spice Output](assets/images/full_adder/layout/fa_lvs_output.png)
 
 ## 6. CSA Schematic and Layout Design
 
