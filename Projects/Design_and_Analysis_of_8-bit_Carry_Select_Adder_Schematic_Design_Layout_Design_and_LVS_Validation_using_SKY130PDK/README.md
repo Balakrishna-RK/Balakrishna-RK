@@ -21,19 +21,19 @@
   - [3.2 Gate Level Synthesis](#32-Gate-Level-Synthesis)
 
 - [4. Multiplexer Schematic and Layout Design](#4-Multiplexrer-Schematic-and-Layout-Design)
-  - [4.1 Schematic Design](#41-Schematic-Design)
-  - [4.2 Layout Design](#42-Layout-Design)
-  - [4.3 Layout Versus Schematic(LVS)](#43-Layout-Versus-Schematic(LVS))
+  - [4.1 MUX Schematic Design](#41-Schematic-Design)
+  - [4.2 MUX Layout Design](#42-Layout-Design)
+  - [4.3 MUX Layout Versus Schematic(LVS)](#43-Layout-Versus-Schematic(LVS))
 
 - [5. Full Adder Schematic and Layout Design](#5-Full-Adder-Schematic-and-Layout-Design)
-  - [5.1 Schematic Design](#51-Schematic-Design)
-  - [5.2 Layout Design](#52-Layout-Design)
-  - [5.3 Layout Versus Schematic(LVS)](#53-Layout-Versus-Schematic(LVS))
+  - [5.1 FA Schematic Design](#51-Schematic-Design)
+  - [5.2 FA Layout Design](#52-Layout-Design)
+  - [5.3 FA Layout Versus Schematic(LVS)](#53-Layout-Versus-Schematic(LVS))
  
 - [6. CSA Schematic and Layout Design](#6-CSA-Schematic-and-Layout-Design)
-  - [6.1 Schematic Design](#61-Schematic-Design)
-  - [6.2 Layout Design](#62-Layout-Design)
-  - [6.3 Layout Versus Schematic(LVS)](#63-Layout-Versus-Schematic(LVS))
+  - [6.1 CSA Schematic Design](#61-Schematic-Design)
+  - [6.2 CSA Layout Design](#62-Layout-Design)
+  - [6.3 CSA Layout Versus Schematic(LVS)](#63-Layout-Versus-Schematic(LVS))
   
 - [7. Conclusion](#7-Conclusion)
 
@@ -129,7 +129,7 @@ Using Yosys, gate-level synthesis of the CSA was performed, producing outputs in
 
 ## 4. Multiplexer Schematic and Layout Design
 
-### 4.1 Schematic Design
+### 4.1 MUX Schematic Design
 ![Schematic Ciruit](assets/images/mux2to1/schematic/mux2to1_circuit.png)
 ![Mux Symbol](assets/images/mux2to1/schematic/mux_symbol.png)
 
@@ -139,13 +139,13 @@ A 2-to-1 multiplexer schematic was created in Xschem. The circuit design incorpo
 Multiplexers are integral to digital circuits, selecting one of several input signals and forwarding the chosen input to a single output line, thereby facilitating decision-making processes within the circuit.
 ![Schematic Mux Output](assets/images/mux2to1/schematic/mux_output_schematic.png)
 
-### 4.2 Layout Design
+### 4.2 MUX Layout Design
 ![Mux Layout](assets/images/mux2to1/layout/mux_layout.png)
 The layout for the multiplexer was meticulously drawn in Magic VLSI using Metal 1 and Local Interconnect (LI) layers, as specified by the SkyWater 130nm Process Design Kit (PDK). This layout was saved as a .mag file for incorporation into the CSA Layout module. The layout was also extracted to a .ext file and converted to SPICE format for further analysis. The associated files are attached for reference.
 #### [Magic VLSI .spice File:](assets/files/mux_2to1_layout/mux_2to1.spice)
 ![Mux Magic Spice File](assets/images/mux2to1/layout/mux_magic_spice.png)
 
-### 4.3 Layout Versus Schematic(LVS)
+### 4.3 MUX Layout Versus Schematic(LVS)
 
 The extracted SPICE file from Magic VLSI was simulated and compared with the schematic design using Ngspice. This comparison ensures that the physical layout accurately represents the intended circuit functionality and performance. The LVS process verifies that the design is both logically and physically sound, ensuring that the layout matches the schematic specifications and performs as expected.
 
@@ -156,7 +156,7 @@ The extracted SPICE file from Magic VLSI was simulated and compared with the sch
 
 ## 5. Full Adder Schematic and Layout Design
 
-### 5.1 Schematic Design
+### 5.1 FA Schematic Design
 
 
 ![FA Schematic Circuit](images/full_adder/schematic/fa_sch_circuit.png)
@@ -171,9 +171,9 @@ In CMOS technology, the full adder design typically involves using complementary
 
 The full adder schematic is created in Xschem and saved as full_adder.sch. A corresponding symbol is generated to facilitate its integration into the Carry Select Adder (CSA) module. The test bench for the full adder is simulated using Ngspice, verifying the functionality of the design through circuit waveforms. The use of symmetric sizes for both NMOS and PMOS transistors ensures balanced performance and minimal signal distortion.
 
- ![FA Schematic Output](assets/images/full_adder/schematic/fa_schematic_output.png)
+![FA Schematic Output](assets/images/full_adder/schematic/fa_schematic_output.png)
 
-### 5.2 Layout Design
+### 5.2 FA Layout Design
 ![FA Layout Design](assets/images/full_adder/layout/fa_layout.png)
   The layout for the full adder is designed as a full_adder.mag module and implemented in the CSA module using the SkyWater 130nm Process Design Kit (PDK). During layout design, it is crucial to maintain a symmetric width-to-length (W/L) ratio for the transistors to ensure consistent performance. The area of each gate is optimized according to design specifications to achieve a compact and efficient layout.
 
@@ -181,7 +181,7 @@ The full adder schematic is created in Xschem and saved as full_adder.sch. A cor
 
 The layout is extracted to a .ext file using the "extract all" command, and the .ext file is converted to a SPICE file using the ext2spice command for LVS (Layout Versus Schematic) verification.
 
-### 5.3 Layout Versus Schematic(LVS)
+### 5.3 FA Layout Versus Schematic(LVS)
 
 The SPICE file obtained from the layout design in Magic VLSI is used to perform LVS verification. LVS validation involves comparing the extracted layout netlist with the original schematic netlist to ensure that the physical layout accurately represents the intended circuit design. This process checks for any discrepancies in connectivity, component values, and overall circuit functionality. The SPICE code for LVS testing includes the necessary inputs to simulate the layout and verify that the outputs match those of the schematic design. This thorough validation ensures that the full adder design is both logically and physically consistent, meeting all design requirements and performance criteria.
 
@@ -192,11 +192,11 @@ The SPICE file obtained from the layout design in Magic VLSI is used to perform 
 
 ## 6. CSA Schematic and Layout Design
 
-### 6.1 Schematic Design
+### 6.1 CSA Schematic Design
 
-### 6.2 Layout Design
+### 6.2 CSA Layout Design
 
-### 6.3 Layout Versus Schematic(LVS)
+### 6.3 CSA Layout Versus Schematic(LVS)
 
 
 
