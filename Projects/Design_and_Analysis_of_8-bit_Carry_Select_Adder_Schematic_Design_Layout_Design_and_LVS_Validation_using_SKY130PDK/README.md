@@ -20,20 +20,20 @@
   - [3.1 CSA HDL Description](#31-CSA-HDL-Description)
   - [3.2 Gate Level Synthesis](#32-Gate-Level-Synthesis)
 
-- [4. Multiplexer Schematic and Layout Design](#4-Multiplexrer-Schematic-and-Layout-Design)
-  - [4.1 MUX Schematic Design](#41-Schematic-Design)
-  - [4.2 MUX Layout Design](#42-Layout-Design)
-  - [4.3 MUX Layout Versus Schematic(LVS)](#43-Layout-Versus-Schematic(LVS))
+- [4. Multiplexer Schematic and Layout Design](#4-Multiplexer-Schematic-and-Layout-Design)
+  - [4.1 MUX Schematic Design](#41-MUX-Schematic-Design)
+  - [4.2 MUX Layout Design](#42-MUX-Layout-Design)
+  - [4.3 MUX Layout Versus Schematic(LVS)](#43-MUX-Layout-Versus-Schematic(LVS))
 
 - [5. Full Adder Schematic and Layout Design](#5-Full-Adder-Schematic-and-Layout-Design)
-  - [5.1 FA Schematic Design](#51-Schematic-Design)
-  - [5.2 FA Layout Design](#52-Layout-Design)
-  - [5.3 FA Layout Versus Schematic(LVS)](#53-Layout-Versus-Schematic(LVS))
+  - [5.1 FA Schematic Design](#51-FA-Schematic-Design)
+  - [5.2 FA Layout Design](#52-FA-Layout-Design)
+  - [5.3 FA Layout Versus Schematic(LVS)](#53-FA-Layout-Versus-Schematic(LVS))
  
 - [6. CSA Schematic and Layout Design](#6-CSA-Schematic-and-Layout-Design)
-  - [6.1 CSA Schematic Design](#61-Schematic-Design)
-  - [6.2 CSA Layout Design](#62-Layout-Design)
-  - [6.3 CSA Layout Versus Schematic(LVS)](#63-Layout-Versus-Schematic(LVS))
+  - [6.1 CSA Schematic Design](#61-CSA-Schematic-Design)
+  - [6.2 CSA Layout Design](#62-CSA-Layout-Design)
+  - [6.3 CSA Layout Versus Schematic(LVS)](#63-CSA-Layout-Versus-Schematic(LVS))
   
 - [7. Conclusion](#7-Conclusion)
 
