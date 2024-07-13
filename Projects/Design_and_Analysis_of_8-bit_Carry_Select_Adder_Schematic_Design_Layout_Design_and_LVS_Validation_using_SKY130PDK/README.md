@@ -23,17 +23,17 @@
 - [4. Multiplexer Schematic and Layout Design](#4-Multiplexer-Schematic-and-Layout-Design)
   - [4.1 MUX Schematic Design](#41-MUX-Schematic-Design)
   - [4.2 MUX Layout Design](#42-MUX-Layout-Design)
-  - [4.3 MUX Layout Versus Schematic(LVS)](#43-MUX-Layout-Versus-Schematic(LVS))
+  - [4.3 MUX Layout Versus Schematic](#43-MUX-Layout-Versus-Schematic)
 
 - [5. Full Adder Schematic and Layout Design](#5-Full-Adder-Schematic-and-Layout-Design)
   - [5.1 FA Schematic Design](#51-FA-Schematic-Design)
   - [5.2 FA Layout Design](#52-FA-Layout-Design)
-  - [5.3 FA Layout Versus Schematic(LVS)](#53-FA-Layout-Versus-Schematic(LVS))
+  - [5.3 FA Layout Versus Schematic](#53-FA-Layout-Versus-Schematic)
  
 - [6. CSA Schematic and Layout Design](#6-CSA-Schematic-and-Layout-Design)
   - [6.1 CSA Schematic Design](#61-CSA-Schematic-Design)
   - [6.2 CSA Layout Design](#62-CSA-Layout-Design)
-  - [6.3 CSA Layout Versus Schematic(LVS)](#63-CSA-Layout-Versus-Schematic(LVS))
+  - [6.3 CSA Layout Versus Schematic](#63-CSA-Layout-Versus-Schematic)
   
 - [7. Conclusion](#7-Conclusion)
 
@@ -145,7 +145,7 @@ The layout for the multiplexer was meticulously drawn in Magic VLSI using Metal 
 #### [Magic VLSI .spice File:](assets/files/mux_2to1_layout/mux_2to1.spice)
 ![Mux Magic Spice File](assets/images/mux2to1/layout/mux_magic_spice.png)
 
-### 4.3 MUX Layout Versus Schematic(LVS)
+### 4.3 MUX Layout Versus Schematic
 
 The extracted SPICE file from Magic VLSI was simulated and compared with the schematic design using Ngspice. This comparison ensures that the physical layout accurately represents the intended circuit functionality and performance. The LVS process verifies that the design is both logically and physically sound, ensuring that the layout matches the schematic specifications and performs as expected.
 
@@ -181,7 +181,7 @@ The full adder schematic is created in Xschem and saved as full_adder.sch. A cor
 
 The layout is extracted to a .ext file using the "extract all" command, and the .ext file is converted to a SPICE file using the ext2spice command for LVS (Layout Versus Schematic) verification.
 
-### 5.3 FA Layout Versus Schematic(LVS)
+### 5.3 FA Layout Versus Schematic
 
 The SPICE file obtained from the layout design in Magic VLSI is used to perform LVS verification. LVS validation involves comparing the extracted layout netlist with the original schematic netlist to ensure that the physical layout accurately represents the intended circuit design. This process checks for any discrepancies in connectivity, component values, and overall circuit functionality. The SPICE code for LVS testing includes the necessary inputs to simulate the layout and verify that the outputs match those of the schematic design. This thorough validation ensures that the full adder design is both logically and physically consistent, meeting all design requirements and performance criteria.
 
@@ -196,7 +196,7 @@ The SPICE file obtained from the layout design in Magic VLSI is used to perform 
 
 ### 6.2 CSA Layout Design
 
-### 6.3 CSA Layout Versus Schematic(LVS)
+### 6.3 CSA Layout Versus Schematic
 
 
 
