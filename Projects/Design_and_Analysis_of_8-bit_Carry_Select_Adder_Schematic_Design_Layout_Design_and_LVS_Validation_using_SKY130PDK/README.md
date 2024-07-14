@@ -143,13 +143,13 @@ Multiplexers are integral to digital circuits, selecting one of several input si
 ![Mux Layout](assets/images/mux2to1/layout/mux_layout.png)
 The layout for the multiplexer was meticulously drawn in Magic VLSI using Metal 1 and Local Interconnect (LI) layers, as specified by the SkyWater 130nm Process Design Kit (PDK). This layout was saved as a .mag file for incorporation into the CSA Layout module. The layout was also extracted to a .ext file and converted to SPICE format for further analysis. The associated files are attached for reference.
 #### [Magic VLSI .spice File:](assets/files/mux_2to1_layout/mux_2to1.spice)
-![Mux Magic Spice File](assets/images/mux2to1/layout/mux_magic_spice.png)
+![Mux Magic Spice File](assets/images/mux2to1/layout/mux_spice.png)
 
 ### 4.3 MUX Layout Versus Schematic
 
 The extracted SPICE file from Magic VLSI was simulated and compared with the schematic design using Ngspice. This comparison ensures that the physical layout accurately represents the intended circuit functionality and performance. The LVS process verifies that the design is both logically and physically sound, ensuring that the layout matches the schematic specifications and performs as expected.
 
-![Mux LVS Spice](assets/images/mux2to1/layout/mux_magic_ngspice.png)
+![Mux LVS Spice](assets/images/mux2to1/layout/mux_ngspice_lvs.png)
 
 
 ![Mux LVS Output](assets/images/mux2to1/layout/mux_lvs_output.png)
