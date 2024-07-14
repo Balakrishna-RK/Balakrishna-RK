@@ -1,0 +1,51 @@
+* SPICE3 file created from full_adder.ext - technology: sky130A
+
+VDD vdd GND 1.8
+vcarry cin GND PULSE(0 0 0 .1n .1n 10n 20n 8)
+Va a GND PULSE(1.8 0 0 .1n .1n 40n 80n 2)
+Vb b GND PULSE(1.8 0 0 .1n .1n 20n 40n 4)
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.tran .02ns 80ns
+.save all
+
+X0 a_3550_n440# a_3010_n440# vdd vdd sky130_fd_pr__pfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X1 a_760_n530# b gnd gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X2 a_510_n530# a a_760_n530# gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X3 a_10_40# b vdd vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X4 a_3550_n440# a_3010_n440# gnd gnd sky130_fd_pr__nfet_01v8 ad=0.1575 pd=1.6 as=0.1575 ps=1.6 w=0.45 l=0.15
+X5 sum a_3550_n440# gnd gnd sky130_fd_pr__nfet_01v8 ad=0.1575 pd=1.6 as=0.1575 ps=1.6 w=0.45 l=0.15
+X6 a_1260_40# cin vdd vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X7 a_2260_40# a vdd vdd sky130_fd_pr__pfet_01v8 ad=0.945 pd=6.1 as=0.945 ps=6.1 w=2.7 l=0.15
+X8 a_10_n530# b gnd gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X9 a_510_n530# cin a_10_n530# gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X10 a_510_n530# a a_760_40# vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X11 a_3010_n440# a_2010_n530# vdd vdd sky130_fd_pr__pfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X12 sum a_3550_n440# vdd vdd sky130_fd_pr__pfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X13 cout a_510_n530# vdd vdd sky130_fd_pr__pfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X14 a_2010_n530# cin a_2510_n620# gnd sky130_fd_pr__nfet_01v8 ad=0.4725 pd=3.4 as=0.4725 ps=3.4 w=1.35 l=0.15
+X15 a_3010_n440# a_2010_n530# gnd gnd sky130_fd_pr__nfet_01v8 ad=0.1575 pd=1.6 as=0.1575 ps=1.6 w=0.45 l=0.15
+X16 a_1260_40# a vdd vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X17 a_510_n530# cin a_10_40# vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X18 a_1260_n530# cin gnd gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X19 a_2010_n530# a_510_n530# a_1260_n530# gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X20 a_2510_40# b a_2260_40# vdd sky130_fd_pr__pfet_01v8 ad=0.945 pd=6.1 as=0.945 ps=6.1 w=2.7 l=0.15
+X21 a_2010_n530# a_510_n530# a_1260_40# vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X22 a_2260_n620# a gnd gnd sky130_fd_pr__nfet_01v8 ad=0.4725 pd=3.4 as=0.4725 ps=3.4 w=1.35 l=0.15
+X23 a_2510_n620# b a_2260_n620# gnd sky130_fd_pr__nfet_01v8 ad=0.4725 pd=3.4 as=0.4725 ps=3.4 w=1.35 l=0.15
+X24 cout a_510_n530# gnd gnd sky130_fd_pr__nfet_01v8 ad=0.1575 pd=1.6 as=0.1575 ps=1.6 w=0.45 l=0.15
+X25 a_10_n530# a gnd gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X26 a_10_40# a vdd vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X27 a_1260_n530# a gnd gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X28 a_1260_n530# b gnd gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X29 a_760_40# b vdd vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X30 a_1260_40# b vdd vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X31 a_2010_n530# cin a_2510_40# vdd sky130_fd_pr__pfet_01v8 ad=0.945 pd=6.1 as=0.945 ps=6.1 w=2.7 l=0.15
+C0 vdd cin 2.43289f
+C1 b cin 2.029f
+C2 vdd a 2.11982f
+C3 vdd b 2.07714f
+C4 a_510_n530# gnd 2.2638f 
+C5 vdd gnd 13.145f 
+
+.end
