@@ -159,7 +159,7 @@ The extracted SPICE file from Magic VLSI was simulated and compared with the sch
 ### 5.1 FA Schematic Design
 
 
-![FA Schematic Circuit](images/full_adder/schematic/fa_sch_circuit.png)
+![FA Schematic Circuit](assets/images/full_adder/schematic/fa_sch_circuit.png)
 
 ![FA symbol](assets/images/full_adder/schematic/fa_symbol.png)
 
