@@ -1,0 +1,27 @@
+* SPICE3 file created from mux_2to1.ext - technology: sky130A
+
+
+V2 in2 GND PULSE(1.8 0 0 .1n .1n 10n 20n 8)
+V1 in1 GND PULSE(1.8 0 0 .1n .1n 20n 40n 4)
+V3 sel GND PULSE(1.8 0 0 .1n .1n 20n 40n 2)
+V4 vdd GND 1.8
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.tran .02ns 40ns
+.save all
+
+X0 a_2720_340# a_2510_640# a_2820_860# vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X1 a_2820_340# sel a_2720_340# gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X2 out a_2720_340# vdd vdd sky130_fd_pr__pfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X3 gnd in2 a_2820_340# gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X4 a_2510_640# sel gnd gnd sky130_fd_pr__nfet_01v8 ad=0.1575 pd=1.6 as=0.1575 ps=1.6 w=0.45 l=0.15
+X5 a_3320_340# a_2510_640# a_2720_340# gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X6 a_2720_340# in1 a_2820_860# vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X7 out a_2720_340# gnd gnd sky130_fd_pr__nfet_01v8 ad=0.1575 pd=1.6 as=0.1575 ps=1.6 w=0.45 l=0.15
+X8 gnd in1 a_3320_340# gnd sky130_fd_pr__nfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X9 a_2820_860# sel vdd vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+X10 a_2510_640# sel vdd vdd sky130_fd_pr__pfet_01v8 ad=0.315 pd=2.5 as=0.315 ps=2.5 w=0.9 l=0.15
+X11 a_2820_860# in2 vdd vdd sky130_fd_pr__pfet_01v8 ad=0.63 pd=4.3 as=0.63 ps=4.3 w=1.8 l=0.15
+C0 vdd gnd 3.68472f 
+
+.end
