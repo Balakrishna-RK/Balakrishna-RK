@@ -207,12 +207,12 @@ The SPICE file obtained from the layout design in Magic VLSI is used to perform 
 
 ### 6.2 CSA Layout Design
 
-  The layout design of the 8-bit CSA is performed in Magic VLSI, utilizing previously designed full adder and 2-to-1 multiplexer layouts. Technical parameters such as metal layers, transistor dimensions, and parasitic elements are carefully considered during the design process. The getcell <name> command is used to import the required modules into the layout, and the layout is extended using the "x" command. To modify the layout, the load <cell path/cell name> command is executed in the tkcon window. After modifications, the layout is saved and reloaded. The commands extract all and ext2spice are used to generate the .spice file for layout versus schematic (LVS) validation.
+  The layout design of the 8-bit CSA is performed in Magic VLSI, utilizing previously designed full adder and 2-to-1 multiplexer layouts. Technical parameters such as metal layers, transistor dimensions, and parasitic elements are carefully considered during the design process. The getcell <name> command is used to import the required modules into the layout, and the layout is extended using the "x" command. To modify the layout, the load <cell path/cell name> command is executed in the tkcon window. After modifications, the layout is saved and reloaded. The commands extract all and ext2spice are used to generate the [.spice](assets/files/csa_layout/carry_select_adder.spice) file for layout versus schematic (LVS) validation.
 
 ![CSA Layout](assets/images/csa/layout/csa_magic_layout.png)
 
 ### 6.3 CSA Layout Versus Schematic
-  Layout versus Schematic (LVS) is a crucial verification step in VLSI design, ensuring that the physical layout matches the schematic at the netlist level. Using the .spice file obtained from the CSA layout design, simulations are conducted by writing the corresponding SPICE code and applying valid inputs to verify the output. The ongoing LVS of the CSA is being worked on, and updates will be provided in the repository once the verification is complete.
+  Layout versus Schematic (LVS) is a crucial verification step in VLSI design, ensuring that the physical layout matches the schematic at the netlist level. Using the .spice file obtained from the CSA layout design, simulations are conducted by writing the corresponding [SPICE code](assets/files/csa_layout/csa_ngspice.spice) and applying valid inputs to verify the output. The ongoing LVS of the CSA is being worked on, and updates will be provided in the repository once the verification is complete.
 
 
 ## 7. Conclusion
