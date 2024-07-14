@@ -174,10 +174,10 @@ The full adder schematic is created in Xschem and saved as full_adder.sch. A cor
 ![FA Schematic Output](assets/images/full_adder/schematic/fa_schematic_output.png)
 
 ### 5.2 FA Layout Design
-![FA Layout Design](assets/images/full_adder/layout/fa_layout.png)
+![FA Layout Design](assets/images/full_adder/layout/fa_magic_layout.png)
   The layout for the full adder is designed as a full_adder.mag module and implemented in the CSA module using the SkyWater 130nm Process Design Kit (PDK). During layout design, it is crucial to maintain a symmetric width-to-length (W/L) ratio for the transistors to ensure consistent performance. The area of each gate is optimized according to design specifications to achieve a compact and efficient layout.
 
-![FA Layout Spice file](assets/images/full_adder/layout/fa_magic_spice.png)
+![FA Layout Spice file](assets/images/full_adder/layout/fa_spice.png)
 
 The layout is extracted to a .ext file using the "extract all" command, and the .ext file is converted to a SPICE file using the ext2spice command for LVS (Layout Versus Schematic) verification.
 
@@ -185,7 +185,7 @@ The layout is extracted to a .ext file using the "extract all" command, and the 
 
 The SPICE file obtained from the layout design in Magic VLSI is used to perform LVS verification. LVS validation involves comparing the extracted layout netlist with the original schematic netlist to ensure that the physical layout accurately represents the intended circuit design. This process checks for any discrepancies in connectivity, component values, and overall circuit functionality. The SPICE code for LVS testing includes the necessary inputs to simulate the layout and verify that the outputs match those of the schematic design. This thorough validation ensures that the full adder design is both logically and physically consistent, meeting all design requirements and performance criteria.
 
-![FA LVS Spice file](assets/images/full_adder/layout/fa_magic_ngspice.png)
+![FA LVS Spice file](assets/images/full_adder/layout/fa_ngspice.png)
 
 
 ![FA LVS Spice Output](assets/images/full_adder/layout/fa_lvs_output.png)
