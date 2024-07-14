@@ -130,10 +130,12 @@ Using Yosys, gate-level synthesis of the CSA was performed, producing outputs in
 ## 4. Multiplexer Schematic and Layout Design
 
 ### 4.1 MUX Schematic Design
+A 2-to-1 multiplexer schematic was created in Xschem. The circuit design incorporates symmetric gates assigned to PMOS and NMOS transistors, creating a reusable Xschem symbol for consistent use across the design. The multiplexer symbol is saved as mux2to1.sym. A test bench was developed to verify the multiplexer’s functionality, with inputs and outputs demonstrated in the test bench.
+
 ![Schematic Ciruit](assets/images/mux2to1/schematic/mux2to1_sch_circuit.png)
 ![Mux Symbol](assets/images/mux2to1/schematic/mux_symbol.png)
 
-A 2-to-1 multiplexer schematic was created in Xschem. The circuit design incorporates symmetric gates assigned to PMOS and NMOS transistors, creating a reusable Xschem symbol for consistent use across the design. The multiplexer symbol is saved as mux2to1.sym. A test bench was developed to verify the multiplexer’s functionality, with inputs and outputs demonstrated in the test bench.
+
 ![Mux Test Bench](assets/images/mux2to1/schematic/mux_testbench.png)
 
 Multiplexers are integral to digital circuits, selecting one of several input signals and forwarding the chosen input to a single output line, thereby facilitating decision-making processes within the circuit.
@@ -158,16 +160,14 @@ The extracted SPICE file from Magic VLSI was simulated and compared with the sch
 
 ### 5.1 FA Schematic Design
 
-
+  The full adder is designed using the generate, propagate, and delete methodology with CMOS logic. This design and implementation will be carried out using the SkyWater 130nm technology, employing eSim and Ngspice software. A full adder is a digital circuit that adds three input bits (A, B, and Cin) and produces two output bits (SUM and CARRY). The full adder performs binary addition, where the SUM output represents the sum of the three inputs, and the CARRY output represents the carry-over bit from the addition.
 ![FA Schematic Circuit](assets/images/full_adder/schematic/fa_sch_circuit.png)
 
 ![FA symbol](assets/images/full_adder/schematic/fa_symbol.png)
 
-  The full adder is designed using the generate, propagate, and delete methodology with CMOS logic. This design and implementation will be carried out using the SkyWater 130nm technology, employing eSim and Ngspice software. A full adder is a digital circuit that adds three input bits (A, B, and Cin) and produces two output bits (SUM and CARRY). The full adder performs binary addition, where the SUM output represents the sum of the three inputs, and the CARRY output represents the carry-over bit from the addition.
+In CMOS technology, the full adder design typically involves using complementary pairs of p-type and n-type MOSFETs (PMOS and NMOS) to achieve low power consumption and high-speed operation. The generate, propagate, and delete logic can be implemented using standard CMOS gates to ensure robustness and efficiency.
   
  ![FA testbench](assets/images/full_adder/schematic/fa_testbench.png)
-
-In CMOS technology, the full adder design typically involves using complementary pairs of p-type and n-type MOSFETs (PMOS and NMOS) to achieve low power consumption and high-speed operation. The generate, propagate, and delete logic can be implemented using standard CMOS gates to ensure robustness and efficiency.
 
 The full adder schematic is created in Xschem and saved as full_adder.sch. A corresponding symbol is generated to facilitate its integration into the Carry Select Adder (CSA) module. The test bench for the full adder is simulated using Ngspice, verifying the functionality of the design through circuit waveforms. The use of symmetric sizes for both NMOS and PMOS transistors ensures balanced performance and minimal signal distortion.
 
@@ -194,10 +194,33 @@ The SPICE file obtained from the layout design in Magic VLSI is used to perform 
 
 ### 6.1 CSA Schematic Design
 
+  Using the full adder and 2-to-1 multiplexer symbols created in Xschem, an 8-bit carry select adder (CSA) is designed. The carry select adder works by dividing the addition process into smaller groups, each of which computes two potential sums: one assuming a carry-in of zero and the other assuming a carry-in of one. These sums are then selected based on the actual carry-in, resulting in faster addition by parallelizing the carry propagation. After designing the CSA in Xschem, a SPICE netlist is generated and simulated using Ngspice to verify the output. The simulation results indicate that the average power consumption over 80 ns is 0.9179 µW.
+![CSA Schematic Circuit](assets/images/csa/schematic/csa_circuit.png)
+
+![CSA Schematic Input](assets/images/csa/schematic/csa_input_a0_a3.png)
+
+![CSA Schematic Input](assets/images/csa/schematic/csa_input_a4_a7.png)
+
+![CSA Schematic Output](assets/images/csa/schematic/csa_output_s0_s3.png)
+
+![CSA Schematic Output](assets/images/csa/schematic/csa_output_s4_s7.png)
+
 ### 6.2 CSA Layout Design
 
-### 6.3 CSA Layout Versus Schematic
+  The layout design of the 8-bit CSA is performed in Magic VLSI, utilizing previously designed full adder and 2-to-1 multiplexer layouts. Technical parameters such as metal layers, transistor dimensions, and parasitic elements are carefully considered during the design process. The getcell <name> command is used to import the required modules into the layout, and the layout is extended using the "x" command. To modify the layout, the load <cell path/cell name> command is executed in the tkcon window. After modifications, the layout is saved and reloaded. The commands extract all and ext2spice are used to generate the .spice file for layout versus schematic (LVS) validation.
 
+![CSA Layout](assets/images/csa/layout/csa_magic_layout.png)
+
+### 6.3 CSA Layout Versus Schematic
+  Layout versus Schematic (LVS) is a crucial verification step in VLSI design, ensuring that the physical layout matches the schematic at the netlist level. Using the .spice file obtained from the CSA layout design, simulations are conducted by writing the corresponding SPICE code and applying valid inputs to verify the output. The ongoing LVS of the CSA is being worked on, and updates will be provided in the repository once the verification is complete.
 
 
 ## 7. Conclusion
+
+Throughout this project, I have gained significant experience in the various stages of the VLSI design flow. By leveraging tools such as Xschem for schematic design, Ngspice for simulation, Yosys for synthesis, and Magic VLSI for layout design, I have developed a comprehensive understanding of designing and implementing an 8-bit Carry Select Adder (CSA). 
+
+One of the key learnings was mastering the use of layout design modules to create and route blocks while adhering to Design Rule Checks (DRC). This process ensured that the layouts met all necessary fabrication constraints, significantly enhancing the robustness and manufacturability of the design.
+
+Moreover, the layout versus schematic (LVS) validation honed my ability to verify that the physical layout accurately represented the schematic design. This step is crucial in ensuring that the designed circuits will function correctly when fabricated. Working through these validation processes has deepened my understanding of how the different stages of the VLSI design flow interconnect and support each other.
+
+The skills and knowledge acquired during this project have equipped me with a strong foundation in VLSI design, which I will utilize in future projects. The ability to effectively transition from schematic capture and simulation to synthesis, layout design, and thorough validation is essential for any VLSI design engineer, and this project has provided a solid platform for further advancements in my career.
