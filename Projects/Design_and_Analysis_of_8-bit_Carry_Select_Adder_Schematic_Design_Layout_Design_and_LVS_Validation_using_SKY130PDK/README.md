@@ -120,17 +120,17 @@ The **[HDL description](assets/files/verilog/csa.v)** of the CSA is provided. A 
 
 Using Yosys, gate-level synthesis of the CSA was performed, producing outputs in two formats: .dot and .json. The .dot format provides a graphical representation of the gate-level design, suitable for visualization with GraphViz. The .json format provides a structured data representation, enabling further analysis and processing. Both synthesis formats are depicted in the accompanying image.
 
-#### NetlistSVG:
+#### [NetlistSVG:](assets/files/verilog/synth.json)
 ![NetlistSVG Gate Level Synthesis](assets/images/verilog/netlistSVG.svg)
 
-##### GraphViz:
+##### [GraphViz:](assets/files/verilog/synth.dot)
 ![GraphViz Gate Level Synthesis](assets/images/verilog/graphviz.png)
 
 
 ## 4. Multiplexer Schematic and Layout Design
 
 ### 4.1 MUX Schematic Design
-A 2-to-1 multiplexer schematic was created in Xschem. The circuit design incorporates symmetric gates assigned to PMOS and NMOS transistors, creating a reusable Xschem symbol for consistent use across the design. The multiplexer symbol is saved as mux2to1.sym. A test bench was developed to verify the multiplexer’s functionality, with inputs and outputs demonstrated in the test bench.
+A 2-to-1 multiplexer schematic was created in [Xschem](assets/files/schematic/two_one_mux.sch). The circuit design incorporates symmetric gates assigned to PMOS and NMOS transistors, creating a reusable Xschem symbol for consistent use across the design. The multiplexer symbol is saved as [mux2to1.sym](assets/files/schematic/two_one_mux.sym). A test bench was developed to verify the multiplexer’s functionality, with inputs and outputs demonstrated in the [test bench](assets/files/schematic/two_to_one_mux_tb.sch).
 
 ![Schematic Ciruit](assets/images/mux2to1/schematic/mux2to1_sch_circuit.png)
 ![Mux Symbol](assets/images/mux2to1/schematic/mux_symbol.png)
@@ -143,13 +143,13 @@ Multiplexers are integral to digital circuits, selecting one of several input si
 
 ### 4.2 MUX Layout Design
 ![Mux Layout](assets/images/mux2to1/layout/mux_magic_layout.png)
-The layout for the multiplexer was meticulously drawn in Magic VLSI using Metal 1 and Local Interconnect (LI) layers, as specified by the SkyWater 130nm Process Design Kit (PDK). This layout was saved as a .mag file for incorporation into the CSA Layout module. The layout was also extracted to a .ext file and converted to SPICE format for further analysis. The associated files are attached for reference.
+The [Layout](assets/files/mux_2to1_layout/mux_2to1.mag) for the multiplexer was meticulously drawn in Magic VLSI using Metal 1 and Local Interconnect (LI) layers, as specified by the SkyWater 130nm Process Design Kit (PDK). This layout was saved as a .mag file for incorporation into the CSA Layout module. The layout was also extracted to a .ext file and converted to SPICE format for further analysis. The associated files are attached for reference.
 #### [Magic VLSI .spice File:](assets/files/mux_2to1_layout/mux_2to1.spice)
 ![Mux Magic Spice File](assets/images/mux2to1/layout/mux_spice.png)
 
 ### 4.3 MUX Layout Versus Schematic
 
-The extracted SPICE file from Magic VLSI was simulated and compared with the schematic design using Ngspice. This comparison ensures that the physical layout accurately represents the intended circuit functionality and performance. The LVS process verifies that the design is both logically and physically sound, ensuring that the layout matches the schematic specifications and performs as expected.
+The extracted SPICE file from Magic VLSI was simulated and compared with the schematic design using Ngspice. This comparison ensures that the physical layout accurately represents the intended circuit functionality and performance. The [LVS process](assets/files/mux_2to1_layout/mux_2to1_ngspice.spice) verifies that the design is both logically and physically sound, ensuring that the layout matches the schematic specifications and performs as expected.
 
 ![Mux LVS Spice](assets/images/mux2to1/layout/mux_ngspice_lvs.png)
 
@@ -160,7 +160,7 @@ The extracted SPICE file from Magic VLSI was simulated and compared with the sch
 
 ### 5.1 FA Schematic Design
 
-  The full adder is designed using the generate, propagate, and delete methodology with CMOS logic. This design and implementation will be carried out using the SkyWater 130nm technology, employing eSim and Ngspice software. A full adder is a digital circuit that adds three input bits (A, B, and Cin) and produces two output bits (SUM and CARRY). The full adder performs binary addition, where the SUM output represents the sum of the three inputs, and the CARRY output represents the carry-over bit from the addition.
+  The Full adder is designed using the generate, propagate, and delete methodology with CMOS logic. This design and implementation will be carried out using the SkyWater 130nm technology, employing Xschem and Ngspice software. A full adder is a digital circuit that adds three input bits (A, B, and Cin) and produces two output bits (SUM and CARRY). The full adder performs binary addition, where the SUM output represents the sum of the three inputs, and the CARRY output represents the carry-over bit from the addition.
 ![FA Schematic Circuit](assets/images/full_adder/schematic/fa_sch_circuit.png)
 
 ![FA symbol](assets/images/full_adder/schematic/fa_symbol.png)
@@ -169,21 +169,21 @@ In CMOS technology, the full adder design typically involves using complementary
   
  ![FA testbench](assets/images/full_adder/schematic/fa_testbench.png)
 
-The full adder schematic is created in Xschem and saved as full_adder.sch. A corresponding symbol is generated to facilitate its integration into the Carry Select Adder (CSA) module. The test bench for the full adder is simulated using Ngspice, verifying the functionality of the design through circuit waveforms. The use of symmetric sizes for both NMOS and PMOS transistors ensures balanced performance and minimal signal distortion.
+The full adder schematic is created in Xschem and saved as [full_adder.sch]](assets/files/schematic/full_adder.sch) . A corresponding [symbol](assets/files/schematic/full_adder.sym) is generated to facilitate its integration into the Carry Select Adder (CSA) module. The [test bench](assets/files/schematic/fa_tb.sch) for the full adder is simulated using Ngspice, verifying the functionality of the design through circuit waveforms. The use of symmetric sizes for both NMOS and PMOS transistors ensures balanced performance and minimal signal distortion.
 
 ![FA Schematic Output](assets/images/full_adder/schematic/fa_schematic_output.png)
 
 ### 5.2 FA Layout Design
 ![FA Layout Design](assets/images/full_adder/layout/fa_magic_layout.png)
-  The layout for the full adder is designed as a full_adder.mag module and implemented in the CSA module using the SkyWater 130nm Process Design Kit (PDK). During layout design, it is crucial to maintain a symmetric width-to-length (W/L) ratio for the transistors to ensure consistent performance. The area of each gate is optimized according to design specifications to achieve a compact and efficient layout.
+  The layout for the full adder is designed as a [full_adder.mag](assets/files/full_adder_layout/full_adder.mag) module and implemented in the CSA module using the SkyWater 130nm Process Design Kit (PDK). During layout design, it is crucial to maintain a symmetric width-to-length (W/L) ratio for the transistors to ensure consistent performance. The area of each gate is optimized according to design specifications to achieve a compact and efficient layout.
 
 ![FA Layout Spice file](assets/images/full_adder/layout/fa_spice.png)
 
-The layout is extracted to a .ext file using the "extract all" command, and the .ext file is converted to a SPICE file using the ext2spice command for LVS (Layout Versus Schematic) verification.
+The layout is extracted to a .ext file using the "extract all" command, and the .ext file is converted to a [SPICE file](assets/files/full_adder_layout/full_adder.spice) using the ext2spice command for LVS (Layout Versus Schematic) verification.
 
 ### 5.3 FA Layout Versus Schematic
 
-The SPICE file obtained from the layout design in Magic VLSI is used to perform LVS verification. LVS validation involves comparing the extracted layout netlist with the original schematic netlist to ensure that the physical layout accurately represents the intended circuit design. This process checks for any discrepancies in connectivity, component values, and overall circuit functionality. The SPICE code for LVS testing includes the necessary inputs to simulate the layout and verify that the outputs match those of the schematic design. This thorough validation ensures that the full adder design is both logically and physically consistent, meeting all design requirements and performance criteria.
+The SPICE file obtained from the layout design in Magic VLSI is used to perform LVS verification. LVS validation involves comparing the extracted layout netlist with the original schematic netlist to ensure that the physical layout accurately represents the intended circuit design. This process checks for any discrepancies in connectivity, component values, and overall circuit functionality. The [SPICE code](assets/files/full_adder_layout/fa_ngspice.spice) for LVS testing includes the necessary inputs to simulate the layout and verify that the outputs match those of the schematic design. This thorough validation ensures that the full adder design is both logically and physically consistent, meeting all design requirements and performance criteria.
 
 ![FA LVS Spice file](assets/images/full_adder/layout/fa_ngspice.png)
 
@@ -194,7 +194,12 @@ The SPICE file obtained from the layout design in Magic VLSI is used to perform 
 
 ### 6.1 CSA Schematic Design
 
-  Using the full adder and 2-to-1 multiplexer symbols created in Xschem, an 8-bit carry select adder (CSA) is designed. The carry select adder works by dividing the addition process into smaller groups, each of which computes two potential sums: one assuming a carry-in of zero and the other assuming a carry-in of one. These sums are then selected based on the actual carry-in, resulting in faster addition by parallelizing the carry propagation. After designing the CSA in Xschem, a SPICE netlist is generated and simulated using Ngspice to verify the output. The simulation results indicate that the average power consumption over 80 ns is 0.9179 µW.
+  Using the full adder and 2-to-1 multiplexer symbols created in Xschem, an [8-Bit Carry Select Adder](assets/files/schematic/carry_select_adder.sch)(CSA) is designed. The carry select adder works by dividing the addition process into smaller groups, each of which computes two potential sums: one assuming a carry-in of zero and the other assuming a carry-in of one.
+  
+#### Average Power:
+![Average Power calculation](assets/images/csa/schematic/power_analysis.png)
+
+  These sums are then selected based on the actual carry-in, resulting in faster addition by parallelizing the carry propagation. After designing the CSA in Xschem, a SPICE netlist is generated and simulated using Ngspice to verify the output. The simulation results indicate that the average power consumption over 80 ns is 0.9179 µW.
 ![CSA Schematic Circuit](assets/images/csa/schematic/csa_circuit.png)
 
 ![CSA Schematic Input](assets/images/csa/schematic/csa_input_a0_a3.png)
@@ -207,7 +212,7 @@ The SPICE file obtained from the layout design in Magic VLSI is used to perform 
 
 ### 6.2 CSA Layout Design
 
-  The layout design of the 8-bit CSA is performed in Magic VLSI, utilizing previously designed full adder and 2-to-1 multiplexer layouts. Technical parameters such as metal layers, transistor dimensions, and parasitic elements are carefully considered during the design process. The getcell <name> command is used to import the required modules into the layout, and the layout is extended using the "x" command. To modify the layout, the load <cell path/cell name> command is executed in the tkcon window. After modifications, the layout is saved and reloaded. The commands extract all and ext2spice are used to generate the [.spice](assets/files/csa_layout/carry_select_adder.spice) file for layout versus schematic (LVS) validation.
+  The [Layout design](assets/files/csa_layout/carry_select_adder.mag) of the 8-bit CSA is performed in Magic VLSI, utilizing previously designed full adder and 2-to-1 multiplexer layouts. Technical parameters such as metal layers, transistor dimensions, and parasitic elements are carefully considered during the design process. The getcell <name> command is used to import the required modules into the layout, and the layout is extended using the "x" command. To modify the layout, the load <cell path/cell name> command is executed in the tkcon window. After modifications, the layout is saved and reloaded. The commands extract all and ext2spice are used to generate the [.spice](assets/files/csa_layout/carry_select_adder.spice) file for layout versus schematic (LVS) validation.
 
 ![CSA Layout](assets/images/csa/layout/csa_magic_layout.png)
 
