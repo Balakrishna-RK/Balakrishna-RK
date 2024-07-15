@@ -130,7 +130,7 @@ Using Yosys, gate-level synthesis of the CSA was performed, producing outputs in
 ## 4. Multiplexer Schematic and Layout Design
 
 ### 4.1 MUX Schematic Design
-A 2-to-1 multiplexer schematic was created in [Xschem](assets/files/schematic/two_one_mux.sch). The circuit design incorporates symmetric gates assigned to PMOS and NMOS transistors, creating a reusable Xschem symbol for consistent use across the design. The multiplexer symbol is saved as [mux2to1.sym](assets/files/schematic/two_one_mux.sym). A test bench was developed to verify the multiplexer’s functionality, with inputs and outputs demonstrated in the [test bench](assets/files/schematic/two_to_one_mux_tb.sch).
+A [2-to-1 Multiplexer Schematic](assets/files/schematic/two_one_mux.sch) was created in Xschem. The circuit design incorporates symmetric gates assigned to PMOS and NMOS transistors, creating a reusable Xschem symbol for consistent use across the design. The multiplexer symbol is saved as [mux2to1.sym](assets/files/schematic/two_one_mux.sym). A test bench was developed to verify the multiplexer’s functionality, with inputs and outputs demonstrated in the [test bench](assets/files/schematic/two_to_one_mux_tb.sch).
 
 ![Schematic Ciruit](assets/images/mux2to1/schematic/mux2to1_sch_circuit.png)
 ![Mux Symbol](assets/images/mux2to1/schematic/mux_symbol.png)
