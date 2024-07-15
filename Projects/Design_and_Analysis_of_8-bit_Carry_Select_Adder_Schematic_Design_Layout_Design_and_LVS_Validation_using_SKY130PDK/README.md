@@ -169,7 +169,7 @@ In CMOS technology, the full adder design typically involves using complementary
   
  ![FA testbench](assets/images/full_adder/schematic/fa_testbench.png)
 
-The full adder schematic is created in Xschem and saved as [full_adder.sch]](assets/files/schematic/full_adder.sch) . A corresponding [symbol](assets/files/schematic/full_adder.sym) is generated to facilitate its integration into the Carry Select Adder (CSA) module. The [test bench](assets/files/schematic/fa_tb.sch) for the full adder is simulated using Ngspice, verifying the functionality of the design through circuit waveforms. The use of symmetric sizes for both NMOS and PMOS transistors ensures balanced performance and minimal signal distortion.
+The full adder schematic is created in Xschem and saved as [full_adder.sch](assets/files/schematic/full_adder.sch) . A corresponding [symbol](assets/files/schematic/full_adder.sym) is generated to facilitate its integration into the Carry Select Adder (CSA) module. The [test bench](assets/files/schematic/fa_tb.sch) for the full adder is simulated using Ngspice, verifying the functionality of the design through circuit waveforms. The use of symmetric sizes for both NMOS and PMOS transistors ensures balanced performance and minimal signal distortion.
 
 ![FA Schematic Output](assets/images/full_adder/schematic/fa_schematic_output.png)
 
