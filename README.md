@@ -7,7 +7,7 @@ I am Balakrishna RK, a passionate Electrical and Electronics Engineer with a bac
 - [**Characteristics of MOS Devices Utilizing SKY130 Process Design Kit with Xschem and Ngspice**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice)
 - [**Design and Analysis of CMOS Inverter: Schematic Design, Layout Design and LVS Validation using SKY130 PDK**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_CMOS_Inverter%3A_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130_PDK)
 - [**Design and Analysis of 8-Bit Carry Select Adder: Schematic Design, Layout Design and LVS Validation using SKY130 PDK**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK)
-- **Schematic Design and Analysis of an 8-Word 8-Bit 6T SRAM Using SKY130 PDK with Xschem and Ngspice**
+- **Schematic Design and Analysis of an 8-Word 8-Bit Static RAM with 6T Storage Cells using SKY130PDK, Xschem, and Ngspice**
 
 ### Skills
 - Circuit design and analysis with software such as Ngspice, Xschem, LTspice, Matlab, and eSim
