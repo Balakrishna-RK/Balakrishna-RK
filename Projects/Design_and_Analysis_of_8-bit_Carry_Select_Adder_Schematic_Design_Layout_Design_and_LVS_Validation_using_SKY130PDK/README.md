@@ -161,7 +161,7 @@ The extracted SPICE file from Magic VLSI was simulated and compared with the sch
 ### 5.1 FA Schematic Design
 
   The Full adder is designed using the generate, propagate, and delete methodology with CMOS logic. This design and implementation will be carried out using the SkyWater 130nm technology, employing Xschem and Ngspice software. A full adder is a digital circuit that adds three input bits (A, B, and Cin) and produces two output bits (SUM and CARRY). The full adder performs binary addition, where the SUM output represents the sum of the three inputs, and the CARRY output represents the carry-over bit from the addition.
-![FA Schematic Circuit](assets/images/full_adder/schematic/fa_sch_circuit.png)
+![FA Schematic Circuit](assets/images/full_adder/schematic/full_adder.svg)
 
 ![FA symbol](assets/images/full_adder/schematic/fa_symbol.png)
 
@@ -200,7 +200,7 @@ The SPICE file obtained from the layout design in Magic VLSI is used to perform 
 ![Average Power calculation](assets/images/csa/schematic/power_analysis.png)
 
   These sums are then selected based on the actual carry-in, resulting in faster addition by parallelizing the carry propagation. After designing the CSA in Xschem, a SPICE netlist is generated and simulated using Ngspice to verify the output. The simulation results indicate that the average power consumption over 80 ns is 0.9179 µW.
-![CSA Schematic Circuit](assets/images/csa/schematic/csa_circuit.png)
+![CSA Schematic Circuit](assets/images/csa/schematic/carry_select_adder.svg)
 
 ![CSA Schematic Input](assets/images/csa/schematic/csa_input_a0_a3.png)
 
