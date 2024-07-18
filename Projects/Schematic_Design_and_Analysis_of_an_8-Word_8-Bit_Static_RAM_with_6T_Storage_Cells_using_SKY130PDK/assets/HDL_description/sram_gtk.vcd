@@ -1,0 +1,111 @@
+$date
+	Thu Jul 18 20:04:11 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb $end
+$var wire 8 ! dout [7:0] $end
+$var reg 3 " add [2:0] $end
+$var reg 8 # din [7:0] $end
+$var reg 1 $ en $end
+$var reg 1 % ysr $end
+$var reg 1 & ysw $end
+$scope module inst1 $end
+$var wire 3 ' add [2:0] $end
+$var wire 8 ( din [7:0] $end
+$var wire 1 $ en $end
+$var wire 1 % ysr $end
+$var wire 1 & ysw $end
+$var reg 8 ) dout [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx )
+bz (
+bz '
+1&
+x%
+0$
+bz #
+bz "
+bx !
+$end
+#5000
+b10010111 #
+b10010111 (
+b0 "
+b0 '
+1$
+#10000
+0$
+#15000
+1$
+b11111001 #
+b11111001 (
+b1 "
+b1 '
+#20000
+0$
+#25000
+1$
+b10000001 #
+b10000001 (
+b10 "
+b10 '
+#30000
+0$
+#35000
+1$
+b10011001 #
+b10011001 (
+b11 "
+b11 '
+#40000
+0$
+#45000
+b10010111 !
+b10010111 )
+1$
+b0 "
+b0 '
+1%
+0&
+bx #
+bx (
+#50000
+0$
+#55000
+b11111001 !
+b11111001 )
+1$
+b1 "
+b1 '
+#60000
+0$
+#65000
+b10000001 !
+b10000001 )
+1$
+b10 "
+b10 '
+#70000
+0$
+#75000
+b10011001 !
+b10011001 )
+1$
+b11 "
+b11 '
+#80000
+0$
+#85000
+1$
