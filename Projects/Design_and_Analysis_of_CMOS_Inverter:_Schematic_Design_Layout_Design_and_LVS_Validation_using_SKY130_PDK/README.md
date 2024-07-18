@@ -4,7 +4,6 @@
 
 ## Contents
 - [1. Introduction](#1-Introduction)
-  - [1.1. Objective](#11-Objective)
 
 - [2. Tools and PDK](#2-Tools-and-PDK)
   - [2.1 SKY130PDK](#21-SKY130PDK)
