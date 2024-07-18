@@ -1,0 +1,24 @@
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 100 -330 120 -330 {}
+L 4 220 -330 240 -330 {}
+L 4 140 -390 140 -370 {}
+L 4 200 -390 200 -370 {}
+B 5 97.5 -332.5 102.5 -327.5 {name=Pchar dir=in}
+B 5 237.5 -332.5 242.5 -327.5 {name=vdd dir=in}
+B 5 137.5 -392.5 142.5 -387.5 {name=bl dir=in}
+B 5 197.5 -392.5 202.5 -387.5 {name=blb dir=in}
+P 4 5 120 -370 120 -290 220 -290 220 -370 120 -370 {}
+T {Pchar} 125 -334 0 0 0.2 0.2 {}
+T {vdd} 215 -326 2 0 0.2 0.2 {}
+T {bl} 144 -365 1 0 0.2 0.2 {}
+T {blb} 204 -365 1 0 0.2 0.2 {}
+T {PRECHARGE} 141.5 -316 0 0 0.2 0.2 {}
