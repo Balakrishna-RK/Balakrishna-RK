@@ -16,33 +16,32 @@
   - [2.7 Magi VLSI](#27-Magi-VLSI)
   - [2.8 Netgen](#28-Netgen)
 
-- [3. RTL Design](#3-RTL-Design)
-  - [3.1 CSA HDL Description](#31-CSA-HDL-Description)
+- [3. HDL Description and Synthesis](#3-HDL-Description-and-Synthesis)
+  - [3.1 SRAM HDL Description](#31-RAM-HDL-Description)
   - [3.2 Gate Level Synthesis](#32-Gate-Level-Synthesis)
 
-- [4. Multiplexer Schematic and Layout Design](#4-Multiplexer-Schematic-and-Layout-Design)
-  - [4.1 MUX Schematic Design](#41-MUX-Schematic-Design)
-  - [4.2 MUX Layout Design](#42-MUX-Layout-Design)
-  - [4.3 MUX Layout Versus Schematic](#43-MUX-Layout-Versus-Schematic)
+- [4. 6T SRAM CELL Design](#4-6T-SRAM-CELL-Design)
 
-- [5. Full Adder Schematic and Layout Design](#5-Full-Adder-Schematic-and-Layout-Design)
-  - [5.1 FA Schematic Design](#51-FA-Schematic-Design)
-  - [5.2 FA Layout Design](#52-FA-Layout-Design)
-  - [5.3 FA Layout Versus Schematic](#53-FA-Layout-Versus-Schematic)
+- [5. Sense Amplifier Design](#5-Sense-Amplifier-Design)
  
-- [6. CSA Schematic and Layout Design](#6-CSA-Schematic-and-Layout-Design)
-  - [6.1 CSA Schematic Design](#61-CSA-Schematic-Design)
-  - [6.2 CSA Layout Design](#62-CSA-Layout-Design)
-  - [6.3 CSA Layout Versus Schematic](#63-CSA-Layout-Versus-Schematic)
+- [6. 3:8 Decoder Design](#6-3:8-Decoder-Design)
+
+- [7. NAND Latch Design](#7-NAND-Latch-Design)
+
+- [8. Precharge Block Design](#8-Precharge-Block-Design)
+
+- [9. Write Amplifier Design](#9-Write-Amplifier-Design)
+
+- [10. 8-Word 8-Bit SRAM Design](#9-8-Word-8-Bit-SRAM-Design)
   
-- [7. Conclusion](#7-Conclusion)
+- [11. Conclusion](#11-Conclusion)
 
 
-  ## 1. Introduction
+## 1. Introduction
+  The project involves the schematic design and analysis of an 8-bit, 8-word Static RAM (SRAM) using Xschem integrated with the SKY130 Process Design Kit (PDK) and simulated using Ngspice. Gate-level synthesis is achieved using Yosys. SRAM is a type of volatile memory that uses bistable latching circuitry to store each bit, providing fast access and low power consumption. The 6T SRAM cell, the fundamental building block of this SRAM, consists of six transistors: two cross-coupled inverters forming a bistable latch and two access transistors connecting the latch to the bitlines.
 
-  In this project, we designed an 8-bit Carry Select Adder (CSA) following a comprehensive VLSI design flow. A Carry Select Adder is an efficient adder design used in digital circuits to speed up the process of addition by calculating multiple carries in parallel. It reduces the delay by independently calculating the sum and carry for different possible carry inputs and then selecting the correct output using multiplexers. We began our project with the schematic design using Xschem and performed simulations using Ngspice to validate the functionality of the circuit at the transistor level. The behavioral design was implemented using Verilog, and we synthesized the gate-level netlist using Yosys, an open-source synthesis tool.
   
-  For layout design, we utilized Magic VLSI to create the physical layout, ensuring design rules and performance criteria were met. Layout versus schematic (LVS) validation was conducted using Netgen to confirm that the layout accurately represents the schematic design. Throughout the project, we employed the open-source SKY130 Process Design Kit (PDK) to leverage industry-standard technology in an accessible manner. Each step of the process, from schematic capture and simulation to synthesis, layout, and validation, was meticulously executed and documented, demonstrating a complete design flow of a CSA using state-of-the-art open-source tools.
+  Data is written or read by selecting the appropriate cell using a row decoder, which connects to the Wordline (WL) of the 6T SRAM cell, and a column decoder, which connects to the Bitline (BL) and Bitline Bar (BLB). The row decoder activates the WL to select a row of cells, while the column decoder selects the bitlines to read or write data. This design ensures efficient memory access and reliable data storage, with the decoders facilitating precise selection and manipulation of individual cells within the array.
 
 
 
@@ -102,5 +101,49 @@ The [SkyWater 130nm Process Design Kit (PDK)](https://skywater-pdk.readthedocs.i
 [Netgen](http://opencircuitdesign.com/netgen/) is an open-source tool for comparing netlists and performing layout versus schematic (LVS) checks. It verifies that the physical layout of a circuit matches its schematic design. Netgen is compatible with multiple EDA tools and supports integration with Magic VLSI for comprehensive design verification.
 
 To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/tutorial_xschem_sky130.html)** the instructions provided in this site.
+
+## 4. 6T SRAM CELL Design
+A 6T SRAM cell consists of six transistors: two PMOS (M4 and M2), two NMOS (M3 and M1), and two additional NMOS (M5 and M6) that connect to the bitlines. The PMOS transistors (M4 and M2) have a larger W/L ratio compared to the bitline NMOS transistors (M5 and M6), and the NMOS transistors (M3 and M1) are also sized larger than M5 and M6. This sizing strategy ensures that the cell can hold its state reliably during read and write operations. When one bitline is driven high, the corresponding bitline bar is pulled low, causing one of the cross-coupled inverters' outputs to be high and the other to be low. This differential signal between the bitlines reinforces the latched state of the inverters, maintaining the stored bit. The larger transistors (M3 and M1) enhance the drive strength for maintaining the stored value, while the bitline NMOS transistors (M5 and M6) facilitate the read and write access by connecting the cell to the bitlines during these operations.
+![6T SRAM CELL Schematic Circuit](assets/images/schematic/sram_cell_6T/6T_cell_circuit_sym.png)
+
+### Write Operation
+For a 6T SRAM cell write operation:
+
+- Drive one bitline high and the other low.
+- Turn on the wordline.
+- Bitlines overpower the cell with the new value.
+- Writability:
+  - Must overpower the feedback inverter (M5 >> M4).
+
+This behavior ensures that the new data is successfully written into the 6T SRAM cell by leveraging the stronger bitline transistors (M5 and M6) to overpower the feedback from the cell's cross-coupled inverters (M1-M4).
+![6T SRAM CELL Write Operation](assets/images/schematic/sram_cell_6T/6T_write_operation.png)
+
+### Read Operation
+For a 6T SRAM cell read operation:
+
+- Precharge both bitlines high.
+- Turn on the wordline.
+- One of the two bitlines will be pulled down by the cell.
+- Read stability:
+  - The stored value (Q) must not flip.
+  - The pull-down NMOS transistor (M3) must be stronger than the access NMOS transistor (M5) (M3 >> M5).
+
+This behavior ensures that the stored data is read correctly without altering the state of the 6T SRAM cell, maintaining its stability during the read operation.
+![6T SRAM CELL Read Operation](assets/images/schematic/sram_cell_6T/6T_read_operation.png)
+
+## 5. Sense Amplifier Design
+ 
+## 6. 3:8 Decoder Design
+
+## 7. NAND Latch Design
+
+## 8. Precharge Block Design
+
+## 9. Write Amplifier Design
+
+## 10. 8-Word 8-Bit SRAM Design
+  
+## 11. Conclusion
+
 
 
