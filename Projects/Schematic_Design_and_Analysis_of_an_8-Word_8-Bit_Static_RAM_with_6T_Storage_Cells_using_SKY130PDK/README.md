@@ -1,5 +1,106 @@
-The project involves the schematic design and analysis of an 8-bit 8-word Static RAM (SRAM) using Xschem, integrated with the SkyWater 130nm Process Design Kit (SKY130PDK), and simulated using Ngspice. SRAM is a type of semiconductor memory that uses bistable latching circuitry to store each bit. Unlike dynamic RAM (DRAM), SRAM does not need to be periodically refreshed, making it faster but also more expensive. This SRAM design consists of 8 words, each 8 bits in size, organized to allow for efficient data storage and retrieval.
+# Design and Analysis of 8-bit Carry Select Adder: Schematic Design, Layout Design and LVS Validation using SKY130PDK
 
-The design process begins with the creation of the SRAM schematic in Xschem, leveraging the components and models provided by the SKY130PDK. Following the schematic design, the circuit is simulated using Ngspice to validate its functionality and performance. The next step involves gate-level synthesis, performed using Yosys, to translate the high-level schematic into a netlist suitable for layout and fabrication.
+#### The project involves the schematic design and analysis of an 8-bit 8-word Static RAM (SRAM) using Xschem, integrated with the SkyWater 130nm Process Design Kit (SKY130PDK), and simulated using Ngspice. SRAM is a type of semiconductor memory that uses bistable latching circuitry to store each bit. This SRAM design consists of 8 words, each 8 bits in size, organized to allow for efficient data storage and retrieval.The design process begins with the creation of the SRAM schematic in Xschem, leveraging the components and models provided by the SKY130PDK.The next step involves gate-level synthesis, performed using Yosys, to translate the high-level schematic into a netlist suitable for layout and fabrication.
 
-Through this project, a comprehensive understanding of SRAM architecture and its implementation in a modern semiconductor process is achieved, demonstrating key skills in VLSI design flow from schematic capture to synthesis.
+## Contents
+- [1. Introduction](#1-Introduction)
+  - [1.1. Objective](#11-Objective)
+
+- [2. Tools and PDK](#2-Tools-and-PDK)
+  - [2.1 SKY130PDK](#21-SKY130PDK)
+  - [2.2 Icarus Verilog](#22-Icarus-Verilog)
+  - [2.3 GTK Wave](#23-GTK-Wave)
+  - [2.4 Yosys](#24-Yosys)
+  - [2.5 Xschem](#25-Xschem)
+  - [2.6 Ngspice](#26-Ngspice)
+  - [2.7 Magi VLSI](#27-Magi-VLSI)
+  - [2.8 Netgen](#28-Netgen)
+
+- [3. RTL Design](#3-RTL-Design)
+  - [3.1 CSA HDL Description](#31-CSA-HDL-Description)
+  - [3.2 Gate Level Synthesis](#32-Gate-Level-Synthesis)
+
+- [4. Multiplexer Schematic and Layout Design](#4-Multiplexer-Schematic-and-Layout-Design)
+  - [4.1 MUX Schematic Design](#41-MUX-Schematic-Design)
+  - [4.2 MUX Layout Design](#42-MUX-Layout-Design)
+  - [4.3 MUX Layout Versus Schematic](#43-MUX-Layout-Versus-Schematic)
+
+- [5. Full Adder Schematic and Layout Design](#5-Full-Adder-Schematic-and-Layout-Design)
+  - [5.1 FA Schematic Design](#51-FA-Schematic-Design)
+  - [5.2 FA Layout Design](#52-FA-Layout-Design)
+  - [5.3 FA Layout Versus Schematic](#53-FA-Layout-Versus-Schematic)
+ 
+- [6. CSA Schematic and Layout Design](#6-CSA-Schematic-and-Layout-Design)
+  - [6.1 CSA Schematic Design](#61-CSA-Schematic-Design)
+  - [6.2 CSA Layout Design](#62-CSA-Layout-Design)
+  - [6.3 CSA Layout Versus Schematic](#63-CSA-Layout-Versus-Schematic)
+  
+- [7. Conclusion](#7-Conclusion)
+
+
+  ## 1. Introduction
+
+  In this project, we designed an 8-bit Carry Select Adder (CSA) following a comprehensive VLSI design flow. A Carry Select Adder is an efficient adder design used in digital circuits to speed up the process of addition by calculating multiple carries in parallel. It reduces the delay by independently calculating the sum and carry for different possible carry inputs and then selecting the correct output using multiplexers. We began our project with the schematic design using Xschem and performed simulations using Ngspice to validate the functionality of the circuit at the transistor level. The behavioral design was implemented using Verilog, and we synthesized the gate-level netlist using Yosys, an open-source synthesis tool.
+  
+  For layout design, we utilized Magic VLSI to create the physical layout, ensuring design rules and performance criteria were met. Layout versus schematic (LVS) validation was conducted using Netgen to confirm that the layout accurately represents the schematic design. Throughout the project, we employed the open-source SKY130 Process Design Kit (PDK) to leverage industry-standard technology in an accessible manner. Each step of the process, from schematic capture and simulation to synthesis, layout, and validation, was meticulously executed and documented, demonstrating a complete design flow of a CSA using state-of-the-art open-source tools.
+
+
+
+## 2. Tools and PDK
+
+### 2.1 SKY130PDK
+
+![SkyWater 130nm PDK](assets/images/tools/sykwater.png)
+
+The [SkyWater 130nm Process Design Kit (PDK)](https://skywater-pdk.readthedocs.io/en/main/index.html#) is an open-source toolset provided by SkyWater Technology, tailored for semiconductor design at the 130nm technology node. It includes essential components such as design rules, device models, and standard cell libraries. The purpose of the SkyWater 130nm PDK is to enable designers to create and simulate integrated circuits with accuracy and efficiency. It supports both analog and digital circuit design, making it suitable for a wide range of applications from consumer electronics to advanced research in semiconductor technology.
+
+### 2.2 Icarus Verilog
+
+![Icarus Verilog](assets/images/tools/icarus_verilog.png)
+
+[Icarus Verilog ](https://iverilog.fandom.com/wiki/Installation_Guide)is an open-source Verilog simulation and synthesis tool. It supports both the IEEE-1364 and IEEE-1800 standards, providing a robust environment for compiling and simulating Verilog designs. Icarus Verilog is widely used in educational and research settings due to its flexibility and free availability.
+
+### 2.3 GTK Wave
+
+![GTK Wave](assets/images/tools/GTK_Wave.png)
+
+[GTKWave ](https://gtkwave.sourceforge.net/)is an open-source waveform viewer that allows users to view simulation results of digital circuits. It supports several waveform formats, including VCD (Value Change Dump) files, which are commonly generated by simulators like Icarus Verilog. GTKWave provides a user-friendly interface for analyzing signal transitions and debugging digital designs.
+
+### 2.4 Yosys
+
+![Yosys](assets/images/tools/yosys.png)
+
+[Yosys](https://yosyshq.net/yosys/) is an open-source framework for Verilog RTL synthesis. It allows designers to convert Verilog code into gate-level netlists, supporting various FPGA and ASIC technologies. Yosys is highly extensible, offering a modular architecture that enables users to add custom synthesis algorithms and optimizations. It is widely used in conjunction with other open-source EDA tools for complete digital design workflows.
+
+### 2.5 Xschem
+
+![Xschem](assets/images/tools/xschem.png)
+
+[Xschem](https://xschem.sourceforge.io/stefan/index.html) is coupled with the SkyWater 130nm Process Design Kit (PDK) and Ngspice, forms a robust toolchain for VLSI circuit design and simulation. Xschem serves as a powerful schematic capture tool, providing an intuitive interface for designing and analyzing circuits at the transistor level. Integrated with the SkyWater 130nm PDK, Xschem facilitates efficient creation and editing of circuit schematics, ensuring compatibility with specific design rules and device models. Ngspice complements Xschem by enabling accurate simulation of analog and mixed-signal circuits, crucial for predicting and validating circuit behavior before fabrication. Together, they enhance the precision and effectiveness of semiconductor design processes.
+**[Learn more about Xschem](https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.html")**
+
+### 2.6 Ngspice
+
+![Ngspice](assets/images/tools/ngspice.png)
+
+[Ngspice](https://ngspice.sourceforge.io/) in conjunction with Xschem and the SkyWater 130nm Process Design Kit (PDK), is pivotal for simulating VLSI circuits with precision. It enables thorough analysis of analog and mixed-signal designs, predicting circuit performance and validating functionality before fabrication. Integrated seamlessly with Xschem and utilizing the comprehensive device models and design rules of the SkyWater 130nm PDK, Ngspice supports various simulation types, including transient and AC/DC analyses. This combination ensures that designers can achieve accurate and reliable results, optimizing circuits for performance, power efficiency, and overall design robustness in semiconductor applications.
+
+**[Get Ngspice Manual Here!](https://ngspice.sourceforge.io/docs/ngspice-manual.pdf)**
+
+### 2.7 Magi VLSI
+
+![Magic VLSI](assets/images/tools/Magic_VLSI.png)
+
+
+[Magic VLSI](http://opencircuitdesign.com/magic/) is an open-source layout tool for designing and editing integrated circuit layouts. It is particularly known for its simple and intuitive user interface. Magic supports various fabrication technologies, including the SKY130 PDK, and provides features for design rule checking (DRC), layout versus schematic (LVS) checking, and extraction of circuit parameters.
+
+### 2.8 Netgen
+
+![Netgen](assets/images/tools/Netgen.png)
+
+
+[Netgen](http://opencircuitdesign.com/netgen/) is an open-source tool for comparing netlists and performing layout versus schematic (LVS) checks. It verifies that the physical layout of a circuit matches its schematic design. Netgen is compatible with multiple EDA tools and supports integration with Magic VLSI for comprehensive design verification.
+
+To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/tutorial_xschem_sky130.html)** the instructions provided in this site.
+
+
