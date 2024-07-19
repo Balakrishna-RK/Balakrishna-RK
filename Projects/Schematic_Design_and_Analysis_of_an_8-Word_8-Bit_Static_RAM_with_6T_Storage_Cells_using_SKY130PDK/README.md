@@ -107,11 +107,9 @@ To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/
 ## 3. HDL Description and Synthesis
 
 ### 3.1 SRAM HDL Description
-Here's a paragraph that describes the SRAM HDL design, including the provided Verilog code and its explanation:
-
 ---
 
-The 8-Word 8-bit SRAM HDL description is created using Verilog code, synthesized and simulated with the Icarus Verilog tool. The .vcd file generated from the test bench is visualized using GTKWave. The SRAM HDL design includes inputs for enabling the decoder (En), performing write operations (YSW), and performing read operations (YSR). It also features an address input to select the storage cell, a data input (Din) for writing data, and a data output (Dout) for reading data. 
+The 8-Word 8-bit SRAM HDL description is created using [Verilog code](assets/HDL_description/sram.v), synthesized and simulated with the Icarus Verilog tool. The .vcd file generated from the [test bench](assets/HDL_description/sram_tb.v) is visualized using GTKWave. The SRAM HDL design includes inputs for enabling the decoder (En), performing write operations (YSW), and performing read operations (YSR). It also features an address input to select the storage cell, a data input (Din) for writing data, and a data output (Dout) for reading data. 
 
 The Verilog code for the SRAM module is as follows:
 
@@ -151,16 +149,14 @@ The `ram` array is an 8x8-bit register array that stores the data. The `always @
 
 ### 3.2 Gate Level Synthesis
 
-Here’s a markdown paragraph explaining the gate-level synthesis process using the specified `make` commands:
-
 ---
 
 The gate-level synthesis is performed using Yosys along with GraphViz, following these commands:
 
 1. **Read and elaborate the design** using the Verilog frontend:
    ```sh
-   yosys> read -sv tests/simple/fiedler-cooley.v
-   yosys> hierarchy -top up3down5
+   yosys> read -sv sram.v
+   yosys> hierarchy -top sram
    ```
 
 2. **Write the design to the console** in the RTLIL format used by Yosys internally:
@@ -183,7 +179,7 @@ The gate-level synthesis is performed using Yosys along with GraphViz, following
    yosys> write_verilog synth.v
    ```
 
-6. **Generate a .dot file for visualization**:
+6. **Generate a [.dot](assets/HDL_description/synth.dot) file for visualization**:
    ```sh
    yosys> show -prefix synth -notitle -colors 2 -width -format dot
    ```
@@ -200,7 +196,7 @@ This sequence of commands reads and processes the Verilog design, performs optim
 ![Gate Level Synthesis](assets/images/HDL_Description_Synthesis/sram_synthesis.svg)
 
 ## 4. 6T SRAM CELL Design
-A 6T SRAM cell consists of six transistors: two PMOS (M4 and M2), two NMOS (M3 and M1), and two additional NMOS (M5 and M6) that connect to the bitlines. The PMOS transistors (M4 and M2) have a larger W/L ratio compared to the bitline NMOS transistors (M5 and M6), and the NMOS transistors (M3 and M1) are also sized larger than M5 and M6. This sizing strategy ensures that the cell can hold its state reliably during read and write operations. When one bitline is driven high, the corresponding bitline bar is pulled low, causing one of the cross-coupled inverters' outputs to be high and the other to be low. This differential signal between the bitlines reinforces the latched state of the inverters, maintaining the stored bit. The larger transistors (M3 and M1) enhance the drive strength for maintaining the stored value, while the bitline NMOS transistors (M5 and M6) facilitate the read and write access by connecting the cell to the bitlines during these operations.
+A [6T SRAM cell](sram_6t_cell.sch) consists of six transistors: two PMOS (M4 and M2), two NMOS (M3 and M1), and two additional NMOS (M5 and M6) that connect to the bitlines. The PMOS transistors (M4 and M2) have a larger W/L ratio compared to the bitline NMOS transistors (M5 and M6), and the NMOS transistors (M3 and M1) are also sized larger than M5 and M6. This sizing strategy ensures that the cell can hold its state reliably during read and write operations. When one bitline is driven high, the corresponding bitline bar is pulled low, causing one of the cross-coupled inverters' outputs to be high and the other to be low. This differential signal between the bitlines reinforces the latched state of the inverters, maintaining the stored bit. The larger transistors (M3 and M1) enhance the drive strength for maintaining the stored value, while the bitline NMOS transistors (M5 and M6) facilitate the read and write access by connecting the cell to the bitlines during these operations.
 ![6T SRAM CELL Schematic Circuit](assets/images/schematic/sram_cell_6T/6T_cell_circuit_sym.png)
 
 ### Write Operation
@@ -230,7 +226,7 @@ This behavior ensures that the stored data is read correctly without altering th
 
 ## 5. Sense Amplifier Design
 
-  A sense amplifier in an SRAM (Static Random Access Memory) is a crucial component that plays a vital role in reading the stored data. I used a latch-type sense amplifier, where the primary function is to detect and amplify the small voltage differences that represent the stored binary data in the SRAM cells. This type of sense amplifier consists of a pair of cross-coupled inverters that form a bistable latch, which can quickly and reliably determine the state of the bitline pair during a read operation. When a read operation is initiated, the bitlines are precharged to an intermediate voltage. The small difference in voltage, caused by the charge stored in the selected SRAM cell, is sensed by the sense amplifier. 
+  A [Sense amplifier](assets/schematic/sense_amp.sch) in an SRAM (Static Random Access Memory) is a crucial component that plays a vital role in reading the stored data. I used a latch-type sense amplifier, where the primary function is to detect and amplify the small voltage differences that represent the stored binary data in the SRAM cells. This type of sense amplifier consists of a pair of cross-coupled inverters that form a bistable latch, which can quickly and reliably determine the state of the bitline pair during a read operation. When a read operation is initiated, the bitlines are precharged to an intermediate voltage. The small difference in voltage, caused by the charge stored in the selected SRAM cell, is sensed by the sense amplifier. 
   
   ![Sense Amplifier Circuit](assets/images/schematic/sense_amplifier/sa_sch_circuit.png) 
   
@@ -240,7 +236,7 @@ This behavior ensures that the stored data is read correctly without altering th
   ![Sense Amplifier Output](assets/images/schematic/sense_amplifier/sa_output.png)
  
 ## 6. Address Decoder Design
-An address decoder in SRAM (Static Random Access Memory) is an essential component responsible for selecting the appropriate memory cells for read and write operations based on the provided address. The 3:8 decoder is a crucial element in both row and column decoders in SRAM, enabling the selection of one out of eight possible rows or columns by decoding a 3-bit address input. This decoder design effectively simplifies the addressing mechanism, allowing for efficient and accurate access to the memory cells. In this implementation, a pseudo NMOS AND gate is used to design the decoder, which reduces the logical effort by minimizing the size and power consumption typically associated with PMOS transistors. This approach enhances the overall speed and efficiency of the decoding process. The output from XSchem and Ngspice simulations validates the functionality and performance of the 3:8 decoder in the SRAM design, demonstrating its capability to handle the addressing needs of high-speed memory operations. The pseudo NMOS AND gate's effectiveness in lowering logical effort contributes significantly to the optimized performance of the SRAM.
+An [Address decoder](assets/schematic/decoder_3to8.sch) in SRAM (Static Random Access Memory) is an essential component responsible for selecting the appropriate memory cells for read and write operations based on the provided address. The 3:8 decoder is a crucial element in both row and column decoders in SRAM, enabling the selection of one out of eight possible rows or columns by decoding a 3-bit address input. This decoder design effectively simplifies the addressing mechanism, allowing for efficient and accurate access to the memory cells. In this implementation, a pseudo NMOS AND gate is used to design the decoder, which reduces the logical effort by minimizing the size and power consumption typically associated with PMOS transistors. This approach enhances the overall speed and efficiency of the decoding process. The output from XSchem and Ngspice simulations validates the functionality and performance of the 3:8 decoder in the SRAM design, demonstrating its capability to handle the addressing needs of high-speed memory operations. The pseudo NMOS AND gate's effectiveness in lowering logical effort contributes significantly to the optimized performance of the SRAM.
 
 ![3:8 Decoder Circuit](assets/images/schematic/decoder_3to8/decoder_3to8.svg)
 
@@ -253,7 +249,7 @@ The 3:8 decoder circuit design in Xschem has been completed, and a symbol for th
 ![3:8 Decoder D4 to D7](assets/images/schematic/decoder_3to8/deco_op_d4_d7.png)
 
 ## 7. NAND Latch Design
-The NAND latch is an integral component used to obtain the output from the sense amplifier in SRAM. It consists of two NAND gates connected in a cross-coupled configuration, forming a stable latch that captures and holds the read output from the 6T SRAM cell. When the sense amplifier provides the differential outputs SA and SA', the NAND latch receives these signals and latches the read data. Each row in the SRAM array has one NAND latch connected to its output through a read decoder, ensuring that the correct data is read from the selected memory cell. This setup enables reliable data retrieval and maintains the integrity of the stored information during read operations.
+The [NAND latch](assets/schematic/nand_latch.sch) is an integral component used to obtain the output from the sense amplifier in SRAM. It consists of two NAND gates connected in a cross-coupled configuration, forming a stable latch that captures and holds the read output from the 6T SRAM cell. When the sense amplifier provides the differential outputs SA and SA', the NAND latch receives these signals and latches the read data. Each row in the SRAM array has one NAND latch connected to its output through a read decoder, ensuring that the correct data is read from the selected memory cell. This setup enables reliable data retrieval and maintains the integrity of the stored information during read operations.
 
 ![NAND Latch Circuit](assets/images/schematic/nand_latch/nand_latch_sch_circuit.png)
 
@@ -261,20 +257,20 @@ The NAND latch is an integral component used to obtain the output from the sense
 
 ## 8. Precharge Block Design
 
-In SRAM systems, the precharge block plays a crucial role in preparing the bitlines for accurate data reading from the 6T SRAM cell. Prior to reading, the bitlines are precharged to a voltage level, typically Vdd/2, using PMOS transistors M1 and M2. This precharging process ensures that both bitlines start from a balanced state, minimizing potential noise and improving the accuracy of the subsequent read operation. The PMOS transistor M3 is used to equalize the bitlines, ensuring that they are at the same voltage level before the read phase begins. Once precharging is complete, the word line and the YSR (sense amplifier read enable) are activated to initiate the read process. This configuration allows the sense amplifier to accurately detect and amplify the small voltage differences between the bitlines, reflecting the stored data from the SRAM cell. The effective use of these transistors in the precharge block enhances the reliability and performance of SRAM memory reads.
+In SRAM systems, the [precharge block](assets/schematic/precharge.sch) plays a crucial role in preparing the bitlines for accurate data reading from the 6T SRAM cell. Prior to reading, the bitlines are precharged to a voltage level, typically Vdd/2, using PMOS transistors M1 and M2. This precharging process ensures that both bitlines start from a balanced state, minimizing potential noise and improving the accuracy of the subsequent read operation. The PMOS transistor M3 is used to equalize the bitlines, ensuring that they are at the same voltage level before the read phase begins. Once precharging is complete, the word line and the YSR (sense amplifier read enable) are activated to initiate the read process. This configuration allows the sense amplifier to accurately detect and amplify the small voltage differences between the bitlines, reflecting the stored data from the SRAM cell. The effective use of these transistors in the precharge block enhances the reliability and performance of SRAM memory reads.
 
 ![Precharge Block](assets/images/schematic/precharge_block/precharge_sch_circuit.png)
 
 ## 9. Write Amplifier Design
 
-In SRAM (Static Random Access Memory), the write amplifier is a critical component responsible for ensuring that data is accurately written to the SRAM cells. When a write operation is initiated, the write decoder sends the data to be written into the SRAM. The write amplifier plays a pivotal role in converting this data into a suitable form for the bitlines and bitline bar. Specifically, when the YSR (sense amplifier read enable) is activated, the data input (Din) is directed to the write amplifier, which then processes and amplifies the signals to drive the bitlines. The write amplifier typically consists of a buffer for the bitline and an inverter to generate the complementary signal for the bitline bar. This configuration ensures that the correct voltage levels are applied to the bitlines.
+In SRAM, the [write amplifier](assets/schematic/write_amp.sch) is a critical component responsible for ensuring that data is accurately written to the SRAM cells. When a write operation is initiated, the write decoder sends the data to be written into the SRAM. The write amplifier plays a pivotal role in converting this data into a suitable form for the bitlines and bitline bar. Specifically, when the YSR (sense amplifier read enable) is activated, the data input (Din) is directed to the write amplifier, which then processes and amplifies the signals to drive the bitlines. The write amplifier typically consists of a buffer for the bitline and an inverter to generate the complementary signal for the bitline bar. This configuration ensures that the correct voltage levels are applied to the bitlines.
 
 ![Write Amplifier Circuit](assets/images/schematic/write_amp/wa_sch_circuit.png)
 
 ![Write Amplifier Test Bench](assets/images/schematic/write_amp/wa_sch_tb_output.png)
 
 ## 10. 8-Word 8-Bit SRAM Design
-The 8-word, 8-bit SRAM operates by utilizing a structured arrangement of memory cells, address decoders, and read/write circuitry to facilitate efficient data storage and retrieval. The SRAM array consists of 8 rows and 8 columns, with each cell capable of storing a single bit of data. When a read operation is initiated, the address decoder selects the appropriate row and column based on the 3-bit address input, enabling the corresponding bitlines. The bitlines are precharged to a balanced voltage level using PMOS transistors, preparing them for accurate data reading. 
+The [8-word 8-bit SRAM](assets/schematic/sram_8word.sch) operates by utilizing a structured arrangement of memory cells, address decoders, and read/write circuitry to facilitate efficient data storage and retrieval. The SRAM array consists of 8 rows and 8 columns, with each cell capable of storing a single bit of data. When a read operation is initiated, the address decoder selects the appropriate row and column based on the 3-bit address input, enabling the corresponding bitlines. The bitlines are precharged to a balanced voltage level using PMOS transistors, preparing them for accurate data reading. 
 
 ![SRAM Block Diagram](assets/images/schematic/sram_8word/SRAM_block_diagram.png)
 
