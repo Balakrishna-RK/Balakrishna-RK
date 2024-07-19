@@ -107,8 +107,97 @@ To install follow **[All Tools](https://xschem.sourceforge.io/stefan/xschem_man/
 ## 3. HDL Description and Synthesis
 
 ### 3.1 SRAM HDL Description
+Here's a paragraph that describes the SRAM HDL design, including the provided Verilog code and its explanation:
+
+---
+
+The 8-Word 8-bit SRAM HDL description is created using Verilog code, synthesized and simulated with the Icarus Verilog tool. The .vcd file generated from the test bench is visualized using GTKWave. The SRAM HDL design includes inputs for enabling the decoder (En), performing write operations (YSW), and performing read operations (YSR). It also features an address input to select the storage cell, a data input (Din) for writing data, and a data output (Dout) for reading data. 
+
+The Verilog code for the SRAM module is as follows:
+
+```verilog
+module sram(
+    input en,
+    input ysw,ysr,
+    input [2:0] add,
+    input [7:0] din,
+    output reg [7:0] dout
+);
+
+    reg [7:0] ram [7:0];
+
+    always @(posedge en) begin
+      if(ysw)
+        ram[add] <= din;
+      else if(ysr)
+        dout <= ram[add];
+      else
+        dout <= 8'bxxxxxxxx;
+    end
+
+endmodule
+```
+
+In this code, the `sram` module defines an 8-word, 8-bit SRAM with the following functionality:
+- **Inputs**: `en` (enable), `ysw` (write enable), `ysr` (read enable), `add` (address), and `din` (data input).
+- **Outputs**: `dout` (data output).
+
+The `ram` array is an 8x8-bit register array that stores the data. The `always @(posedge en)` block triggers on the rising edge of the `en` signal. If `ysw` is high, the module writes the data from `din` into the addressed location specified by `add`. If `ysr` is high, it reads the data from the addressed location into `dout`. If neither `ysw` nor `ysr` is active, `dout` is set to an undefined state (`8'bxxxxxxxx`). The simulated output and its behavior can be observed using GTKWave to ensure the SRAM operates as intended.
+
+---
+
+
+![GTK Wave Output](assets/images/HDL_Description_Synthesis/sram_gtkwave.png)
 
 ### 3.2 Gate Level Synthesis
+
+Here’s a markdown paragraph explaining the gate-level synthesis process using the specified `make` commands:
+
+---
+
+The gate-level synthesis is performed using Yosys along with GraphViz, following these commands:
+
+1. **Read and elaborate the design** using the Verilog frontend:
+   ```sh
+   yosys> read -sv tests/simple/fiedler-cooley.v
+   yosys> hierarchy -top up3down5
+   ```
+
+2. **Write the design to the console** in the RTLIL format used by Yosys internally:
+   ```sh
+   yosys> write_rtlil
+   ```
+
+3. **Convert processes (always blocks) to netlist elements** and perform some simple optimizations:
+   ```sh
+   yosys> proc; opt
+   ```
+
+4. **Translate netlist to gate logic** and perform additional optimizations:
+   ```sh
+   yosys> techmap; opt
+   ```
+
+5. **Write the design netlist to a new Verilog file**:
+   ```sh
+   yosys> write_verilog synth.v
+   ```
+
+6. **Generate a .dot file for visualization**:
+   ```sh
+   yosys> show -prefix synth -notitle -colors 2 -width -format dot
+   ```
+
+To view the gate-level synthesis result, use the following command in the file directory:
+```sh
+$ Xdot synth.dot &
+```
+
+This sequence of commands reads and processes the Verilog design, performs optimizations, translates it to gate logic, and produces a visual representation of the netlist.
+
+---
+
+![Gate Level Synthesis](assets/images/HDL_Description_Synthesis/sram_synthesis.svg)
 
 ## 4. 6T SRAM CELL Design
 A 6T SRAM cell consists of six transistors: two PMOS (M4 and M2), two NMOS (M3 and M1), and two additional NMOS (M5 and M6) that connect to the bitlines. The PMOS transistors (M4 and M2) have a larger W/L ratio compared to the bitline NMOS transistors (M5 and M6), and the NMOS transistors (M3 and M1) are also sized larger than M5 and M6. This sizing strategy ensures that the cell can hold its state reliably during read and write operations. When one bitline is driven high, the corresponding bitline bar is pulled low, causing one of the cross-coupled inverters' outputs to be high and the other to be low. This differential signal between the bitlines reinforces the latched state of the inverters, maintaining the stored bit. The larger transistors (M3 and M1) enhance the drive strength for maintaining the stored value, while the bitline NMOS transistors (M5 and M6) facilitate the read and write access by connecting the cell to the bitlines during these operations.
@@ -121,7 +210,7 @@ For a 6T SRAM cell write operation:
 - Turn on the wordline.
 - Bitlines overpower the cell with the new value.
 - Writability:
-  - Must overpower the feedback inverter (M5 >> M4).
+  - Must overpower the feedback inverter (M5 >> M4)
 
 This behavior ensures that the new data is successfully written into the 6T SRAM cell by leveraging the stronger bitline transistors (M5 and M6) to overpower the feedback from the cell's cross-coupled inverters (M1-M4).
 ![6T SRAM CELL Write Operation](assets/images/schematic/sram_cell_6T/6T_write_operation.png)
