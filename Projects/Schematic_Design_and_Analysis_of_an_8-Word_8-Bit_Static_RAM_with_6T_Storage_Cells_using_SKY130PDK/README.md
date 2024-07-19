@@ -24,7 +24,7 @@
 
 - [5. Sense Amplifier Design](#5-Sense-Amplifier-Design)
  
-- [6. 3:8 Decoder Design](#6-3:8-Decoder-Design)
+- [6. Address Decoder Design](#6-Address-Decoder-Design)
 
 - [7. NAND Latch Design](#7-NAND-Latch-Design)
 
@@ -133,7 +133,7 @@ This behavior ensures that the stored data is read correctly without altering th
 
 ## 5. Sense Amplifier Design
  
-## 6. 3:8 Decoder Design
+## 6. Address Decoder Design
 
 ## 7. NAND Latch Design
 
