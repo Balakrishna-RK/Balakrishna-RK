@@ -1,4 +1,4 @@
-# Design and Analysis of 8-bit Carry Select Adder: Schematic Design, Layout Design and LVS Validation using SKY130PDK
+# Schematic Design and Analysis of an 8-Word 8-Bit Static RAM with 6T Storage Cells using SKY130PDK
 
 #### The project involves the schematic design and analysis of an 8-bit 8-word Static RAM (SRAM) using Xschem, integrated with the SkyWater 130nm Process Design Kit (SKY130PDK), and simulated using Ngspice. SRAM is a type of semiconductor memory that uses bistable latching circuitry to store each bit. This SRAM design consists of 8 words, each 8 bits in size, organized to allow for efficient data storage and retrieval.The design process begins with the creation of the SRAM schematic in Xschem, leveraging the components and models provided by the SKY130PDK.The next step involves gate-level synthesis, performed using Yosys, to translate the high-level schematic into a netlist suitable for layout and fabrication.
 
