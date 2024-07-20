@@ -1,6 +1,6 @@
 # Design and Analysis of 8-bit Carry Select Adder: Schematic Design, Layout Design and LVS Validation using SKY130PDK
 
-#### In this project, we developed an 8-bit Carry Select Adder (CSA) following a complete design flow. We began with the schematic design using Xschem and validated it with Ngspice simulations. The behavioral design was implemented in Verilog and synthesized to the gate level using Yosys. The layout was created in Magic VLSI, and Layout Versus Schematic (LVS) validation was performed using Yosys. This project demonstrates the full CSA design process, from schematic and behavioral design to physical implementation and verification. 
+#### The 8-bit Carry Select Adder (CSA) was developed following a complete design flow. The process began with schematic design using Xschem, validated through Ngspice simulations. Behavioral design was implemented in Verilog and synthesized to the gate level using Yosys. The layout was created in Magic VLSI, with Layout Versus Schematic (LVS) validation performed using Yosys. This project demonstrates the full CSA design process, encompassing schematic and behavioral design, physical implementation, and verification. 
 
 ## Contents
 - [1. Introduction](#1-Introduction)
@@ -38,10 +38,9 @@
 
 
   ## 1. Introduction
+The design of an 8-bit Carry Select Adder (CSA) followed a comprehensive VLSI design flow. The Carry Select Adder, known for its efficiency in digital circuits, speeds up addition by calculating multiple carries in parallel. It reduces delay by independently computing the sum and carry for different carry inputs and selecting the correct output using multiplexers. The project began with schematic design using Xschem, with simulations performed using Ngspice to validate transistor-level functionality. Behavioral design was implemented in Verilog, and the gate-level netlist was synthesized using Yosys, an open-source synthesis tool.
 
-  In this project, we designed an 8-bit Carry Select Adder (CSA) following a comprehensive VLSI design flow. A Carry Select Adder is an efficient adder design used in digital circuits to speed up the process of addition by calculating multiple carries in parallel. It reduces the delay by independently calculating the sum and carry for different possible carry inputs and then selecting the correct output using multiplexers. We began our project with the schematic design using Xschem and performed simulations using Ngspice to validate the functionality of the circuit at the transistor level. The behavioral design was implemented using Verilog, and we synthesized the gate-level netlist using Yosys, an open-source synthesis tool.
-  
-  For layout design, we utilized Magic VLSI to create the physical layout, ensuring design rules and performance criteria were met. Layout versus schematic (LVS) validation was conducted using Yosys to confirm that the layout accurately represents the schematic design. Throughout the project, we employed the open-source SKY130 Process Design Kit (PDK) to leverage industry-standard technology in an accessible manner. Each step of the process, from schematic capture and simulation to synthesis, layout, and validation, was meticulously executed and documented, demonstrating a complete design flow of a CSA using state-of-the-art open-source tools.
+For layout design, Magic VLSI was utilized to create the physical layout, ensuring compliance with design rules and performance criteria. Layout versus Schematic (LVS) validation was conducted using Yosys to confirm accurate representation of the schematic design. The open-source SKY130 Process Design Kit (PDK) was employed throughout the project to leverage industry-standard technology. Each step of the process, from schematic capture and simulation to synthesis, layout, and validation, was meticulously executed and documented, showcasing a complete CSA design flow using state-of-the-art open-source tools.
 
 
 
