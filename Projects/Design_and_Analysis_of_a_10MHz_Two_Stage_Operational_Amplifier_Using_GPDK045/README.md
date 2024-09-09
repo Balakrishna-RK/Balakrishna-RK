@@ -102,7 +102,7 @@ With I<sub>D7</sub> set at 176.68 µA, the width-to-length ratio (W/L)  of M7 wa
 After designing the operational amplifier based on the calculated parameters, it is essential to ensure that the PDK provides the necessary large transistor sizes to meet the design requirements. Once the operational amplifier circuit is created according to the W/L ratios, it is crucial to verify that all transistors remain in saturation for both ICMR <sub>-ve</sub> and ICMR<sub>+ve</sub>. Transistors operating in saturation are necessary to maintain the desired gain and linearity, ensuring proper amplification. Saturation also helps achieve higher output impedance, which is critical for the stability and overall performance of the op-amp.
 
 ![Sat at Vin=0.8 V](asset/images/Design_Flow/image8_saturation_Vin_800mV.jpeg)
-![Sat at Vin=1.8 V](asset/images/Design_Flow/asset/images/Design_Flow/image9_saturation_Vin_1_8V.jpeg)
+![Sat at Vin=1.8 V](asset/images/Design_Flow/image9_saturation_Vin_1_8V.jpeg)
 
 
 ### 3.3 Gain and Power Calculation
