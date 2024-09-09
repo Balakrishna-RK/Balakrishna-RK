@@ -6,7 +6,7 @@
 ## Contents
 - [1. Introduction](#1-Introduction)
 - [2. Tools and PDK](#2-Tools-and-PDK)
-  - [2.1 GPDK045](#21-SKY130PDK)
+  - [2.1 GPDK045](#21-GPDK045)
   - [2.2 Cadence Virtuoso](#22-Cadence-Virtuoso)
 - [3. Schematic Design](#3-Schematic-Design)
   - [3.1 Stage I](#31-Stage-I)
