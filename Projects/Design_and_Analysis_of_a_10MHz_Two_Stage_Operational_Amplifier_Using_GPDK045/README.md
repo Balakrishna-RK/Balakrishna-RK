@@ -98,6 +98,13 @@ With I<sub>D7</sub> set at 176.68 µA, the width-to-length ratio (W/L)  of M7 wa
 | M5, M8 | 4.5       | 675            | 150             |
 | M6     | 13        | 1,950          | 150             |
 | M7     | 31.8      | 4,770          | 150             |
+
+After designing the operational amplifier based on the calculated parameters, it is essential to ensure that the PDK provides the necessary large transistor sizes to meet the design requirements. Once the operational amplifier circuit is created according to the W/L ratios, it is crucial to verify that all transistors remain in saturation for both ICMR <sub>-ve</sub> and ICMR<sub>+ve</sub>. Transistors operating in saturation are necessary to maintain the desired gain and linearity, ensuring proper amplification. Saturation also helps achieve higher output impedance, which is critical for the stability and overall performance of the op-amp.
+
+![Sat at Vin=0.8 V](asset/images/Design_Flow/image8_saturation_Vin_800mV.jpeg)
+![Sat at Vin=1.8 V](asset/images/Design_Flow/asset/images/Design_Flow/image9_saturation_Vin_1_8V.jpeg)
+
+
 ### 3.3 Gain and Power Calculation
 **Gain:**  
 The gain of both the first and second stages was calculated as shown in the image below. For the ICMR<sub>-ve</sub> at 0.8V, the gain was found to be 48.5 dB, while for the ICMR<sub>+ve</sub> at 1.8V, the gain was reduced to 29.68 dB. These gain values highlight the variation in performance based on input common-mode voltage, indicating how the operational amplifier operates differently under varying input conditions.
