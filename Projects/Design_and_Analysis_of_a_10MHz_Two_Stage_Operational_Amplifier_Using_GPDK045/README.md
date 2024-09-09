@@ -48,35 +48,34 @@ Compensation capacitor is critical for stabilizing the operational amplifier and
  In a two-stage operational amplifier, the tail current \( I_{D5} \) through transistor M5 plays a crucial role in determining the amplifier's slew rate, which is a measure of how quickly the output voltage can change. The slew rate is directly proportional to the tail current, meaning a higher \( I_{D5} \) results in a faster response time. For this design, the target slew rate is 20 V/µs, and the `calculated tail current required to achieve this was 20 µA. To ensure sufficient performance and to accommodate variations, a slightly higher value of 25 µA was chosen, improving the overall dynamic performance of the amplifier without significantly increasing power consumption.
  
 ### 3) Design of M1 and M2
-M1 and M2 are the input differential pair transistors in the two-stage operational amplifier, which are critical for defining the transconductance (Gm) of the amplifier. The transconductance \Gm1,2 is a key parameter, directly influencing the gain and bandwidth of the amplifier. To calculate Gm1,2 , the process-dependent parameters µn Cox and µp Cox are required, which represent the electron and hole mobilities in the MOSFETs. 
+M1 and M2 are the input differential pair transistors in the two-stage operational amplifier, which are critical for defining the transconductance (Gm) of the amplifier. The transconductance \Gm1,2 is a key parameter, directly influencing the gain and bandwidth of the amplifier. To calculate Gm1,2 , the process-dependent parameters µn Cox and µp Cox are required, which represent the electron and hole mobilities in the MOSFETs. These values were obtained from the process technology file (GPDK045), and the circuit was created in Cadence Virtuoso for DC operating point analysis to verify the values, ensuring accurate results.
+For the design, the width-to-length ratio (W/L) for M1 and M2 was initially set to 1 as a starting point to simplify the analysis. After performing the necessary calculations and verifying the β-efficiency, the optimized (W/L) ratio for M1 and M2 was calculated to be 2. This ensures that the amplifier achieves the required transconductance while maintaining proper current flow and overall stability.
 
 ![MuNCOx](asset/images/Design_Flow/image3_muNCox.jpeg)
 ![MuPCOx](asset/images/Design_Flow/image4_muPCox.jpeg)
 
-These values were obtained from the process technology file (GPDK045), and the circuit was created in Cadence Virtuoso for DC operating point analysis to verify the values, ensuring accurate results.
-For the design, the width-to-length ratio (W/L) for M1 and M2 was initially set to 1 as a starting point to simplify the analysis. After performing the necessary calculations and verifying the β-efficiency, the optimized (W/L) ratio for M1 and M2 was calculated to be 2. This ensures that the amplifier achieves the required transconductance while maintaining proper current flow and overall stability.
+
 ![Calculation2](asset/images/calculation/Calculation2.jpeg)
 
 ### 4) Design of M3 and M5(Related to ICMR +ve)
-In the design of M3 and M5, the key focus is on ensuring that the input common-mode range (ICMR) is met, particularly the positive ICMR. To determine the appropriate width-to-length ratios (W/L) of M3 and M4, it is necessary to find the threshold voltages V<sub>t3,max</sub> ,  V<sub>t1,min</sub>  and V<sub>t1,max</sub>.
+In the design of M3 and M5, the key focus is on ensuring that the input common-mode range (ICMR) is met, particularly the positive ICMR. To determine the appropriate width-to-length ratios (W/L) of M3 and M4, it is necessary to find the threshold voltages V<sub>t3,max</sub> ,  V<sub>t1,min</sub>  and V<sub>t1,max</sub>. To do this, the circuit was set up in Cadence Virtuoso, and the necessary values were extracted from the DC operating point analysis. For V<sub>t1,min</sub> , the ICMR -ve value was applied as Vin to both M1 and M2. Similarly, for V<sub>t1,max</sub>. , the ICMR +ve value was applied to both M1 and M2. After obtaining these values from simulation, the calculated (W/L) ratios were applied in further calculations.
+The final (W/L) ratio for M3 and M4 was determined to be 0.925, ensuring proper operation within the specified ICMR range and maintaining the desired amplifier performance.
 
 ![Vt3max](asset/images/Design_Flow/image5_Vt3Max.jpeg)
 
 ![Vt1min and Vt1,max](asset/images/Design_Flow/image6_Vt1min.jpeg)
 
-To do this, the circuit was set up in Cadence Virtuoso, and the necessary values were extracted from the DC operating point analysis. For V<sub>t1,min</sub> , the ICMR -ve value was applied as Vin to both M1 and M2. Similarly, for V<sub>t1,max</sub>. , the ICMR +ve value was applied to both M1 and M2. After obtaining these values from simulation, the calculated (W/L) ratios were applied in further calculations.
-The final (W/L) ratio for M3 and M4 was determined to be 0.925, ensuring proper operation within the specified ICMR range and maintaining the desired amplifier performance.
 ![Calculation3](asset/images/calculation/calculation3.jpeg)
 
 ### Design of M5 (Related to ICMR<sub>-ve</sub>)
 
-In the design of M5, it is essential to calculate V<sub>DS5,sat</sub> using the input common-mode range ICMR<sub>-ve</sub>. Based on the DC operating point simulation, the calculated V<sub>DS5,sat</sub> was found to be -0.323V. Since this value is negative, it is not suitable for the intended ICMR<sub>-ve</sub>, indicating that adjustments are required to ensure proper operation.
+In the design of M5, it is essential to calculate V<sub>DS5,sat</sub> using the input common-mode range ICMR<sub>-ve</sub>. Based on the DC operating point simulation, the calculated V<sub>DS5,sat</sub> was found to be -0.323V. Since this value is negative, it is not suitable for the intended ICMR<sub>-ve</sub>, indicating that adjustments are required to ensure proper operation.To determine the minimum Vin<sub>min</sub>, the overdrive voltages of M1 and M5 were considered, along with the maximum threshold voltage between V<sub>th1</sub> and V<sub>th5</sub>. This led to the calculation of Vin<sub>min</sub> = 0.189V, which ensures that the amplifier operates correctly within the given ICMR.
+Using this value, the width-to-length ratio (W/L) of both M5 and M8 was calculated to be 4.5, optimizing the current flow and ensuring the desired performance.
 
 ![Calculation4](asset/images/calculation/Calculation4.jpeg)
 
-To determine the minimum Vin<sub>min</sub>, the overdrive voltages of M1 and M5 were considered, along with the maximum threshold voltage between V<sub>th1</sub> and V<sub>th5</sub>. This led to the calculation of Vin<sub>min</sub> = 0.189V, which ensures that the amplifier operates correctly within the given ICMR.
-Using this value, the width-to-length ratio (W/L) of both M5 and M8 was calculated to be 4.5, optimizing the current flow and ensuring the desired performance.
-![Vov1 and Vov5](asset/images/Design_Flow/image7_Vov1_Vov5)
+
+![Vov1 and Vov5](asset/images/Design_Flow/image7_Vov1_Vov5.jpeg)
 
 ## 3.2 Stage II
 ### Design of M6 
