@@ -121,3 +121,5 @@ The layout design was implemented in the Layout XL editor, following the schemat
 The design of the two-stage operational amplifier was successfully executed, meeting the specified performance criteria. The gain for ICMR<sub>-ve</sub> and ICMR<sub>+ve</sub> was calculated to be 48.5 dB and 29.68 dB, respectively. Power consumption varied between 190.8 µW and 255 µW, depending on the input common-mode voltage. The layout was designed using the Layout XL editor, ensuring minimal parasitics and alignment with the schematic. The overall design was verified through simulation, ensuring that the amplifier operates as intended within the specified gain-bandwidth, power, and phase margin requirements.
 
  
+![Two Stage Op Amp](asset/images/Design_Flow/image12_Final_Op_Amp_and_Symbol.jpeg)
+![Layout Design](asset/images/Design_Flow/image13_Layout_Design.jpeg)
