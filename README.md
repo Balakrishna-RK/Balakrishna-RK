@@ -8,6 +8,7 @@ I am Balakrishna RK, a passionate Electrical and Electronics Engineer with a bac
 - [**Design and Analysis of CMOS Inverter: Schematic Design, Layout Design and LVS Validation using SKY130 PDK**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_CMOS_Inverter%3A_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130_PDK)
 - [**Design and Analysis of 8-Bit Carry Select Adder: Schematic Design, Layout Design and LVS Validation using SKY130 PDK**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK)
 - [**Schematic Design and Analysis of an 8-Word 8-Bit Static RAM with 6T Storage Cells using SKY130PDK**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Schematic_Design_and_Analysis_of_an_8-Word_8-Bit_Static_RAM_with_6T_Storage_Cells_using_SKY130PDK)
+- [**Design and Analysis of a 10MHz Two Stage Operational Amplifier Using GPDK045**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_a_10MHz_Two_Stage_Operational_Amplifier_Using_GPDK045)
 
 ### Skills
 - Circuit design and analysis with software such as Ngspice, Xschem, LTspice, Matlab, and eSim
