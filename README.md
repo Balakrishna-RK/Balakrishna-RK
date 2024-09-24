@@ -1,7 +1,26 @@
 # About Me
 
-Hi,  
-I am Balakrishna RK, a passionate Electrical and Electronics Engineer with a bachelor's degree from Alagappa Chettiar Government College of Engineering and Technology, Tamil Nadu, India.My keen interest in electronics, semiconductor technology, and IC design has driven me to pursue a career in VLSI Design. Highly proficient in VLSI design, with expertise spanning RTL to GDSII, including RTL design, Logic Synthesis, Static Timing Analysis, and Physical Design. Adept in Chip Planning (Partitioning, Floor planning, Power Planning), Constraints, Power Analysis, and all stages of physical implementation such as Placement and Routing. Experienced in verification processes such as LVS and DRC, with a strong track record of delivering high-performance semiconductor solutions through a variety of projects.
+Hi, I am **Balakrishna RK**, a passionate Electrical and Electronics Engineer with a bachelor's degree from **Alagappa Chettiar Government College of Engineering and Technology**, Tamil Nadu, India. 
+
+My keen interest in electronics, semiconductor technology, and IC design has driven me to pursue a career in **VLSI Design**. 
+
+I am highly proficient in VLSI design, with expertise spanning from **RTL to GDSII**, including:
+- **RTL Design**
+- **Logic Synthesis**
+- **Static Timing Analysis**
+- **Physical Design**
+
+I am adept in:
+- **Chip Planning** (Partitioning, Floor Planning, Power Planning)
+- **Constraints**
+- **Power Analysis**
+- All stages of physical implementation, such as Placement and Routing.
+
+Additionally, I have experience in verification processes, including **LVS** and **DRC**, and I have a strong track record of delivering high-performance semiconductor solutions through a variety of projects.
+
+---
+
+
 
 ### Projects
 - [**Characteristics of MOS Devices Utilizing SKY130 Process Design Kit with Xschem and Ngspice**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice)
@@ -9,8 +28,6 @@ I am Balakrishna RK, a passionate Electrical and Electronics Engineer with a bac
 - [**Design and Analysis of 8-Bit Carry Select Adder: Schematic Design, Layout Design and LVS Validation using SKY130 PDK**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_8-bit_Carry_Select_Adder_Schematic_Design_Layout_Design_and_LVS_Validation_using_SKY130PDK)
 - [**Schematic Design and Analysis of an 8-Word 8-Bit Static RAM with 6T Storage Cells using SKY130PDK**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Schematic_Design_and_Analysis_of_an_8-Word_8-Bit_Static_RAM_with_6T_Storage_Cells_using_SKY130PDK)
 - [**Design and Analysis of a 10MHz Two Stage Operational Amplifier Using GPDK045**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Design_and_Analysis_of_a_10MHz_Two_Stage_Operational_Amplifier_Using_GPDK045)
-
-### Here are the technical skills from your resume formatted as bullet points:
 
 ### Technical Skills
 - **Hardware Description Languages**: Verilog, System Verilog
