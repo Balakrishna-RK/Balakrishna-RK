@@ -2,16 +2,17 @@
 
 Hi, I am **Balakrishna RK**, a passionate Electrical and Electronics Engineer with a bachelor's degree from **Alagappa Chettiar Government College of Engineering and Technology**, Tamil Nadu, India. 
 
-My keen interest in electronics, semiconductor technology, and IC design has driven me to pursue a career in **VLSI Design**. 
 
 I am highly proficient in VLSI design, with expertise spanning from **RTL to GDSII**, including:
 - **RTL Design**
 - **Logic Synthesis**
 - **Static Timing Analysis**
 - **Physical Design**
+- **Analog Design**
 
 I am adept in:
 - **Chip Planning** (Partitioning, Floor Planning, Power Planning)
+- **PNR** (Placement and Routing)
 - **Constraints**
 - **Power Analysis**
 - All stages of physical implementation, such as Placement and Routing.
@@ -19,8 +20,6 @@ I am adept in:
 Additionally, I have experience in verification processes, including **LVS** and **DRC**, and I have a strong track record of delivering high-performance semiconductor solutions through a variety of projects.
 
 ---
-
-
 
 ### Projects
 - [**Characteristics of MOS Devices Utilizing SKY130 Process Design Kit with Xschem and Ngspice**](https://github.com/Balakrishna-RK/Balakrishna-RK/tree/main/Projects/Characteristics_of_MOS_Devices_Utilizing_SKY130_Process_Design_Kit_with_Xschem_and_Ngspice)
