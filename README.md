@@ -18,7 +18,7 @@ I am adept in:
 - All stages of physical implementation, such as Placement and Routing.
 
 Additionally, I have experience in verification processes, including **LVS** and **DRC**, and I have a strong track record of delivering high-performance semiconductor solutions through a variety of projects.
-**Check Out My Projects Links**
+
 ---
 
 ### Projects
