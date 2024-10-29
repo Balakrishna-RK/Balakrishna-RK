@@ -2,7 +2,6 @@
 
 Hi, I am **Balakrishna RK**, a passionate Electrical and Electronics Engineer with a bachelor's degree from **Alagappa Chettiar Government College of Engineering and Technology**, Tamil Nadu, India. 
 
-
 I am highly proficient in VLSI design, with expertise spanning from **RTL to GDSII**, including:
 - **RTL Design**
 - **Logic Synthesis**
