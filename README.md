@@ -1,7 +1,5 @@
 ---
 
-# About Me  
-
 # Hi, I'm **Balakrishna RK**
 
 A passionate **Electrical and Electronics Engineer** specializing in **Analog Circuit Design** and **Layout Design** with comprehensive expertise in **Analog and Mixed-Signal IC Design**. I have hands-on experience with advanced **CMOS analog circuits** and a deep understanding of the **circuit-to-layout** process. My work spans across **circuit design**, **simulation**, **layout implementation**, and **physical verification** using industry-leading **EDA tools**.
@@ -46,7 +44,6 @@ A passionate **Electrical and Electronics Engineer** specializing in **Analog Ci
 - **Analog Layout Techniques**: Guard rings, dummy devices, common-centroid layout, and matching
 - **Design for Manufacturability (DFM)**: Ensuring layout reliability across process variations
 
---- 
 
 
 ### Vision
