@@ -2,9 +2,16 @@
 
 # About Me  
 
-Hi, I am **Balakrishna RK**, a passionate Electrical and Electronics Engineer with a strong foundation in **VLSI Design** and hands-on experience in the **RTL to GDSII flow**. I bring expertise in **RTL Design**, **Logic Synthesis**, **Static Timing Analysis**, **Physical Design**, **Layout Design** and **Analog Design**, along with a robust understanding of **physical verification** and optimization techniques.  
+# Hi, I'm **Balakrishna RK**
 
-Proficient in industry-standard tools such as **Cadence Virtuoso**,**Innovus**, **ADE XL**, **Spectre**, **Calibre**, **OpenRoad**, **Xschem**, **Ngspice**, **Yosys**, **Magic VLSI**, and **OpenSTA**, I excel in hardware modeling with **Verilog/System Verilog**, scripting in **Python/Tcl**, and programming in **C++**. 
+A passionate **Electrical and Electronics Engineer** specializing in **Analog Circuit Design** and **Layout Design** with comprehensive expertise in **Analog and Mixed-Signal IC Design**. I have hands-on experience with advanced **CMOS analog circuits** and a deep understanding of the **circuit-to-layout** process. My work spans across **circuit design**, **simulation**, **layout implementation**, and **physical verification** using industry-leading **EDA tools**.
+
+## 📐 **Expertise**
+
+- **Analog Circuit Design**: CMOS Amplifiers, Phase Shifters, Analog Filters, LNAs (Low Noise Amplifiers), Mixers, Attenuators, Operational Amplifiers (Op-Amps), ADCs (Analog-to-Digital Converters), DACs (Digital-to-Analog Converters), Comparators, and Oscillators
+- **Layout Design**: Custom Layout, Parasitic Extraction, LVS (Layout vs. Schematic), DRC (Design Rule Check), Signal Integrity, Antenna Effect Mitigation
+- **Analog Simulation and Analysis**: Transient, AC, Noise, and PVT (Process, Voltage, Temperature) Corners Analysis
+- **Physical Verification**: Layout vs. Schematic (LVS), Design Rule Check (DRC), Parasitic Extraction (PEX), and Electrical Rule Check (ERC) 
 
 ---
 
@@ -19,30 +26,25 @@ Proficient in industry-standard tools such as **Cadence Virtuoso**,**Innovus**, 
 
 ---  
 
-## Expertise  
+# 🛠️ **Technical Skills**
 
-- **Basic Concepts of Integrated Circuits**: IC Structures, Fabrication, Design Styles, Figures of Merit  
-- **Pre-RTL Methodologies**: SoC Design, Hardware-Software Partitioning, IP Assembly, Behavioral Synthesis  
-- **RTL Design**: Hardware Modeling (Verilog), Testbench Development, Coverage Analysis  
-- **Logic Synthesis**: Multi-level Logic Optimization, FSM Optimization, Formal Verification  
-- **Static Timing Analysis**: Timing Graph, Delay Calculation, Timing Exceptions, Robust Timing Closure  
-- **Power Analysis and DFT**: Power-driven Optimizations, Fault Models, Scan Design, ATPG, BIST  
-- **Physical Design**: Chip Planning, Floorplanning, Power Planning, Placement, Routing  
-- **Clock Tree Synthesis**: Skew Balancing, Clock Distribution Networks, Global and Detailed Routing  
-- **Physical Verification**: LVS, DRC, ERC, Parasitic Extraction, ECO Implementation  
-- **Analog Design**: CMOS Amplifiers, Comparators, Oscillators, ADCs, DACs, LDOs  
-- **Layout Design**: Schematic Capture, Layout Design, Parasitic Extraction, LVS, DRC, Signal Integrity, Antenna Effect
-  
----
+### **EDA Tools**
+- **Cadence Virtuoso**: Schematic Capture, Layout Design, Simulation (Spectre, ADE XL)
+- **Calibre**: DRC, LVS, Parasitic Extraction
+- **Xschem**: Schematic Capture for Analog and Mixed-Signal Circuits
+- **Ngspice**: Circuit Simulation and Analysis
+- **Magic VLSI**: Layout Design and DRC Verification
+- **Netgen**: LVS Verification
 
+### **Programming Languages**
+- **C++**: For modeling and algorithm development
 
-### Technical Skills  
-
-I am proficient in **Hardware Description Languages** such as **Verilog** and **System Verilog**, with strong expertise in various **EDA Tools**, including **Cadence Virtuoso** (Schematic Capture, Layout, Simulation), **Xschem** (Schematic Capture), **Ngspice** (Circuit Simulation), **Yosys** (Logic Synthesis), **Netgen** (LVS), **Magic VLSI** (Layout and DRC), **OpenSTA** (Static Timing Analysis, Power Analysis, and Technology Mapping), **Bambu** (High-Level Synthesis), **OpenROAD** (Physical Design Automation), **Calibre** (DRC/LVS), and **Spectre** (Analog Simulation with **ADE XL**).  
-
-My programming skills include **C++**, complemented by scripting knowledge in **Tcl** and **Python**.  
-
-In terms of core competencies, I excel in **RTL Design**, **Logic Synthesis**, **Physical Design**, **Schematic and Layout Design**, **Floor Planning**, **Placement**, **Routing**, **Clock Tree Synthesis (CTS)**, **Power Planning**, **PDN (Power Delivery Network)**, **CDC (Clock Domain Crossing)**, and **DRC/LVS Verification**. I have extensive knowledge of the **VLSI Design Flow**, spanning from **RTL to GDSII**, and ensure designs are optimized for power, performance, and area.
+## 📊 **Core Competencies**
+- **Analog Design Flow**: End-to-end design from schematic to verified layout
+- **Circuit Characterization**: Design optimization for power, performance, and area (PPA)
+- **Parasitic Extraction**: Accurate modeling and mitigation of parasitic effects
+- **Analog Layout Techniques**: Guard rings, dummy devices, common-centroid layout, and matching
+- **Design for Manufacturability (DFM)**: Ensuring layout reliability across process variations
 
 --- 
 
